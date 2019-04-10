@@ -1,16 +1,18 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Master.cshtml";
-    var selection = CurrentPage.Children.Where("Visible").OrderBy("CreateDate desc");
+    //var selection = CurrentPage.Children.Where("Visible").OrderBy("CreateDate desc");
 
 
 }
 
 
-
-<div class="card mb-3">
-    <div class="card-body">
-        @Html.Action("RenderCasinos", "Casino")
+@*
+    <div class="card mb-3">
+        <div class="card-body">
+            @Html.Action("RenderCasinos", "Casino")
+        </div>
     </div>
-</div>
+*@
 
+@Html.Action("RenderArticles", "Article")

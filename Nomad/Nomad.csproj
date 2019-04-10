@@ -1909,6 +1909,7 @@
     <Compile Include="Controllers\CasinoController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\NewsletterController.cs" />
