@@ -67,3 +67,13 @@ C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\DAL.dll.config
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\EntityFramework.xml
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Autofac.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Autofac.Integration.Mvc.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Autofac.Integration.WebApi.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Autofac.pdb
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Autofac.xml
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Autofac.Integration.Mvc.xml
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Autofac.Integration.WebApi.pdb
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Autofac.Integration.WebApi.xml
