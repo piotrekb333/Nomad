@@ -1,0 +1,14 @@
+/*.user
+/*.manifest
+/*.suo
+/obj
+*.config
+/.vs
+/DAL/bin
+/DAL/obj
+/FitnessApp/bin
+/FitnessApp/obj
+/Models/bin
+/Models/obj
+/FitnessAppTests/bin
+/FitnessAppTests/obj

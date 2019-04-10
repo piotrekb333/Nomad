@@ -1,0 +1,1 @@
+﻿ 2019-04-10 00:00:40,542 [P21468/D2/T39] INFO  Umbraco.Core.Logging.OwinLogger - Event Id: 0, state: User logged will be logged out due to timeout: piotr.bancarzewski3@gmail.com, IP Address: ::1
