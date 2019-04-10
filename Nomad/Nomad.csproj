@@ -1923,7 +1923,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\NavigationModels\TopNavigationModel.cs" />
-    <Compile Include="Models\NewsModels\News.cs" />
+    <Compile Include="Models\ArticleModels\ArticleModel.cs" />
     <Compile Include="Models\Requests\SaveToNewsletterRequest.cs" />
     <Compile Include="Models\Responses\AjaxResponse.cs" />
     <Compile Include="Models\Responses\SaveToNewsletterResponse.cs" />
@@ -2195,6 +2195,26 @@
     <Content Include="Umbraco\Webservices\TreeDataService.ashx" />
     <Content Include="Umbraco\Xslt\Web.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Partials\Bookmakers\_Bookmakers.cshtml" />
+    <Content Include="Views\Partials\Casinos\_RenderCasinos.cshtml" />
+    <Content Include="Views\Partials\Navigation\SubNavigation.cshtml" />
+    <Content Include="Views\Partials\Articles\_Articles.cshtml" />
+    <Content Include="Views\Partials\Reviews\_Reviews.cshtml" />
+    <Content Include="Views\Partials\CategoryLinks.cshtml" />
+    <Content Include="Views\Partials\SectionHeader.cshtml" />
+    <Content Include="Views\Partials\TopNavigationItems.cshtml" />
+    <Content Include="Views\Partials\TopNavigation.cshtml" />
+    <Content Include="Views\Article.cshtml" />
+    <Content Include="Views\Articles.cshtml" />
+    <Content Include="Views\Bookmaker.cshtml" />
+    <Content Include="Views\Bookmakers.cshtml" />
+    <Content Include="Views\Casino.cshtml" />
+    <Content Include="Views\Casinos.cshtml" />
+    <Content Include="Views\Contact.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Master.cshtml" />
+    <Content Include="Views\Review.cshtml" />
+    <Content Include="Views\Reviews.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,4 @@
-﻿using Nomad.Models.NewsModels;
+﻿using Nomad.Models.ArticleModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,18 +11,18 @@ namespace Nomad.Controllers
 {
     public class ArticleController : SurfaceController
     {
-        public ActionResult RenderNews()
+        public ActionResult RenderArticles()
         {
             try
             {
-                List<News> newsList = new List<News>();
+                List<ArticleModel> newsList = new List<ArticleModel>();
                 var list=CurrentPage?.Children.Where(m=>!m.IsDraft).ToList();
                 if (list != null)
                 {
                     list.ForEach(m =>
                     {
                         int idbanner = 0;
-                        newsList.Add(new News {
+                        newsList.Add(new ArticleModel {
                             Body = m.GetProperty("articleBody")?.Value?.ToString(),
                             Title = m.GetProperty("articleTitle")?.Value?.ToString(),
                             ImagePath = int.TryParse(m.GetProperty("articleBanner")?.Value?.ToString(), out idbanner) ? Umbraco.TypedMedia(idbanner).Url : "",
@@ -32,7 +32,7 @@ namespace Nomad.Controllers
                     });
                     newsList = newsList.OrderByDescending(m => m.DatePublished).ToList();
                 }
-                return PartialView("News/_News",newsList);
+                return PartialView("Articles/_Articles",newsList);
             }
             catch(Exception ex)
             {

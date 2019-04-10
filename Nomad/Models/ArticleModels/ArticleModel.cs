@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Nomad.Models.NewsModels
+namespace Nomad.Models.ArticleModels
 {
-    public class News
+    public class ArticleModel
     {
         public string Title { get; set; }
         public string Body { get; set; }
