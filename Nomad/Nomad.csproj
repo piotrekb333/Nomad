@@ -1918,6 +1918,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ArticleModels\ArticleImportModel.cs" />
     <Compile Include="Models\BookmakerModels\BookmakerModel.cs" />
     <Compile Include="Models\CasinoModels\CasinoModel.cs" />
     <Compile Include="Models\Contact\ContactViewModel.cs" />

@@ -10,9 +10,12 @@ namespace Nomad.Models.ArticleModels
         public ArticleModel(string line)
         {
             var split = line.Split(',');
+            int catid = 0;
+            int.TryParse(split[6], out catid);
             Title = split[2];
             Body = split[4];
             DatePublished = DateTime.UtcNow;
+            CategoryId = catid;
         }
         public ArticleModel() { }
 
@@ -22,5 +25,6 @@ namespace Nomad.Models.ArticleModels
         public string ImagePath { get; set; }
         public DateTime? DatePublished { get; set; }
         public string SiteUrl { get; set; }
+        public int CategoryId { get; set; }
     }
 }
