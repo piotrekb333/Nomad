@@ -1,0 +1,14 @@
+﻿@using Nomad.Models.CasinoModels
+@model IEnumerable<CasinoModel>
+@{
+    Layout = null;
+}
+<div class="list-group">
+  @foreach (var item in Model)
+  {
+
+  <a href="@item.SiteUrl" class="list-group-item list-group-item-action">
+    @Html.Raw(item.Title)
+  </a>
+}
+</div>

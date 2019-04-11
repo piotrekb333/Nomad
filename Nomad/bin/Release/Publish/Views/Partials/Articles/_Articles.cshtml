@@ -1,0 +1,62 @@
+﻿@using Nomad.Models.ArticleModels
+@using Umbraco.Core
+@using Nomad.Helpers;
+@model IEnumerable<ArticleModel>
+@{
+    Layout = null;
+    int i = 0;
+}
+
+<div class="container">
+    <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="table-container">
+                            <table class="table table-filter">
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        var body = HtmlRemoval.StripTagsRegex(item.Body);
+                                        string[] words = body.Split();
+                                        var wordsString = words.Take(5);
+                                        string subTitle=string.Join(" ", wordsString)+" ...";
+                                        if(string.IsNullOrEmpty(subTitle))
+                                        {
+                                            subTitle="More...";
+                                        }
+                                        <tr data-status="pagado">
+                                            <td>
+                                                <div class="media">
+
+                                                    <div class="media-body">
+                                                        <span class="media-meta pull-right">@(item.DatePublished.HasValue ? item.DatePublished.Value.ToString("MMM dd, yyyy") : "")</span>
+                                                        <h4 class="title">
+                                                            <a href="@item.SiteUrl">@item.Title</a>
+                                                        </h4>
+                                                        <p class="summary">@subTitle</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

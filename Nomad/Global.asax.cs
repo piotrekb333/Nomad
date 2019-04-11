@@ -16,13 +16,13 @@ namespace Nomad
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutofacConfig.RegisterServices();
         }
         protected override void OnApplicationStarted(object sender, EventArgs e)
         {
             AutofacConfig.RegisterServices();
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
             base.OnApplicationStarted(sender, e);
         }
     }

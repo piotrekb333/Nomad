@@ -332,6 +332,7 @@ Umbraco.Web.Cache.UserCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=n
 Umbraco.Web.Cache.UserGroupPermissionsCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
 Casino.Controllers.NewsletterController, Nomad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Casino.Controllers.ReviewController, Nomad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Nomad.NomadEventHandler, Nomad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Nomad.Controllers.BookmakerController, Nomad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Nomad.Controllers.CasinoController, Nomad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Nomad.Controllers.ContactController, Nomad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -559,6 +560,7 @@ Umbraco.Web.Models.Mapping.ContentModelMapper, umbraco, Version=1.0.7009.26206, 
 Umbraco.Web.Models.Mapping.SectionModelMapper, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Models.Mapping.UserModelMapper, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Cache.CacheRefresherEventHandler, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Nomad.NomadEventHandler, Nomad, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Umbraco.ModelsBuilderApplication, Umbraco.ModelsBuilder, Version=3.0.10.102, Culture=neutral, PublicKeyToken=null
 Umbraco.Core.Strategies.RelateOnCopyHandler, Umbraco.Core, Version=1.0.7009.26199, Culture=neutral, PublicKeyToken=null
 Umbraco.Core.Strategies.RelateOnTrashHandler, Umbraco.Core, Version=1.0.7009.26199, Culture=neutral, PublicKeyToken=null
@@ -748,9 +750,6 @@ Umbraco.Web.PropertyEditors.ParameterEditors.SingleMediaPickerParameterEditor, u
 Umbraco.Core.PropertyEditors.ParameterEditor, Umbraco.Core, Version=1.0.7009.26199, Culture=neutral, PublicKeyToken=null
 Umbraco.Core.PropertyEditors.PropertyEditor, Umbraco.Core, Version=1.0.7009.26199, Culture=neutral, PublicKeyToken=null
 
-Umbraco.Core.Deploy.IServiceConnector
-
-
 Umbraco.Core.Persistence.Mappers.BaseMapper
 Umbraco.Core.Persistence.Mappers.MapperForAttribute
 Umbraco.Core.Persistence.Mappers.AccessMapper, Umbraco.Core, Version=1.0.7009.26199, Culture=neutral, PublicKeyToken=null
@@ -784,4 +783,28 @@ Umbraco.Core.Persistence.Mappers.RelationTypeMapper, Umbraco.Core, Version=1.0.7
 Umbraco.Core.Persistence.Mappers.ServerRegistrationMapper, Umbraco.Core, Version=1.0.7009.26199, Culture=neutral, PublicKeyToken=null
 Umbraco.Core.Persistence.Mappers.UmbracoEntityMapper, Umbraco.Core, Version=1.0.7009.26199, Culture=neutral, PublicKeyToken=null
 Umbraco.Core.Persistence.Mappers.UserMapper, Umbraco.Core, Version=1.0.7009.26199, Culture=neutral, PublicKeyToken=null
+
+umbraco.interfaces.ICacheRefresher
+
+Umbraco.Web.Cache.ApplicationCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.ApplicationTreeCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.ContentTypeCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.DataTypeCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.DictionaryCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.DomainCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.LanguageCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.MacroCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.MediaCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.MemberCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.MemberGroupCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.PageCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.PublicAccessCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.RelationTypeCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.UserGroupCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.StylesheetCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.StylesheetPropertyCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.TemplateCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.UnpublishedPageCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.UserCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.Cache.UserGroupPermissionsCacheRefresher, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
 

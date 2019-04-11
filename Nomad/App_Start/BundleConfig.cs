@@ -48,7 +48,7 @@ namespace Nomad
                       "~/css/font-awesome.min.css",
                       "~/css/sb-admin.css"
                       ));
-            //BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
