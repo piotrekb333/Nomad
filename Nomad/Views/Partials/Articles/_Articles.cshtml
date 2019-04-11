@@ -1,5 +1,6 @@
 ﻿@using Nomad.Models.ArticleModels
 @using Umbraco.Core
+@using Nomad.Helpers;
 @model IEnumerable<ArticleModel>
 @{
     Layout = null;
@@ -16,8 +17,14 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        string[] words = item.Body.Split();
+                                        var body = HtmlRemoval.StripTagsRegex(item.Body);
+                                        string[] words = body.Split();
                                         var wordsString = words.Take(5);
+                                        string subTitle=string.Join(" ", wordsString)+" ...";
+                                        if(string.IsNullOrEmpty(subTitle))
+                                        {
+                                            subTitle="More...";
+                                        }
                                         <tr data-status="pagado">
                                             <td>
                                                 <div class="media">
@@ -27,7 +34,7 @@
                                                         <h4 class="title">
                                                             <a href="@item.SiteUrl">@item.Title</a>
                                                         </h4>
-                                                        <p class="summary">@Html.Raw(string.Join(" ", wordsString)+" ...")</p>
+                                                        <p class="summary">@subTitle</p>
                                                     </div>
                                                 </div>
                                             </td>
