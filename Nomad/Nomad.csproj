@@ -323,7 +323,9 @@
     <Content Include="css\dataTables.bootstrap4.css" />
     <Content Include="css\font-awesome.min.css" />
     <Content Include="css\fontastic.css" />
+    <Content Include="css\jquery.hoverGrid.css" />
     <Content Include="css\main.css" />
+    <Content Include="css\multislider.css" />
     <Content Include="css\pe-icons.css" />
     <Content Include="css\prettyPhoto.css" />
     <Content Include="css\responsive.css" />
@@ -357,6 +359,7 @@
     <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Scripts\jquery.dataTables.js" />
     <Content Include="Scripts\jquery.easing.js" />
+    <Content Include="Scripts\jquery.hoverGrid.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
     <Content Include="Scripts\jquery.prettyPhoto.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -366,6 +369,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\multislider.min.js" />
     <Content Include="Scripts\Newsletter\Newsletter.js" />
     <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\popper-utils.min.js" />

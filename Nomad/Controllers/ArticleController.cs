@@ -30,7 +30,7 @@ namespace Nomad.Controllers
                             SiteUrl = m.Url
                         });
                     });
-                    newsList = newsList.OrderByDescending(m => m.DatePublished).ToList();
+                    //newsList = newsList.OrderByDescending(m => m.DatePublished).ToList();
                 }
                 return PartialView("Articles/_Articles",newsList);
             }

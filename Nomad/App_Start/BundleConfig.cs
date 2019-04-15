@@ -38,15 +38,22 @@ namespace Nomad
                       "~/Scripts/sb-admin-datatables.js",
                       //"~/Scripts/sb-admin-charts.js",
                       "~/Scripts/Newsletter/Newsletter.js",
-                      "~/Scripts/jquery.validate*"
-                       
+                      "~/Scripts/jquery.validate*",
+                      "~/Scripts/jquery.hoverGrid.js",
+                      "~/Scripts/main.js",
+                      "~/Scripts/multislider.min.js"
+
+
                       ));
 
             bundles.Add(new StyleBundle("~/bundles/Styles").Include(
                       "~/css/bootstrap.min.css",
                       "~/css/dataTables.bootstrap4.css",
                       "~/css/font-awesome.min.css",
-                      "~/css/sb-admin.css"
+                      "~/css/sb-admin.css",
+                      "~/css/jquery.hoverGrid.css",
+                      "~/css/multislider.css"
+
                       ));
             BundleTable.EnableOptimizations = false;
         }

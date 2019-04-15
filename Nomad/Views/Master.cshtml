@@ -5,10 +5,11 @@
 @{
     Layout = null;
 
-    //IContent content = ApplicationContext.Current.Services.ContentService.GetById(1141);
+    //IContent content = ApplicationContext.Current.Services.ContentService.GetById(1057);
     //var logoList = content.GetValue<List<IContent>>("footerImages");
     //var logoListString = content.GetValue("footerImages");
-
+    var content = Umbraco.TypedContent(1057);
+    var logoList = content.GetPropertyValue<List<IPublishedContent>>("footerImages");
 
 }
 
@@ -44,18 +45,18 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                 @*
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-            <a class="nav-link" href="index.html">
-                <i class="fa fa-fw fa-dashboard"></i>
-                <span class="nav-link-text">Dashboard</span>
-            </a>
-        </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa fa-fw fa-dashboard"></i>
+                            <span class="nav-link-text">Dashboard</span>
+                        </a>
+                    </li>
                 *@
 
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Casinos">
-                    <a class="nav-link" href="/Casinos">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Online Casinos - Reviews">
+                    <a class="nav-link" href="/online-casinos-reviews">
                         <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">Casinos</span>
+                        <span class="nav-link-text">Online Casinos - Reviews</span>
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="history-ocm">
@@ -184,10 +185,16 @@
                     <div class="col-md-12">
                         <small>Copyright © Psycho Casino 2019</small>
                         @*
-        <span id="siteseal">
-            <script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=CD9MoLPfmgWLxd15rSjxE6JrXb9sWbRb3eDxdEsKQaUF5eHpQ3TivpfwRyV2"></script>
-        </span>
-        <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+                        @foreach (var logo in logoList)
+                        {
+                            <img src="@logo.Url" alt="@logo.Name logo" />
+                        }
+                            *@
+                        @*
+                            <span id="siteseal">
+                                <script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=CD9MoLPfmgWLxd15rSjxE6JrXb9sWbRb3eDxdEsKQaUF5eHpQ3TivpfwRyV2"></script>
+                            </span>
+                            <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
                         *@
                     </div>
                 </div>
