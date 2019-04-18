@@ -897,3 +897,22 @@ umbraco.businesslogic.UsersApplicationDefinition, businesslogic, Version=1.0.700
 umbraco.businesslogic.MembersApplicationDefinition, businesslogic, Version=1.0.7009.26204, Culture=neutral, PublicKeyToken=null
 umbraco.businesslogic.TranslationApplicationDefinition, businesslogic, Version=1.0.7009.26204, Culture=neutral, PublicKeyToken=null
 
+Umbraco.Web.HealthCheck.HealthCheck
+
+Umbraco.Web.HealthCheck.Checks.DataIntegrity.XmlDataIntegrityHealthCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Permissions.FolderAndFilePermissionsCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.MacroErrorsCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.NotificationEmailCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.TrySkipIisCustomErrorsCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.CustomErrorsCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.TraceCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Config.CompilationDebugCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Security.XssProtectionCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Security.HstsCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Security.NoSniffCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Security.ExcessiveHeadersCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Security.ClickJackingCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Security.HttpsCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Services.Tls12Check, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.HealthCheck.Checks.Services.SmtpCheck, umbraco, Version=1.0.7009.26206, Culture=neutral, PublicKeyToken=null
+
