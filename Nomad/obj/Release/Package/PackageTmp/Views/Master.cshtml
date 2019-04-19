@@ -5,11 +5,12 @@
 @{
     Layout = null;
 
-    //IContent content = ApplicationContext.Current.Services.ContentService.GetById(1141);
+    //IContent content = ApplicationContext.Current.Services.ContentService.GetById(1057);
     //var logoList = content.GetValue<List<IContent>>("footerImages");
     //var logoListString = content.GetValue("footerImages");
-
-
+    var content = Umbraco.TypedContent(1057);
+    var logoList = content.GetPropertyValue<List<IPublishedContent>>("footerImages");
+    var banner = content.GetPropertyValue<IPublishedContent>("mainBanner");
 }
 
 
@@ -17,9 +18,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="@CurrentPage.seoDescription">
     <meta name="author" content="">
-    <title>Nomad Casino</title>
+    <meta name="title" content="@CurrentPage.seoTitle">
+    <meta name="keywords" content="@CurrentPage.seoKeywords">
+
+    <title>Casino Psycho - Play Like a Psycho, Win like a Pro!</title>
     @Styles.Render("~/bundles/Styles")
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138151375-1"></script>
@@ -37,23 +41,23 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-        <a class="navbar-brand" href="/">Nomad Casino</a>
+        <a class="navbar-brand" href="/">Casino Psycho - Insane Bonuses</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                 @*
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-            <a class="nav-link" href="index.html">
-                <i class="fa fa-fw fa-dashboard"></i>
-                <span class="nav-link-text">Dashboard</span>
-            </a>
-        </li>
+                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa fa-fw fa-dashboard"></i>
+                            <span class="nav-link-text">Dashboard</span>
+                        </a>
+                    </li>
                 *@
 
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Casinos">
-                    <a class="nav-link" href="/Casinos">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Online Casinos - Reviews">
+                    <a class="nav-link" href="/online-casinos-reviews">
                         <i class="fa fa-fw fa-table"></i>
                         <span class="nav-link-text">Casinos</span>
                     </a>
@@ -61,7 +65,7 @@
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="history-ocm">
                     <a class="nav-link" href="/history-ocm">
                         <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">History OCM</span>
+                        <span class="nav-link-text">History</span>
                     </a>
                 </li>
 
@@ -72,10 +76,10 @@
                     </a>
                 </li>
 
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Sportsbetting">
-                    <a class="nav-link" href="/sportsbetting">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmakers">
+                    <a class="nav-link" href="/Bookmakers">
                         <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">Sportsbetting</span>
+                        <span class="nav-link-text">Bookmakers</span>
                     </a>
                 </li>
 
@@ -169,6 +173,12 @@
             </ul>
         </div>
     </nav>
+    <div class="content-wrapper banner-wrapper">
+        @if (banner != null)
+        {
+            <img src="@banner.Url" />
+        }
+    </div>
     <div class="content-wrapper">
         <div class="container-fluid">
             @RenderBody()
@@ -182,12 +192,16 @@
 
                     </div>
                     <div class="col-md-12">
-                        <small>Copyright © Psycho Casino 2019</small>
+                        <small class="float-left">Copyright 2019 © CasinoPsycho</small>
+                        @foreach (var logo in logoList)
+                        {
+                            <img src="@logo.Url" alt="@logo.Name logo" />
+                        }
                         @*
-        <span id="siteseal">
-            <script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=CD9MoLPfmgWLxd15rSjxE6JrXb9sWbRb3eDxdEsKQaUF5eHpQ3TivpfwRyV2"></script>
-        </span>
-        <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+                            <span id="siteseal">
+                                <script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=CD9MoLPfmgWLxd15rSjxE6JrXb9sWbRb3eDxdEsKQaUF5eHpQ3TivpfwRyV2"></script>
+                            </span>
+                            <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
                         *@
                     </div>
                 </div>

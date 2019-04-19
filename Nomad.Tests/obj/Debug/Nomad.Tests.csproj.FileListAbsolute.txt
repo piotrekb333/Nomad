@@ -113,3 +113,10 @@ C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\ImageProcessor.xml
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Hangfire.Core.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Hangfire.SqlServer.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Hangfire.Core.xml
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\Hangfire.SqlServer.xml
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\es\Hangfire.Core.resources.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\zh\Hangfire.Core.resources.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\zh-TW\Hangfire.Core.resources.dll

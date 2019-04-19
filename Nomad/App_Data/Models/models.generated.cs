@@ -19,14 +19,14 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b7bb0bbce5117a6d")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "edb243c3c9174a56")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Article</summary>
 	[PublishedContentModel("article")]
-	public partial class Article : PublishedContentModel, ISeo
+	public partial class Article : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "article";
@@ -84,38 +84,11 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue<IHtmlString>("articleTitle"); }
 		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("seoDescription")]
-		public string SeoDescription
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
-		}
-
-		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("seoKeywords")]
-		public string SeoKeywords
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("seoTitle")]
-		public string SeoTitle
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
-		}
 	}
 
 	/// <summary>Home</summary>
 	[PublishedContentModel("home")]
-	public partial class Home : PublishedContentModel, ISeo
+	public partial class Home : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "home";
@@ -136,78 +109,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Home, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Banner link
-		///</summary>
-		[ImplementPropertyType("bannerLink")]
-		public string BannerLink
-		{
-			get { return this.GetPropertyValue<string>("bannerLink"); }
-		}
-
-		///<summary>
-		/// Footer Images
-		///</summary>
-		[ImplementPropertyType("footerImages")]
-		public IEnumerable<IPublishedContent> FooterImages
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("footerImages"); }
-		}
-
-		///<summary>
-		/// Gallery Images
-		///</summary>
-		[ImplementPropertyType("galleryImages")]
-		public IEnumerable<IPublishedContent> GalleryImages
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("galleryImages"); }
-		}
-
-		///<summary>
-		/// Banner
-		///</summary>
-		[ImplementPropertyType("mainBanner")]
-		public IPublishedContent MainBanner
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("mainBanner"); }
-		}
-
-		///<summary>
-		/// Page Body
-		///</summary>
-		[ImplementPropertyType("pageBody")]
-		public IHtmlString PageBody
-		{
-			get { return this.GetPropertyValue<IHtmlString>("pageBody"); }
-		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("seoDescription")]
-		public string SeoDescription
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
-		}
-
-		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("seoKeywords")]
-		public string SeoKeywords
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("seoTitle")]
-		public string SeoTitle
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
 		}
 	}
 
@@ -239,7 +140,7 @@ namespace Umbraco.Web.PublishedContentModels
 
 	/// <summary>Sportsbetting</summary>
 	[PublishedContentModel("sportsbetting")]
-	public partial class Sportsbetting : PublishedContentModel, ISeo
+	public partial class Sportsbetting : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "sportsbetting";
@@ -261,38 +162,11 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("seoDescription")]
-		public string SeoDescription
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
-		}
-
-		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("seoKeywords")]
-		public string SeoKeywords
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("seoTitle")]
-		public string SeoTitle
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
-		}
 	}
 
 	/// <summary>History OCM</summary>
 	[PublishedContentModel("historyOCM")]
-	public partial class HistoryOcm : PublishedContentModel, ISeo
+	public partial class HistoryOcm : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "historyOCM";
@@ -314,38 +188,11 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("seoDescription")]
-		public string SeoDescription
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
-		}
-
-		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("seoKeywords")]
-		public string SeoKeywords
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("seoTitle")]
-		public string SeoTitle
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
-		}
 	}
 
 	/// <summary>Operators</summary>
 	[PublishedContentModel("operators")]
-	public partial class Operators : PublishedContentModel, ISeo
+	public partial class Operators : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "operators";
@@ -367,38 +214,11 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("seoDescription")]
-		public string SeoDescription
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
-		}
-
-		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("seoKeywords")]
-		public string SeoKeywords
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("seoTitle")]
-		public string SeoTitle
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
-		}
 	}
 
 	/// <summary>Providers</summary>
 	[PublishedContentModel("providers")]
-	public partial class Providers : PublishedContentModel, ISeo
+	public partial class Providers : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "providers";
@@ -420,38 +240,11 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("seoDescription")]
-		public string SeoDescription
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
-		}
-
-		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("seoKeywords")]
-		public string SeoKeywords
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("seoTitle")]
-		public string SeoTitle
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
-		}
 	}
 
 	/// <summary>Reviews</summary>
 	[PublishedContentModel("reviews")]
-	public partial class Reviews : PublishedContentModel, ISeo
+	public partial class Reviews : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "reviews";
@@ -473,38 +266,11 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("seoDescription")]
-		public string SeoDescription
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
-		}
-
-		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("seoKeywords")]
-		public string SeoKeywords
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("seoTitle")]
-		public string SeoTitle
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
-		}
 	}
 
 	/// <summary>Tips</summary>
 	[PublishedContentModel("tips")]
-	public partial class Tips : PublishedContentModel, ISeo
+	public partial class Tips : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "tips";
@@ -526,38 +292,11 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("seoDescription")]
-		public string SeoDescription
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
-		}
-
-		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("seoKeywords")]
-		public string SeoKeywords
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("seoTitle")]
-		public string SeoTitle
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
-		}
 	}
 
 	/// <summary>Slot Machines</summary>
 	[PublishedContentModel("slotMachines")]
-	public partial class SlotMachines : PublishedContentModel, ISeo
+	public partial class SlotMachines : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "slotMachines";
@@ -579,38 +318,11 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
 		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("seoDescription")]
-		public string SeoDescription
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
-		}
-
-		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("seoKeywords")]
-		public string SeoKeywords
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("seoTitle")]
-		public string SeoTitle
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
-		}
 	}
 
 	/// <summary>Contact</summary>
 	[PublishedContentModel("contact")]
-	public partial class Contact : PublishedContentModel, ISeo
+	public partial class Contact : PublishedContentModel
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "contact";
@@ -631,241 +343,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Contact, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("seoDescription")]
-		public string SeoDescription
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
-		}
-
-		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("seoKeywords")]
-		public string SeoKeywords
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
-		}
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("seoTitle")]
-		public string SeoTitle
-		{
-			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
-		}
-	}
-
-	/// <summary>XMLSitemap</summary>
-	[PublishedContentModel("xMLSitemap")]
-	public partial class XMlsitemap : PublishedContentModel
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "xMLSitemap";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public XMlsitemap(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<XMlsitemap, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-	}
-
-	/// <summary>Carousel Slide</summary>
-	[PublishedContentModel("carouselSlide")]
-	public partial class CarouselSlide : PublishedContentModel
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "carouselSlide";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public CarouselSlide(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<CarouselSlide, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Slide Image
-		///</summary>
-		[ImplementPropertyType("slideImage")]
-		public IPublishedContent SlideImage
-		{
-			get { return this.GetPropertyValue<IPublishedContent>("slideImage"); }
-		}
-
-		///<summary>
-		/// Slide Link
-		///</summary>
-		[ImplementPropertyType("slideLink")]
-		public string SlideLink
-		{
-			get { return this.GetPropertyValue<string>("slideLink"); }
-		}
-
-		///<summary>
-		/// Slide Subtitle
-		///</summary>
-		[ImplementPropertyType("slideSubtitle")]
-		public string SlideSubtitle
-		{
-			get { return this.GetPropertyValue<string>("slideSubtitle"); }
-		}
-
-		///<summary>
-		/// Slide Title
-		///</summary>
-		[ImplementPropertyType("slideTitle")]
-		public string SlideTitle
-		{
-			get { return this.GetPropertyValue<string>("slideTitle"); }
-		}
-
-		///<summary>
-		/// Disabled
-		///</summary>
-		[ImplementPropertyType("umbracoNaviHide")]
-		public bool UmbracoNaviHide
-		{
-			get { return this.GetPropertyValue<bool>("umbracoNaviHide"); }
-		}
-	}
-
-	// Mixin content Type 1193 with alias "seo"
-	/// <summary>Seo</summary>
-	public partial interface ISeo : IPublishedContent
-	{
-		/// <summary>Description</summary>
-		string SeoDescription { get; }
-
-		/// <summary>Keywords</summary>
-		string SeoKeywords { get; }
-
-		/// <summary>Title</summary>
-		string SeoTitle { get; }
-	}
-
-	/// <summary>Seo</summary>
-	[PublishedContentModel("seo")]
-	public partial class Seo : PublishedContentModel, ISeo
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "seo";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public Seo(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Seo, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Description
-		///</summary>
-		[ImplementPropertyType("seoDescription")]
-		public string SeoDescription
-		{
-			get { return GetSeoDescription(this); }
-		}
-
-		/// <summary>Static getter for Description</summary>
-		public static string GetSeoDescription(ISeo that) { return that.GetPropertyValue<string>("seoDescription"); }
-
-		///<summary>
-		/// Keywords
-		///</summary>
-		[ImplementPropertyType("seoKeywords")]
-		public string SeoKeywords
-		{
-			get { return GetSeoKeywords(this); }
-		}
-
-		/// <summary>Static getter for Keywords</summary>
-		public static string GetSeoKeywords(ISeo that) { return that.GetPropertyValue<string>("seoKeywords"); }
-
-		///<summary>
-		/// Title
-		///</summary>
-		[ImplementPropertyType("seoTitle")]
-		public string SeoTitle
-		{
-			get { return GetSeoTitle(this); }
-		}
-
-		/// <summary>Static getter for Title</summary>
-		public static string GetSeoTitle(ISeo that) { return that.GetPropertyValue<string>("seoTitle"); }
-	}
-
-	/// <summary>Robot</summary>
-	[PublishedContentModel("robot")]
-	public partial class Robot : PublishedContentModel
-	{
-#pragma warning disable 0109 // new is redundant
-		public new const string ModelTypeAlias = "robot";
-		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
-#pragma warning restore 0109
-
-		public Robot(IPublishedContent content)
-			: base(content)
-		{ }
-
-#pragma warning disable 0109 // new is redundant
-		public new static PublishedContentType GetModelContentType()
-		{
-			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
-		}
-#pragma warning restore 0109
-
-		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Robot, TValue>> selector)
-		{
-			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Content
-		///</summary>
-		[ImplementPropertyType("content")]
-		public string Content
-		{
-			get { return this.GetPropertyValue<string>("content"); }
 		}
 	}
 

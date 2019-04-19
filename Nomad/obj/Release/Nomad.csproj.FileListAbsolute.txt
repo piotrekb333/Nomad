@@ -288,3 +288,10 @@ C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\Um
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\umbraco.providers.xml
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\Umbraco.Web.UI.xml
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\UmbracoExamine.xml
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\Hangfire.Core.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\Hangfire.SqlServer.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\Hangfire.Core.xml
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\Hangfire.SqlServer.xml
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\es\Hangfire.Core.resources.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\zh\Hangfire.Core.resources.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\zh-TW\Hangfire.Core.resources.dll
