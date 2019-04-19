@@ -15,7 +15,7 @@ namespace Nomad
         protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            base.ApplicationStarted(umbracoApplication, applicationContext);
+            //base.ApplicationStarted(umbracoApplication, applicationContext);
         }
     }
 }

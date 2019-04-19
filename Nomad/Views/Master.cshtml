@@ -10,7 +10,9 @@
     //var logoListString = content.GetValue("footerImages");
     var content = Umbraco.TypedContent(1057);
     var logoList = content.GetPropertyValue<List<IPublishedContent>>("footerImages");
-    var banner = content.GetPropertyValue<IPublishedContent>("mainBanner");
+    //var banner=content.GetPropertyValue<IPublishedContent>("mainBanner");
+    var bannerLink = content.GetPropertyValue<IPublishedContent>("bannerLink");
+
 }
 
 
@@ -174,10 +176,11 @@
         </div>
     </nav>
     <div class="content-wrapper banner-wrapper">
-        @if (banner != null)
-        {
-            <img src="@banner.Url" />
-        }
+
+        <a href="@CurrentPage.bannerLink">
+            <img src="https://media.wishmaker.partners/renderimage.aspx?pid=3444&bid=1511" />
+        </a>
+
     </div>
     <div class="content-wrapper">
         <div class="container-fluid">
@@ -193,10 +196,7 @@
                     </div>
                     <div class="col-md-12">
                         <small class="float-left">Copyright 2019 © CasinoPsycho</small>
-                        @foreach (var logo in logoList)
-                        {
-                            <img src="@logo.Url" alt="@logo.Name logo" />
-                        }
+
                         @*
                             <span id="siteseal">
                                 <script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=CD9MoLPfmgWLxd15rSjxE6JrXb9sWbRb3eDxdEsKQaUF5eHpQ3TivpfwRyV2"></script>
