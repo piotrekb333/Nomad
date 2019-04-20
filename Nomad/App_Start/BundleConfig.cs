@@ -46,8 +46,12 @@ namespace Nomad
 
                       ));
 
+            var bundle=new StyleBundle("~/bundles/bootstrap").Include(
+                      "~/css/bootstrap.min.css"
+                      );
+            bundle.Transforms.Clear();
             bundles.Add(new StyleBundle("~/bundles/Styles").Include(
-                      "~/css/bootstrap.min.css",
+                      //"~/css/bootstrap.min.css",
                       "~/css/dataTables.bootstrap4.css",
                       "~/css/font-awesome.min.css",
                       "~/css/sb-admin.css",
@@ -55,7 +59,8 @@ namespace Nomad
                       "~/css/multislider.css"
 
                       ));
-            BundleTable.EnableOptimizations = false;
+            bundles.Add(bundle);
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
