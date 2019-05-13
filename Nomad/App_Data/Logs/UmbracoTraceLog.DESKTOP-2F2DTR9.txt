@@ -1,126 +1,171 @@
-﻿ 2019-04-20 15:33:59,397 [P5576/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.14.0 application starting on DESKTOP-2F2DTR9
- 2019-04-20 15:33:59,539 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
- 2019-04-20 15:33:59,617 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 77ms)
- 2019-04-20 15:33:59,668 [P5576/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
- 2019-04-20 15:33:59,669 [P5576/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
- 2019-04-20 15:33:59,670 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:33:59,734 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 63ms)
- 2019-04-20 15:33:59,734 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
- 2019-04-20 15:33:59,735 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 0ms)
- 2019-04-20 15:33:59,760 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:33:59,760 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:33:59,761 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
- 2019-04-20 15:33:59,762 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 0ms)
- 2019-04-20 15:33:59,764 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:33:59,764 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:33:59,764 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
- 2019-04-20 15:33:59,765 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 0ms)
- 2019-04-20 15:33:59,783 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:33:59,784 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:33:59,784 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
- 2019-04-20 15:33:59,785 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 0ms)
- 2019-04-20 15:33:59,785 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:33:59,785 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:33:59,786 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
- 2019-04-20 15:33:59,786 [P5576/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 0ms)
- 2019-04-20 15:34:01,800 [P5576/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2019-04-20 15:34:02,353 [P5576/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
- 2019-04-20 15:34:02,536 [P5576/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
- 2019-04-20 15:34:02,537 [P5576/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
- 2019-04-20 15:34:02,900 [P5576/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Start installing Hangfire SQL objects...
- 2019-04-20 15:34:03,203 [P5576/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Hangfire SQL objects installed.
- 2019-04-20 15:34:03,228 [P5576/D2/T1] INFO  Hangfire.BackgroundJobServer - Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-2F2DTR9\SQLEXPRESS@Nomad'
- 2019-04-20 15:34:03,229 [P5576/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
- 2019-04-20 15:34:03,229 [P5576/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for Hangfire Server:
+﻿ 2019-05-02 14:30:19,998 [P29152/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.14.0 application starting on DESKTOP-2F2DTR9
+ 2019-05-02 14:30:20,028 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2019-05-02 14:30:20,134 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 105ms)
+ 2019-05-02 14:30:20,206 [P29152/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2019-05-02 14:30:20,207 [P29152/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2019-05-02 14:30:20,209 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:20,279 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 70ms)
+ 2019-05-02 14:30:20,280 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2019-05-02 14:30:20,282 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 1ms)
+ 2019-05-02 14:30:20,309 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:20,310 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:30:20,310 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2019-05-02 14:30:20,310 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 0ms)
+ 2019-05-02 14:30:20,313 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:20,313 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:30:20,313 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2019-05-02 14:30:20,314 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 0ms)
+ 2019-05-02 14:30:20,325 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:20,326 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:30:20,326 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2019-05-02 14:30:20,326 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 0ms)
+ 2019-05-02 14:30:20,327 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:20,327 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:30:20,327 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2019-05-02 14:30:20,328 [P29152/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 0ms)
+ 2019-05-02 14:30:22,401 [P29152/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2019-05-02 14:30:22,784 [P29152/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2019-05-02 14:30:22,942 [P29152/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2019-05-02 14:30:22,942 [P29152/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2019-05-02 14:30:23,316 [P29152/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Start installing Hangfire SQL objects...
+ 2019-05-02 14:30:23,453 [P29152/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Hangfire SQL objects installed.
+ 2019-05-02 14:30:23,477 [P29152/D2/T1] INFO  Hangfire.BackgroundJobServer - Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-2F2DTR9\SQLEXPRESS@Nomad'
+ 2019-05-02 14:30:23,477 [P29152/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+ 2019-05-02 14:30:23,477 [P29152/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for Hangfire Server:
     Worker count: 20
     Listening queues: 'default'
     Shutdown timeout: 00:00:15
     Schedule polling interval: 00:00:15
- 2019-04-20 15:34:03,454 [P5576/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:5576:72af9015 successfully announced in 142,6838 ms
- 2019-04-20 15:34:03,468 [P5576/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:5576:72af9015 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
- 2019-04-20 15:34:03,473 [P5576/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 4169ms)
- 2019-04-20 15:34:03,560 [P5576/D2/TServerWatchdog #1] INFO  Hangfire.Server.ServerWatchdog - 1 servers were removed due to timeout
- 2019-04-20 15:34:04,367 [P5576/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:5576:72af9015 all the dispatchers started
- 2019-04-20 15:34:04,871 [P5576/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:58484/umbraco
- 2019-04-20 15:34:04,872 [P5576/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:58484/umbraco (UmbracoModule request)
- 2019-04-20 15:34:06,530 [P5576/D2/T11] INFO  umbraco.content - Load Xml from file...
- 2019-04-20 15:34:06,588 [P5576/D2/T11] INFO  umbraco.content - Loaded Xml from file.
- 2019-04-20 15:34:07,357 [P5576/D2/T11] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:34:07,358 [P5576/D2/T11] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:34:07,359 [P5576/D2/T11] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
- 2019-04-20 15:34:07,360 [P5576/D2/T11] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 1ms)
- 2019-04-20 15:34:07,397 [P5576/D2/T3] INFO  Umbraco.Core.Manifest.ManifestWatcher - manifest has changed, app pool is restarting (C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\App_Plugins\ModelsBuilder\package.manifest)
- 2019-04-20 15:34:07,406 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
- 2019-04-20 15:34:07,407 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
- 2019-04-20 15:34:07,408 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
- 2019-04-20 15:34:07,409 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
- 2019-04-20 15:34:07,412 [P5576/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
- 2019-04-20 15:34:07,412 [P5576/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
- 2019-04-20 15:34:07,417 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
- 2019-04-20 15:34:07,418 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
- 2019-04-20 15:34:07,418 [P5576/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
- 2019-04-20 15:34:07,418 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
- 2019-04-20 15:34:07,420 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
- 2019-04-20 15:34:07,420 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Terminating
- 2019-04-20 15:34:07,420 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Waiting for tasks to complete
- 2019-04-20 15:34:07,421 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Terminating
- 2019-04-20 15:34:07,421 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Waiting for tasks to complete
- 2019-04-20 15:34:07,421 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Tasks completed, terminated
- 2019-04-20 15:34:07,421 [P5576/D2/T42] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
- 2019-04-20 15:34:07,422 [P5576/D2/T42] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Tasks completed, terminated
- 2019-04-20 15:34:07,422 [P5576/D2/T12] INFO  Umbraco.Core.MainDom - Stopping...
- 2019-04-20 15:34:07,429 [P5576/D2/T12] INFO  Umbraco.Web.ExamineStartup - Examine shutting down
- 2019-04-20 15:34:07,431 [P5576/D2/T12] INFO  Umbraco.Web.ExamineStartup - Complete (took 1ms)
- 2019-04-20 15:34:07,431 [P5576/D2/T12] INFO  Umbraco.Core.MainDom - Released MainDom.
- 2019-04-20 15:34:07,431 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
- 2019-04-20 15:34:07,432 [P5576/D2/T12] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
- 2019-04-20 15:34:07,432 [P5576/D2/T42] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
- 2019-04-20 15:34:08,272 [P5576/D2/T11] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
- 2019-04-20 15:34:12,919 [P5576/D3/T43] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.14.0 application starting on DESKTOP-2F2DTR9
- 2019-04-20 15:34:12,935 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
- 2019-04-20 15:34:13,050 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Hash determined (took 114ms)
- 2019-04-20 15:34:13,089 [P5576/D3/T43] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
- 2019-04-20 15:34:13,090 [P5576/D3/T43] INFO  Umbraco.Core.MainDom - Acquired MainDom.
- 2019-04-20 15:34:13,092 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:34:13,125 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 33ms)
- 2019-04-20 15:34:13,125 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
- 2019-04-20 15:34:13,126 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 0ms)
- 2019-04-20 15:34:13,145 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:34:13,145 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:34:13,146 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
- 2019-04-20 15:34:13,146 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 0ms)
- 2019-04-20 15:34:13,147 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:34:13,147 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:34:13,147 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
- 2019-04-20 15:34:13,148 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 0ms)
- 2019-04-20 15:34:13,161 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:34:13,161 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:34:13,162 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
- 2019-04-20 15:34:13,162 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 0ms)
- 2019-04-20 15:34:13,163 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:34:13,164 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:34:13,164 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
- 2019-04-20 15:34:13,164 [P5576/D3/T43] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 0ms)
- 2019-04-20 15:34:14,151 [P5576/D3/T43] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2019-04-20 15:34:14,331 [P5576/D3/T43] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
- 2019-04-20 15:34:14,431 [P5576/D3/T43] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
- 2019-04-20 15:34:14,432 [P5576/D3/T43] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
- 2019-04-20 15:34:14,651 [P5576/D3/T43] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Start installing Hangfire SQL objects...
- 2019-04-20 15:34:14,673 [P5576/D3/T43] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Hangfire SQL objects installed.
- 2019-04-20 15:34:14,692 [P5576/D3/T43] INFO  Hangfire.BackgroundJobServer - Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-2F2DTR9\SQLEXPRESS@Nomad'
- 2019-04-20 15:34:14,692 [P5576/D3/T43] INFO  Hangfire.BackgroundJobServer - Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
- 2019-04-20 15:34:14,692 [P5576/D3/T43] INFO  Hangfire.BackgroundJobServer - Using the following options for Hangfire Server:
+ 2019-05-02 14:30:23,594 [P29152/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:29152:03f98eca successfully announced in 71,8541 ms
+ 2019-05-02 14:30:23,602 [P29152/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:29152:03f98eca is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+ 2019-05-02 14:30:23,620 [P29152/D2/TServerWatchdog #1] INFO  Hangfire.Server.ServerWatchdog - 1 servers were removed due to timeout
+ 2019-05-02 14:30:23,942 [P29152/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 4176ms)
+ 2019-05-02 14:30:24,175 [P29152/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:29152:03f98eca all the dispatchers started
+ 2019-05-02 14:30:24,662 [P29152/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:58484/umbraco
+ 2019-05-02 14:30:24,663 [P29152/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:58484/umbraco (UmbracoModule request)
+ 2019-05-02 14:30:29,419 [P29152/D2/T12] INFO  umbraco.content - Load Xml from file...
+ 2019-05-02 14:30:29,505 [P29152/D2/T12] INFO  umbraco.content - Loaded Xml from file.
+ 2019-05-02 14:30:30,028 [P29152/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:30,029 [P29152/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:30:30,029 [P29152/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2019-05-02 14:30:30,029 [P29152/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 0ms)
+ 2019-05-02 14:30:30,080 [P29152/D2/T5] INFO  Umbraco.Core.Manifest.ManifestWatcher - manifest has changed, app pool is restarting (C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\App_Plugins\ModelsBuilder\package.manifest)
+ 2019-05-02 14:30:30,089 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2019-05-02 14:30:30,089 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2019-05-02 14:30:30,091 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2019-05-02 14:30:30,091 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2019-05-02 14:30:30,093 [P29152/D2/T11] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2019-05-02 14:30:30,094 [P29152/D2/T11] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2019-05-02 14:30:30,094 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Terminating
+ 2019-05-02 14:30:30,095 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Waiting for tasks to complete
+ 2019-05-02 14:30:30,098 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2019-05-02 14:30:30,098 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2019-05-02 14:30:30,099 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2019-05-02 14:30:30,100 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2019-05-02 14:30:30,099 [P29152/D2/T11] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Tasks completed, terminated
+ 2019-05-02 14:30:30,100 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Terminating
+ 2019-05-02 14:30:30,100 [P29152/D2/T42] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2019-05-02 14:30:30,100 [P29152/D2/T11] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2019-05-02 14:30:30,100 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Waiting for tasks to complete
+ 2019-05-02 14:30:30,101 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Tasks completed, terminated
+ 2019-05-02 14:30:30,102 [P29152/D2/T13] INFO  Umbraco.Core.MainDom - Stopping...
+ 2019-05-02 14:30:30,104 [P29152/D2/T13] INFO  Umbraco.Web.ExamineStartup - Examine shutting down
+ 2019-05-02 14:30:30,108 [P29152/D2/T13] INFO  Umbraco.Web.ExamineStartup - Complete (took 3ms)
+ 2019-05-02 14:30:30,109 [P29152/D2/T13] INFO  Umbraco.Core.MainDom - Released MainDom.
+ 2019-05-02 14:30:30,109 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2019-05-02 14:30:30,109 [P29152/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2019-05-02 14:30:30,109 [P29152/D2/T42] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2019-05-02 14:30:30,386 [P29152/D2/T12] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-02 14:30:41,706 [P29152/D2/T12] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ASP._Page_Views_Home_cshtml.Execute() in c:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\Views\Home.cshtml:line 35
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 2019-05-02 14:30:50,699 [P29152/D3/T44] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.14.0 application starting on DESKTOP-2F2DTR9
+ 2019-05-02 14:30:50,714 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2019-05-02 14:30:50,803 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Hash determined (took 89ms)
+ 2019-05-02 14:30:50,841 [P29152/D3/T44] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2019-05-02 14:30:50,842 [P29152/D3/T44] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2019-05-02 14:30:50,843 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:50,876 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 32ms)
+ 2019-05-02 14:30:50,876 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2019-05-02 14:30:50,877 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 0ms)
+ 2019-05-02 14:30:50,894 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:50,894 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:30:50,894 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2019-05-02 14:30:50,895 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 0ms)
+ 2019-05-02 14:30:50,895 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:50,896 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:30:50,896 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2019-05-02 14:30:50,897 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 1ms)
+ 2019-05-02 14:30:50,909 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:50,910 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:30:50,910 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2019-05-02 14:30:50,910 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 0ms)
+ 2019-05-02 14:30:50,911 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:50,912 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:30:50,912 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2019-05-02 14:30:50,912 [P29152/D3/T44] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 0ms)
+ 2019-05-02 14:30:51,814 [P29152/D3/T44] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2019-05-02 14:30:52,034 [P29152/D3/T44] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2019-05-02 14:30:52,132 [P29152/D3/T44] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2019-05-02 14:30:52,133 [P29152/D3/T44] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2019-05-02 14:30:52,356 [P29152/D3/T44] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Start installing Hangfire SQL objects...
+ 2019-05-02 14:30:52,381 [P29152/D3/T44] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Hangfire SQL objects installed.
+ 2019-05-02 14:30:52,400 [P29152/D3/T44] INFO  Hangfire.BackgroundJobServer - Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-2F2DTR9\SQLEXPRESS@Nomad'
+ 2019-05-02 14:30:52,400 [P29152/D3/T44] INFO  Hangfire.BackgroundJobServer - Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+ 2019-05-02 14:30:52,401 [P29152/D3/T44] INFO  Hangfire.BackgroundJobServer - Using the following options for Hangfire Server:
     Worker count: 20
     Listening queues: 'default'
     Shutdown timeout: 00:00:15
     Schedule polling interval: 00:00:15
- 2019-04-20 15:34:14,853 [P5576/D3/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:5576:5fb22735 successfully announced in 136,926 ms
- 2019-04-20 15:34:14,861 [P5576/D3/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:5576:5fb22735 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
- 2019-04-20 15:34:15,338 [P5576/D3/T43] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2485ms)
- 2019-04-20 15:34:15,359 [P5576/D3/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:5576:5fb22735 all the dispatchers started
- 2019-04-20 15:34:15,588 [P5576/D3/T13] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:58484/umbraco
- 2019-04-20 15:34:15,589 [P5576/D3/T13] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:58484/umbraco (UmbracoModule request)
- 2019-04-20 15:34:37,533 [P5576/D2/T13] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: UnloadAppDomainCalled
+ 2019-05-02 14:30:52,564 [P29152/D3/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:29152:a466341c successfully announced in 137,9469 ms
+ 2019-05-02 14:30:52,571 [P29152/D3/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:29152:a466341c is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+ 2019-05-02 14:30:52,672 [P29152/D3/T44] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2037ms)
+ 2019-05-02 14:30:53,238 [P29152/D3/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:29152:a466341c all the dispatchers started
+ 2019-05-02 14:30:53,594 [P29152/D3/T42] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:58484/umbraco
+ 2019-05-02 14:30:53,596 [P29152/D3/T42] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:58484/umbraco (UmbracoModule request)
+ 2019-05-02 14:30:54,316 [P29152/D3/T42] INFO  umbraco.content - Load Xml from file...
+ 2019-05-02 14:30:54,320 [P29152/D3/T42] INFO  umbraco.content - Loaded Xml from file.
+ 2019-05-02 14:30:54,716 [P29152/D3/T42] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:30:54,716 [P29152/D3/T42] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:30:54,716 [P29152/D3/T42] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2019-05-02 14:30:54,716 [P29152/D3/T42] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 0ms)
+ 2019-05-02 14:30:54,991 [P29152/D3/T42] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-02 14:31:11,388 [P29152/D2/T13] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: UnloadAppDomainCalled
 
 _shutDownMessage=User code called UnloadAppDomain
 HostingEnvironment initiated shutdown
@@ -140,67 +185,352 @@ _shutDownStack=   w System.Environment.GetStackTrace(Exception e, Boolean needFi
    w System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
    w System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
    w System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)
- 2019-04-20 15:34:37,537 [P5576/D2/T13] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:5576:72af9015 caught stopping signal...
- 2019-04-20 15:34:37,717 [P5576/D2/T12] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:5576:72af9015 caught stopped signal...
- 2019-04-20 15:34:37,981 [P5576/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:5576:72af9015 All dispatchers stopped
- 2019-04-20 15:34:38,137 [P5576/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:5576:72af9015 successfully reported itself as stopped in 33,4359 ms
- 2019-04-20 15:34:38,137 [P5576/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:5576:72af9015 has been stopped in total 452,7292 ms
- 2019-04-20 15:53:45,434 [P18844/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.14.0 application starting on DESKTOP-2F2DTR9
- 2019-04-20 15:53:45,457 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
- 2019-04-20 15:53:45,563 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 105ms)
- 2019-04-20 15:53:45,631 [P18844/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
- 2019-04-20 15:53:45,632 [P18844/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
- 2019-04-20 15:53:45,634 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:53:45,990 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 355ms)
- 2019-04-20 15:53:45,990 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
- 2019-04-20 15:53:45,997 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 7ms)
- 2019-04-20 15:53:46,013 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:53:46,014 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:53:46,014 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
- 2019-04-20 15:53:46,021 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 6ms)
- 2019-04-20 15:53:46,022 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:53:46,023 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:53:46,023 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
- 2019-04-20 15:53:46,029 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 6ms)
- 2019-04-20 15:53:46,054 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:53:46,054 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:53:46,054 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
- 2019-04-20 15:53:46,062 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 7ms)
- 2019-04-20 15:53:46,063 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:53:46,063 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:53:46,063 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
- 2019-04-20 15:53:46,068 [P18844/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 4ms)
- 2019-04-20 15:53:47,813 [P18844/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
- 2019-04-20 15:53:48,000 [P18844/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
- 2019-04-20 15:53:48,107 [P18844/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
- 2019-04-20 15:53:48,107 [P18844/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
- 2019-04-20 15:53:48,305 [P18844/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Start installing Hangfire SQL objects...
- 2019-04-20 15:53:48,350 [P18844/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Hangfire SQL objects installed.
- 2019-04-20 15:53:48,369 [P18844/D2/T1] INFO  Hangfire.BackgroundJobServer - Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-2F2DTR9\SQLEXPRESS@Nomad'
- 2019-04-20 15:53:48,369 [P18844/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
- 2019-04-20 15:53:48,369 [P18844/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for Hangfire Server:
+ 2019-05-02 14:31:11,404 [P29152/D2/T13] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:29152:03f98eca caught stopping signal...
+ 2019-05-02 14:31:12,141 [P29152/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:29152:03f98eca All dispatchers stopped
+ 2019-05-02 14:31:12,237 [P29152/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:29152:03f98eca successfully reported itself as stopped in 86,7898 ms
+ 2019-05-02 14:31:12,237 [P29152/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:29152:03f98eca has been stopped in total 352,7686 ms
+ 2019-05-02 14:31:51,267 [P18092/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.14.0 application starting on DESKTOP-2F2DTR9
+ 2019-05-02 14:31:51,283 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2019-05-02 14:31:51,410 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 127ms)
+ 2019-05-02 14:31:51,481 [P18092/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2019-05-02 14:31:51,482 [P18092/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2019-05-02 14:31:51,483 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:31:51,757 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 273ms)
+ 2019-05-02 14:31:51,757 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2019-05-02 14:31:51,766 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 9ms)
+ 2019-05-02 14:31:51,780 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:31:51,781 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:31:51,781 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2019-05-02 14:31:51,787 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 5ms)
+ 2019-05-02 14:31:51,788 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:31:51,788 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:31:51,788 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2019-05-02 14:31:51,794 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 5ms)
+ 2019-05-02 14:31:51,804 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:31:51,805 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:31:51,805 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2019-05-02 14:31:51,813 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 7ms)
+ 2019-05-02 14:31:51,813 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:31:51,814 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:31:51,814 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2019-05-02 14:31:51,819 [P18092/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 5ms)
+ 2019-05-02 14:31:53,030 [P18092/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2019-05-02 14:31:53,214 [P18092/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2019-05-02 14:31:53,308 [P18092/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2019-05-02 14:31:53,309 [P18092/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2019-05-02 14:31:53,463 [P18092/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Start installing Hangfire SQL objects...
+ 2019-05-02 14:31:53,517 [P18092/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Hangfire SQL objects installed.
+ 2019-05-02 14:31:53,536 [P18092/D2/T1] INFO  Hangfire.BackgroundJobServer - Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-2F2DTR9\SQLEXPRESS@Nomad'
+ 2019-05-02 14:31:53,537 [P18092/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+ 2019-05-02 14:31:53,537 [P18092/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for Hangfire Server:
     Worker count: 20
     Listening queues: 'default'
     Shutdown timeout: 00:00:15
     Schedule polling interval: 00:00:15
- 2019-04-20 15:53:48,436 [P18844/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:18844:2029f6ca successfully announced in 41,7868 ms
- 2019-04-20 15:53:48,450 [P18844/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:18844:2029f6ca is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
- 2019-04-20 15:53:48,469 [P18844/D2/TServerWatchdog #1] INFO  Hangfire.Server.ServerWatchdog - 1 servers were removed due to timeout
- 2019-04-20 15:53:48,795 [P18844/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:18844:2029f6ca all the dispatchers started
- 2019-04-20 15:53:48,850 [P18844/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 3486ms)
- 2019-04-20 15:53:49,161 [P18844/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:58484/umbraco
- 2019-04-20 15:53:49,163 [P18844/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:58484/umbraco (UmbracoModule request)
- 2019-04-20 15:53:49,685 [P18844/D2/T11] INFO  umbraco.content - Load Xml from file...
- 2019-04-20 15:53:49,690 [P18844/D2/T11] INFO  umbraco.content - Loaded Xml from file.
- 2019-04-20 15:53:50,711 [P18844/D2/T11] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:53:50,712 [P18844/D2/T11] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:53:50,712 [P18844/D2/T11] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
- 2019-04-20 15:53:50,719 [P18844/D2/T11] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 6ms)
- 2019-04-20 15:53:53,378 [P18844/D2/T11] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
- 2019-04-20 15:54:49,782 [P18844/D2/T13] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
- 2019-04-20 15:54:49,783 [P18844/D2/T13] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
- 2019-04-20 15:54:49,783 [P18844/D2/T13] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper
- 2019-04-20 15:54:49,785 [P18844/D2/T43] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2019-04-19 15:54:49
- 2019-04-20 15:54:49,792 [P18844/D2/T13] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper (took 9ms)
- 2019-04-20 15:54:53,910 [P18844/D2/T13] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
- 2019-04-20 15:58:27,343 [P18844/D2/T68] WARN  Umbraco.Web.UmbracoModule - Status code is 404 yet TrySkipIisCustomErrors is false - IIS will take over.
+ 2019-05-02 14:31:53,673 [P18092/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:18092:e7f9a5ab successfully announced in 108,6551 ms
+ 2019-05-02 14:31:53,694 [P18092/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:18092:e7f9a5ab is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+ 2019-05-02 14:31:54,087 [P18092/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2882ms)
+ 2019-05-02 14:31:54,107 [P18092/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:18092:e7f9a5ab all the dispatchers started
+ 2019-05-02 14:31:54,334 [P18092/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:58484/umbraco
+ 2019-05-02 14:31:54,335 [P18092/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:58484/umbraco (UmbracoModule request)
+ 2019-05-02 14:31:54,843 [P18092/D2/T11] INFO  umbraco.content - Load Xml from file...
+ 2019-05-02 14:31:54,849 [P18092/D2/T11] INFO  umbraco.content - Loaded Xml from file.
+ 2019-05-02 14:31:55,282 [P18092/D2/T11] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:31:55,282 [P18092/D2/T11] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:31:55,282 [P18092/D2/T11] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2019-05-02 14:31:55,287 [P18092/D2/T11] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 5ms)
+ 2019-05-02 14:31:57,499 [P18092/D2/T11] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-02 14:32:24,796 [P24856/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.14.0 application starting on DESKTOP-2F2DTR9
+ 2019-05-02 14:32:24,823 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2019-05-02 14:32:24,951 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 128ms)
+ 2019-05-02 14:32:24,997 [P24856/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2019-05-02 14:32:24,998 [P24856/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2019-05-02 14:32:24,999 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:32:25,043 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 44ms)
+ 2019-05-02 14:32:25,043 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2019-05-02 14:32:25,044 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 0ms)
+ 2019-05-02 14:32:25,072 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:32:25,073 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:32:25,073 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2019-05-02 14:32:25,073 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 0ms)
+ 2019-05-02 14:32:25,074 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:32:25,074 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:32:25,074 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2019-05-02 14:32:25,075 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 0ms)
+ 2019-05-02 14:32:25,088 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:32:25,088 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:32:25,089 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2019-05-02 14:32:25,089 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 0ms)
+ 2019-05-02 14:32:25,089 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:32:25,090 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:32:25,090 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2019-05-02 14:32:25,090 [P24856/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 0ms)
+ 2019-05-02 14:32:26,526 [P24856/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2019-05-02 14:32:26,727 [P24856/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2019-05-02 14:32:26,840 [P24856/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2019-05-02 14:32:26,841 [P24856/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2019-05-02 14:32:27,083 [P24856/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Start installing Hangfire SQL objects...
+ 2019-05-02 14:32:27,258 [P24856/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Hangfire SQL objects installed.
+ 2019-05-02 14:32:27,278 [P24856/D2/T1] INFO  Hangfire.BackgroundJobServer - Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-2F2DTR9\SQLEXPRESS@Nomad'
+ 2019-05-02 14:32:27,279 [P24856/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+ 2019-05-02 14:32:27,279 [P24856/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+ 2019-05-02 14:32:27,425 [P24856/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2695ms)
+ 2019-05-02 14:32:27,789 [P24856/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:24856:d754e1fe successfully announced in 461,7684 ms
+ 2019-05-02 14:32:27,810 [P24856/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:24856:d754e1fe is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+ 2019-05-02 14:32:27,823 [P24856/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:58484/umbraco
+ 2019-05-02 14:32:27,824 [P24856/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:58484/umbraco (UmbracoModule request)
+ 2019-05-02 14:32:28,664 [P24856/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:24856:d754e1fe all the dispatchers started
+ 2019-05-02 14:32:29,423 [P24856/D2/T12] INFO  umbraco.content - Load Xml from file...
+ 2019-05-02 14:32:29,449 [P24856/D2/T12] INFO  umbraco.content - Loaded Xml from file.
+ 2019-05-02 14:32:29,932 [P24856/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:32:29,932 [P24856/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:32:29,932 [P24856/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2019-05-02 14:32:29,932 [P24856/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 0ms)
+ 2019-05-02 14:32:30,191 [P24856/D2/T12] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-02 14:32:53,224 [P26136/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.14.0 application starting on DESKTOP-2F2DTR9
+ 2019-05-02 14:32:53,269 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2019-05-02 14:32:53,408 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 138ms)
+ 2019-05-02 14:32:53,454 [P26136/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2019-05-02 14:32:53,455 [P26136/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2019-05-02 14:32:53,457 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:32:53,493 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 36ms)
+ 2019-05-02 14:32:53,493 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2019-05-02 14:32:53,494 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 0ms)
+ 2019-05-02 14:32:53,514 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:32:53,514 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:32:53,514 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2019-05-02 14:32:53,515 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 0ms)
+ 2019-05-02 14:32:53,515 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:32:53,515 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:32:53,515 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2019-05-02 14:32:53,516 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 0ms)
+ 2019-05-02 14:32:53,527 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:32:53,527 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:32:53,527 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2019-05-02 14:32:53,527 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 0ms)
+ 2019-05-02 14:32:53,528 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:32:53,528 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:32:53,528 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2019-05-02 14:32:53,529 [P26136/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 0ms)
+ 2019-05-02 14:32:54,878 [P26136/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2019-05-02 14:32:55,082 [P26136/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2019-05-02 14:32:55,189 [P26136/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2019-05-02 14:32:55,190 [P26136/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2019-05-02 14:32:55,433 [P26136/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Start installing Hangfire SQL objects...
+ 2019-05-02 14:32:55,466 [P26136/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Hangfire SQL objects installed.
+ 2019-05-02 14:32:55,488 [P26136/D2/T1] INFO  Hangfire.BackgroundJobServer - Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-2F2DTR9\SQLEXPRESS@Nomad'
+ 2019-05-02 14:32:55,489 [P26136/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+ 2019-05-02 14:32:55,489 [P26136/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+ 2019-05-02 14:32:55,571 [P26136/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:26136:667c2544 successfully announced in 53,0148 ms
+ 2019-05-02 14:32:55,602 [P26136/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:26136:667c2544 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+ 2019-05-02 14:32:55,675 [P26136/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2531ms)
+ 2019-05-02 14:32:56,409 [P26136/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:26136:667c2544 all the dispatchers started
+ 2019-05-02 14:32:56,620 [P26136/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:58484/umbraco
+ 2019-05-02 14:32:56,621 [P26136/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:58484/umbraco (UmbracoModule request)
+ 2019-05-02 14:33:02,314 [P26136/D2/T11] INFO  umbraco.content - Load Xml from file...
+ 2019-05-02 14:33:02,320 [P26136/D2/T11] INFO  umbraco.content - Loaded Xml from file.
+ 2019-05-02 14:33:02,770 [P26136/D2/T11] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:33:02,770 [P26136/D2/T11] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:33:02,770 [P26136/D2/T11] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2019-05-02 14:33:02,771 [P26136/D2/T11] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 0ms)
+ 2019-05-02 14:33:03,022 [P26136/D2/T11] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-02 14:33:30,741 [P26136/D2/T11] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ASP._Page_Views_Home_cshtml.Execute() in c:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\Views\Home.cshtml:line 33
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 2019-05-02 14:34:02,413 [P26136/D2/T43] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2019-05-01 14:34:02
+ 2019-05-02 14:34:02,426 [P26136/D2/T41] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:34:02,426 [P26136/D2/T41] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:34:02,427 [P26136/D2/T41] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2019-05-02 14:34:02,437 [P26136/D2/T41] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper (took 11ms)
+ 2019-05-02 14:34:06,559 [P26136/D2/T43] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-02 14:34:14,656 [P26136/D2/T43] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ASP._Page_Views_Home_cshtml.Execute() in c:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\Views\Home.cshtml:line 19
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 2019-05-02 14:34:33,711 [P26136/D2/T12] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-02 14:34:53,127 [P26136/D2/T44] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:34:53,127 [P26136/D2/T44] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:34:53,127 [P26136/D2/T44] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Deploy.IServiceConnector
+ 2019-05-02 14:34:53,133 [P26136/D2/T44] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Deploy.IServiceConnector (took 5ms)
+ 2019-05-02 14:35:35,983 [P24924/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.14.0 application starting on DESKTOP-2F2DTR9
+ 2019-05-02 14:35:36,000 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2019-05-02 14:35:36,149 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 149ms)
+ 2019-05-02 14:35:36,198 [P24924/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2019-05-02 14:35:36,199 [P24924/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2019-05-02 14:35:36,201 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:35:36,260 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 58ms)
+ 2019-05-02 14:35:36,260 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2019-05-02 14:35:36,261 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 1ms)
+ 2019-05-02 14:35:36,279 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:35:36,280 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:35:36,280 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2019-05-02 14:35:36,280 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 0ms)
+ 2019-05-02 14:35:36,281 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:35:36,281 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:35:36,281 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2019-05-02 14:35:36,282 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 0ms)
+ 2019-05-02 14:35:36,293 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:35:36,293 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:35:36,294 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2019-05-02 14:35:36,295 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 1ms)
+ 2019-05-02 14:35:36,295 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:35:36,295 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:35:36,295 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2019-05-02 14:35:36,296 [P24924/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 0ms)
+ 2019-05-02 14:35:37,566 [P24924/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2019-05-02 14:35:37,770 [P24924/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2019-05-02 14:35:37,881 [P24924/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2019-05-02 14:35:37,881 [P24924/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2019-05-02 14:35:38,145 [P24924/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Start installing Hangfire SQL objects...
+ 2019-05-02 14:35:38,419 [P24924/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Hangfire SQL objects installed.
+ 2019-05-02 14:35:38,439 [P24924/D2/T1] INFO  Hangfire.BackgroundJobServer - Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-2F2DTR9\SQLEXPRESS@Nomad'
+ 2019-05-02 14:35:38,440 [P24924/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+ 2019-05-02 14:35:38,442 [P24924/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+ 2019-05-02 14:35:38,573 [P24924/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:24924:c6f4eb15 successfully announced in 56,3781 ms
+ 2019-05-02 14:35:38,594 [P24924/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:24924:c6f4eb15 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+ 2019-05-02 14:35:39,043 [P24924/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:24924:c6f4eb15 all the dispatchers started
+ 2019-05-02 14:35:39,101 [P24924/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 3188ms)
+ 2019-05-02 14:35:39,288 [P24924/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:58484/umbraco
+ 2019-05-02 14:35:39,290 [P24924/D2/T11] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:58484/umbraco (UmbracoModule request)
+ 2019-05-02 14:40:38,628 [P24924/D2/TServerWatchdog #1] INFO  Hangfire.Server.ServerWatchdog - 4 servers were removed due to timeout
+ 2019-05-02 14:44:06,996 [P24924/D2/T55] INFO  umbraco.content - Load Xml from file...
+ 2019-05-02 14:44:07,014 [P24924/D2/T55] INFO  umbraco.content - Loaded Xml from file.
+ 2019-05-02 14:44:07,505 [P24924/D2/T55] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:44:07,505 [P24924/D2/T55] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:44:07,505 [P24924/D2/T55] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2019-05-02 14:44:07,507 [P24924/D2/T55] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 1ms)
+ 2019-05-02 14:44:08,010 [P24924/D2/T55] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:44:08,010 [P24924/D2/T55] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:44:08,010 [P24924/D2/T55] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Deploy.IServiceConnector
+ 2019-05-02 14:44:08,010 [P24924/D2/T55] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Deploy.IServiceConnector (took 0ms)
+ 2019-05-02 14:46:17,703 [P24924/D2/T55] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at ASP._Page_Views_Master_cshtml.Execute() in c:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\Views\Master.cshtml:line 79
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStepImpl(IExecutionStep step)
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 2019-05-02 14:47:15,939 [P24924/D2/T6] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-02 14:47:15,940 [P24924/D2/T6] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-02 14:47:15,940 [P24924/D2/T6] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2019-05-02 14:47:15,940 [P24924/D2/T6] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper (took 0ms)
+ 2019-05-02 18:46:15,949 [P24924/D2/T139] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2019-05-01 18:46:15
+ 2019-05-02 22:46:15,999 [P24924/D2/T160] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2019-05-01 22:46:15

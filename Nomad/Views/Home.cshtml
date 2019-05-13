@@ -8,6 +8,16 @@
     string carouselId = "galleryImages";
     IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);
     //Response.Redirect("/Casinos");
+    string guidstr = "";
+    if(Culture=="en-US"){
+        guidstr="380435a1-a234-41c8-af6c-5600b44f2061";
+    }
+    if(Culture=="pl"){
+        guidstr="21cb3b79-5a9b-4c3d-a68a-9cf62ca858af";
+    }    
+    Guid guid = new Guid(guidstr);
+    var cs = ApplicationContext.Services.ContentService;
+    var reviewChildrens = cs.GetById(guid).Children();
 
 }
 
@@ -21,6 +31,8 @@
             {
                 string title = logo.HasValue("slideTitle") ? logo.GetPropertyValue<string>("slideTitle") : "";
                 string subtitle = logo.HasValue("slideSubtitle") ? logo.GetPropertyValue<string>("slideSubtitle") : "";
+                string imageTitle = logo.HasValue("slideImageTitle") ? logo.GetPropertyValue<string>("slideImageTitle") : "";
+                string imageAlt = logo.HasValue("slideImageAlt") ? logo.GetPropertyValue<string>("slideImageAlt") : "";
                 string imageUrl = logo.HasValue("slideImage") ? logo.GetPropertyValue<IPublishedContent>("slideImage").Url : "/img/carousel.jpg";
                 //IEnumerable<RelatedLink> links = logo.GetPropertyValue<IEnumerable<RelatedLink>>("slideLink");
                 //RelatedLink link = links != null ? links.FirstOrDefault() : null;
@@ -38,7 +50,7 @@
                 <div class="item">
                     <div class="imgTitle">
                         <h2 class="blogTitle">@title</h2>
-                        <img src="@(imageUrl)" alt="" />
+                        <a href="@link"><img src="@(imageUrl)" alt="@imageAlt" title="@imageTitle" /></a>
                     </div>
                     <p>@subtitle</p>
                     <a href="@link">Read More</a>
@@ -56,8 +68,96 @@
     </div>
 }
 
-@CurrentPage.
+<div class="row mt-5">
+<div class="offset-md-1 col-md-10">
+    <table id="reviewsTable" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in reviewChildrens)
+            {
+                var rating = int.Parse(item.GetValue("casinoRating").ToString());
+                var url = item.GetValue("casinoImage");
+                string link="";
+                string reviewLink="";
+                if(item.GetValue("casinoRegisterLink")!=null)
+                {
+                    link = item.GetValue("casinoRegisterLink").ToString();
+                }
+                if(item.GetValue("casinoReviewLink")!=null)
+                {
+                    reviewLink = item.GetValue("casinoReviewLink").ToString();
+                }
+                <tr class="review-tr">
+                    <td class="review-td">
+                        <div class="review-title">
+                            @item.GetValue("casinoTitle")
+                        </div>
+                        @if (url != null)
+                        {
+                            <div class="review-image-wrapper">
+                                <img class="reviews-image" src="@Umbraco.TypedMedia(url).Url" />
+                            </div>
+                        }
+                    </td>
+                    <td class="table-cell-position">
+                        @if (!string.IsNullOrEmpty(link))
+                        {
+                            <a href="@link">
+                                @item.GetValue("casinoRegister")
+                            </a>
+                        }
+                        else
+                        {
+                            @item.GetValue("casinoRegister")
+                        }
+                    </td>
+                    <td class="table-cell-position">
+                        @if (!string.IsNullOrEmpty(reviewLink))
+                        {
+                            <a href="@reviewLink">
+                                @item.GetValue("casinoReview")
+                            </a>
+                        }
+                        else
+                        {
+                            @item.GetValue("casinoReview")
+                        }
+                    </td>
+                    <td>
 
+
+                        <div class="review-rating">
+                            @for (int i = 0; i < 5; i++)
+                            {
+                                if (i < rating)
+                                {
+                                    <span class="fa fa-star checked"></span>
+                                }
+                                else
+                                {
+                                    <span class="fa fa-star"></span>
+                                }
+                            }
+                        </div>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+    @*
+        @Html.Raw(CurrentPage.pageBody)
+    *@
+</div>
 
 @*
     @if (Model.Content.HasValue("sliderImages"))

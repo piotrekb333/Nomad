@@ -34,7 +34,7 @@ namespace Nomad.Controllers
                 });
                 if (res)
                     ViewBag.WasSent = true;
-                return View();
+                return CurrentUmbracoPage();
             }
             catch (Exception ex)
             {

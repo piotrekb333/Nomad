@@ -32,7 +32,7 @@
                                                     <div class="media-body">
                                                         <span class="media-meta pull-right">@(item.DatePublished.HasValue ? item.DatePublished.Value.ToString("MMM dd, yyyy") : "")</span>
                                                         <h4 class="title">
-                                                            <a href="@item.SiteUrl">@item.Title</a>
+                                                            <a href="@item.SiteUrl">@Html.Raw(item.Title)</a>
                                                         </h4>
                                                         <p class="summary">@subTitle</p>
                                                     </div>

@@ -2,20 +2,42 @@
 @using Umbraco.Core
 @using ClientDependency.Core.Mvc;
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Umbraco.Core.Models;
+@using Umbraco.Core.Services;
 @{
     Layout = null;
 
     //IContent content = ApplicationContext.Current.Services.ContentService.GetById(1057);
     //var logoList = content.GetValue<List<IContent>>("footerImages");
     //var logoListString = content.GetValue("footerImages");
-    var content = Umbraco.TypedContent(1057);
+    IPublishedContent content = null;
+    if(Culture=="en-US"){
+        content=Umbraco.TypedContent(1057);
+    }
+    if(Culture=="pl"){
+        content=Umbraco.TypedContent(1274);
+    }    
     var logoList = content.GetPropertyValue<List<IPublishedContent>>("footerImages");
-    //var banner=content.GetPropertyValue<IPublishedContent>("mainBanner");
+    var banner = content.GetPropertyValue<IPublishedContent>("mainBanner");
     var bannerLink = content.GetPropertyValue<IPublishedContent>("bannerLink");
+    var bannerImageTitle = content.GetPropertyValue<IPublishedContent>("bannerImageTitle");
+    var bannerImageAlt = content.GetPropertyValue<IPublishedContent>("bannerImageAlt");
+    //IDomainService domainService = ApplicationContext.Services.DomainService;
+    //var rootNodes = Umbraco.TypedContentAtRoot();
+    //var rootNode = rootNodes.FirstOrDefault(x => x.DocumentTypeAlias == "home");
+    
+    //var currentLang = domainService.GetById(rootNode.Id).LanguageIsoCode;
 
+    IEnumerable<IPublishedContent> footerImagesList = content.GetPropertyValue<IEnumerable<IPublishedContent>>("footerImagesList");
+    var menu = content.Children.Where(m => !m.GetPropertyValue<bool>("disabledInMenu"));
+    
+    Uri urlMain = new Uri(Request.Url.AbsoluteUri);
+    string pathUrl = String.Format("{0}{1}{2}{3}", urlMain.Scheme, 
+    Uri.SchemeDelimiter, urlMain.Authority, urlMain.AbsolutePath);
 }
 
-
+<!DOCTYPE html>
+<html lang="@Umbraco.GetDictionaryValue("Language shortcut")">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,8 +46,8 @@
     <meta name="author" content="">
     <meta name="title" content="@CurrentPage.seoTitle">
     <meta name="keywords" content="@CurrentPage.seoKeywords">
-
-    <title>Casino Psycho - Play Like a Psycho, Win like a Pro!</title>
+    <meta name="google-site-verification" content="843AozMxXNNQHx_RKJ4-Uu7VNhIbURwb-7A-EV8EiS0" />
+    <title>@CurrentPage.seoTitle</title>
     @Styles.Render("~/bundles/bootstrap")
     @Styles.Render("~/bundles/Styles")
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,12 +61,14 @@
     </script>
 
 
-
+<link rel="canonical" href="@pathUrl">
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-        <a class="navbar-brand" href="/">Casino Psycho - Insane Bonuses</a>
+        <header>
+            <h1><a class="navbar-brand" href="@content.Url">Casino Psycho - Insane Bonuses</a></h1>
+        </header>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,41 +82,55 @@
                         </a>
                     </li>
                 *@
-
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Online Casinos - Reviews">
-                    <a class="nav-link" href="/online-casinos-reviews">
+                @foreach(var item in menu)
+                {                
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@item.Name">
+                    <a class="nav-link" href="@item.Url">
                         <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">Casinos</span>
+                        <span class="nav-link-text">@item.Name</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="history-ocm">
-                    <a class="nav-link" href="/history-ocm">
+                }
+                @*
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("Casinos")">
+                    <a class="nav-link" href="/en/casinos">
                         <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">History</span>
+                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("Casinos")</span>
                     </a>
                 </li>
-
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Slot Machines">
-                    <a class="nav-link" href="/slot-machines">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("History")">
+                    <a class="nav-link" href="/en/history">
                         <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">Slot Machines</span>
-                    </a>
-                </li>
-
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmakers">
-                    <a class="nav-link" href="/Bookmakers">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">Bookmakers</span>
+                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("History")</span>
                     </a>
                 </li>
 
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("Slot Machines")">
+                    <a class="nav-link" href="/en/slot-machines">
+                        <i class="fa fa-fw fa-table"></i>
+                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("Slot Machines")</span>
+                    </a>
+                </li>
 
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Contact">
-                    <a class="nav-link" href="/Contact">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("Bookmakers")">
+                    <a class="nav-link" href="/en/bookmakers">
+                        <i class="fa fa-fw fa-table"></i>
+                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("Bookmakers")</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("Affiliate Programs")">
+                    <a class="nav-link" href="/en/affiliate-programs">
+                        <i class="fa fa-fw fa-table"></i>
+                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("Affiliate Programs")</span>
+                    </a>
+
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("Contact")">
+                    <a class="nav-link" href="/en/contact-form/">
                         <i class="fa fa-fw fa-file"></i>
-                        <span class="nav-link-text">Contact</span>
+                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("Contact")</span>
                     </a>
                 </li>
+            *@
             </ul>
             <ul class="navbar-nav sidenav-toggler">
                 <li class="nav-item">
@@ -102,6 +140,13 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
+                <div class="language-wrapper">
+                  <a href="/en" class="language-link"><img class="img-language" src="/media/1053/gbicon.png" title="English" alt="English" /></a>
+                  <a href="/pl" class="language-link"><img class="img-language hidden" src="/media/1054/polandicon.png" title="Polski" alt="Polski" /></a>                  
+                </div>
+
+
+                <a href="skype:xion999x?call" class="link-skype"><img class="img-skype" src="/media/1041/skypesmall.png" title="skype" alt="skypesmall logo" /></a>
                 @*
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -118,24 +163,7 @@
                             <h6 class="dropdown-header">New Messages:</h6>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">
-                                <strong>David Miller</strong>
-                                <span class="small float-right text-muted">11:21 AM</span>
-                                <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">
-                                <strong>Jane Smith</strong>
-                                <span class="small float-right text-muted">11:21 AM</span>
-                                <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">
-                                <strong>John Doe</strong>
-                                <span class="small float-right text-muted">11:21 AM</span>
-                                <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item small" href="#">View all messages</a>
+                                <View all messages</a>
                         </div>
                     </li>
                 *@
@@ -179,7 +207,7 @@
     <div class="content-wrapper banner-wrapper">
 
         <a href="@CurrentPage.bannerLink">
-            <img src="https://media.wishmaker.partners/renderimage.aspx?pid=3444&bid=1511" />
+            <img src="@banner.Url" alt="@bannerImageAlt" title="@bannerImageTitle" />
         </a>
 
     </div>
@@ -196,8 +224,19 @@
 
                     </div>
                     <div class="col-md-12">
-                        <small class="float-left">Copyright 2019 © CasinoPsycho</small>
+                        <small class="float-left">Copyright 2019 © Casino Psycho</small>
 
+                        <a href="//www.dmca.com/Protection/Status.aspx?ID=a96d485a-17c4-4239-9eb0-aa15fd08ed86" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca_protected_16_120.png?ID=a96d485a-17c4-4239-9eb0-aa15fd08ed86" alt="DMCA.com Protection Status" /></a>
+                        <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+                        <a href="https://www.dmca.com/compliance/casinopsycho.com" title="DMCA Compliance information for casinopsycho.com"><img src="https://www.dmca.com/img/dmca-compliant-grayscale.png" /></a>
+
+                        @foreach (var logo in footerImagesList)
+                        {
+                            var url = logo.GetPropertyValue<IPublishedContent>("customMediaImage").Url;
+                            var alt = logo.GetPropertyValue<string>("customImageAlt");
+                            var title = logo.GetPropertyValue<string>("customImageTitle");
+                            <img src="@url" alt="@alt" title="@title" />
+                        }
                         @*
                             <span id="siteseal">
                                 <script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=CD9MoLPfmgWLxd15rSjxE6JrXb9sWbRb3eDxdEsKQaUF5eHpQ3TivpfwRyV2"></script>
@@ -212,24 +251,26 @@
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fa fa-angle-up"></i>
         </a>
-        <!-- Logout Modal-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
+        @*
+            <!-- Logout Modal-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            <a class="btn btn-primary" href="login.html">Logout</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        *@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         @Scripts.Render("~/bundles/MainScript")
     </div>
@@ -246,13 +287,43 @@
                 <div class="modal-body">
                     <form id="newsletter-form">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Email Address</label>
-                            <input type="email" class="form-control" id="NewsletterEmail" name="NewsletterEmail" placeholder="Enter email">
+                            <input type="email" class="form-control" id="NewsletterEmail" name="NewsletterEmail" placeholder="@Umbraco.GetDictionaryValue("Enter Email")">
                         </div>
-                        <button id="saveToEmailBtn" type="button" class="btn btn-primary">Subscribe</button>
+                        <button id="saveToEmailBtn" type="button" class="btn btn-primary">@Umbraco.GetDictionaryValue("Subscribe")</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    
+    
+    
+    <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v3.3'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="345561016311160"
+  theme_color="#ffc300">
+</div>
+    
+    
+    
 </body>
+</html>

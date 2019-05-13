@@ -15,6 +15,10 @@ body.sticky-footer .content-wrapper {
   min-height: calc(100vh - 56px - 56px);
 }
 
+body.sticky-footer .content-wrapper.banner-wrapper {
+  min-height: 0px;
+}
+
 body.fixed-nav {
   padding-top: 56px;
 }
@@ -200,6 +204,10 @@ body.fixed-nav {
 
 #mainNav.fixed-top .sidenav-toggler {
   display: none;
+}
+
+.banner-wrapper{
+	text-align:center;
 }
 
 @media (min-width: 992px) {
@@ -898,4 +906,62 @@ footer.sticky-footer {
 
 .checked-star {
     color: orange;
+}
+
+
+.reviews-image{
+	max-width:125px;
+	max-height:125px;
+}
+.review-title{
+	text-align:center;
+}
+.review-image-wrapper{
+	text-align:center;	
+}
+.review-td{
+	width:200px;
+}
+#reviewsTable{
+
+}
+.fa.fa-star.checked{
+	color:orange;
+}
+
+.img-skype{
+    align-self: center;
+	width:20px;
+}
+
+.link-skype{
+	display: flex;
+}
+
+.table-cell-position{
+	vertical-align:middle !important;
+}
+
+.blog-post-image-wrapper{
+	text-align:center;
+}
+
+.review-tr{
+	text-align:center;
+}
+
+.language-wrapper{
+	display:flex;
+	margin-right:20px;
+}
+.language-link{
+	display:flex;
+	margin-right: 10px;
+}
+.img-language{
+	width:40px;
+	align-self: center;
+}
+.hidden{
+	display:none;
 }

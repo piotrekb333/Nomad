@@ -2,6 +2,11 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "Master.cshtml";
+    var banner = CurrentPage.GetPropertyValue<IPublishedContent>("articleBanner");
+    var bannerUrl = banner != null ? banner.Url : "";
+    //var bannerLink = content.GetPropertyValue<IPublishedContent>("bannerLink");
+    var bannerImageTitle = CurrentPage.GetPropertyValue<IPublishedContent>("articleImageTitle");
+    var bannerImageAlt = CurrentPage.GetPropertyValue<IPublishedContent>("articleImageAlt");
 }
 
 
@@ -10,13 +15,19 @@
 
 <div class="row">
     <div class="col-sm-12 blog-main">
-            <div class="blog-post">
-                <h2 class="blog-post-title">@CurrentPage.articleTitle</h2>
-                <p class="blog-post-meta">@(CurrentPage.articlePublishedDate!=null ? CurrentPage.articlePublishedDate.ToString("MMM dd, yyyy") : "")</p>
+        <div class="blog-post">
+            <div class="blog-post-image-wrapper">
+                @if(bannerUrl!=""){
+                     <img src="@bannerUrl" alt="@bannerImageAlt" title="@bannerImageTitle" class="blog-post-image" />
+                }
 
-                @Html.Raw(CurrentPage.articleBody)
-                <hr />
-            </div><!-- /.blog-post -->
+            </div>
+            <h2 class="blog-post-title">@Html.Raw(CurrentPage.articleTitle)</h2>
+            <p class="blog-post-meta">@(CurrentPage.articlePublishedDate != null ? CurrentPage.articlePublishedDate.ToString("MMM dd, yyyy") : "")</p>
+
+            @Html.Raw(CurrentPage.articleBody)
+            <hr />
+        </div><!-- /.blog-post -->
 
     </div><!-- /.blog-main -->
 

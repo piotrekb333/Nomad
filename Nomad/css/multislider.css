@@ -1,96 +1,105 @@
-html {
-  padding: 50px;
-  font-family: sans-serif;
-}
-html h1 {
-  text-align: center;
-}
-html h2 {
-  text-align: center;
-  color: grey;
-}
-#exampleSlider {
+#imageGallery {
   position: relative;
-  border: 1px solid black;
 }
-@media (max-width: 767px) {
-  #exampleSlider {
-    border-color: transparent;
-  }
-}
-#exampleSlider .MS-content {
-  margin: 15px 5%;
-  overflow: hidden;
+#imageGallery .MS-content {
   white-space: nowrap;
-  border: 1px solid red;
-}
-@media (max-width: 767px) {
-  #exampleSlider .MS-content {
-    margin: 0;
-  }
-}
-#exampleSlider .MS-content .item {
-  display: inline-block;
-  height: 100%;
   overflow: hidden;
+  margin: 0 5%;
+}
+#imageGallery .MS-content .item {
+  display: inline-block;
+  width: 33.3333%;
   position: relative;
   vertical-align: top;
-  border: 1px solid green;
-  border-right: none;
-  width: 20%;
+  overflow: hidden;
+  
+  white-space: normal;
+  padding: 0 10px;
 }
-@media (max-width: 1200px) {
-  #exampleSlider .MS-content .item {
-    width: 25%;
-  }
-}
-@media (max-width: 992px) {
-  #exampleSlider .MS-content .item {
-    width: 33.3333%;
-  }
-}
-@media (max-width: 767px) {
-  #exampleSlider .MS-content .item {
+@media (max-width: 991px) {
+  #imageGallery .MS-content .item {
     width: 50%;
   }
 }
-#exampleSlider .MS-content .item p {
-  font-size: 30px;
-  text-align: center;
-  line-height: 1;
-  vertical-align: middle;
-  margin: 0;
-  padding: 10px 0;
+@media (max-width: 767px) {
+  #imageGallery .MS-content .item {
+    width: 100%;
+  }
 }
-#exampleSlider .MS-controls button {
+#imageGallery .MS-content .item .imgTitle {
+  position: relative;
+}
+#imageGallery .MS-content .item .imgTitle .blogTitle {
+  margin: 0;
+  text-align: left;
+  letter-spacing: 2px;
+  color: #252525;
+  font-style: italic;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  bottom: 0;
+  font-weight: bold;
+  padding: 0 0 2px 10px;
+}
+#imageGallery .MS-content .item .imgTitle img {
+  height: auto;
+  width: 100%;
+}
+#imageGallery .MS-content .item p {
+  font-size: 16px;
+  margin: 2px 10px 0 5px;
+  text-indent: 15px;
+}
+#imageGallery .MS-content .item a {
+  float: right;
+  margin: 0 20px 0 0;
+  font-size: 16px;
+  font-style: italic;
+  color: rgba(173, 0, 0, 0.82);
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: linear 0.1s;
+}
+#imageGallery .MS-content .item a:hover {
+  text-shadow: 0 0 1px grey;
+}
+#imageGallery .MS-controls button {
   position: absolute;
   border: none;
-  background: transparent;
-  font-size: 30px;
+  background-color: transparent;
   outline: 0;
-  top: 35px;
+  font-size: 50px;
+  top: 95px;
+  color: rgba(0, 0, 0, 0.4);
+  transition: 0.15s linear;
+}
+#imageGallery .MS-controls button:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 992px) {
+  #imageGallery .MS-controls button {
+    font-size: 30px;
+  }
 }
 @media (max-width: 767px) {
-  #exampleSlider .MS-controls button {
-    display: none;
+  #imageGallery .MS-controls button {
+    font-size: 20px;
   }
 }
-#exampleSlider .MS-controls button:hover {
-  cursor: pointer;
+#imageGallery .MS-controls .MS-left {
+  left: 0px;
 }
-#exampleSlider .MS-controls .MS-left {
-  left: 10px;
-}
-@media (max-width: 992px) {
-  #exampleSlider .MS-controls .MS-left {
-    left: -2px;
+@media (max-width: 767px) {
+  #imageGallery .MS-controls .MS-left {
+    left: -10px;
   }
 }
-#exampleSlider .MS-controls .MS-right {
-  right: 10px;
+#imageGallery .MS-controls .MS-right {
+  right: 0px;
 }
-@media (max-width: 992px) {
-  #exampleSlider .MS-controls .MS-right {
-    right: -2px;
+@media (max-width: 767px) {
+  #imageGallery .MS-controls .MS-right {
+    right: -10px;
   }
 }
