@@ -10,25 +10,37 @@
 }
 
 
-
-
-
-<div class="row">
-    <div class="col-sm-12 blog-main">
-        <div class="blog-post">
-            <div class="blog-post-image-wrapper">
-                @if(bannerUrl!=""){
-                     <img src="@bannerUrl" alt="@bannerImageAlt" title="@bannerImageTitle" class="blog-post-image" />
-                }
-
+<!-- Blog post -->
+ @if (bannerUrl != "")
+ {
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="post_img">
+                    <img src="@bannerUrl" alt="@bannerImageAlt" title="@bannerImageTitle">
+                </div>
             </div>
-            <h2 class="blog-post-title">@Html.Raw(CurrentPage.articleTitle)</h2>
-            <p class="blog-post-meta">@(CurrentPage.articlePublishedDate != null ? CurrentPage.articlePublishedDate.ToString("MMM dd, yyyy") : "")</p>
+        </div>
+    </div>
+}
+<div class="container mb-65px">
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1 mt-10px">
+            <div class="blog_posts stander_blog_single_post">
+                <article>
+                    <h3 class="post_title">
+                        <a href="@CurrentPage.articleUrl">@Html.Raw(CurrentPage.articleTitle)</a>
+                    </h3>
+                    <div class="post_meta_top">
 
-            @Html.Raw(CurrentPage.articleBody)
-            <hr />
-        </div><!-- /.blog-post -->
-
-    </div><!-- /.blog-main -->
-
-</div><!-- /.row -->
+                        <span class="post_meta_date">@(CurrentPage.articlePublishedDate != null ? CurrentPage.articlePublishedDate.ToString("MMM dd, yyyy") : "")</span>
+                    </div>
+                    <div class="post_content">
+                        @Html.Raw(CurrentPage.articleBody)
+                    </div>
+                    <div class="separator-line"></div>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
