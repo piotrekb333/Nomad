@@ -86,6 +86,8 @@
                 var url = item.GetValue("casinoImage");
                 string link="";
                 string reviewLink="";
+                string alt="";
+                string title="";            
                 if(item.GetValue("casinoRegisterLink")!=null)
                 {
                     link = item.GetValue("casinoRegisterLink").ToString();
@@ -94,6 +96,15 @@
                 {
                     reviewLink = item.GetValue("casinoReviewLink").ToString();
                 }
+                if(item.GetValue("casinoImageAlt")!=null)
+                {
+                    alt = item.GetValue("casinoImageAlt").ToString();
+                }  
+                if(item.GetValue("casinoImageTitle")!=null)
+                {
+                    title = item.GetValue("casinoImageTitle").ToString();
+                }               
+
                 <tr class="review-tr">
                     <td class="review-td">
                         <div class="review-title">
@@ -102,7 +113,7 @@
                         @if (url != null)
                         {
                             <div class="review-image-wrapper">
-                                <img class="reviews-image" src="@Umbraco.TypedMedia(url).Url" />
+                                <img class="reviews-image" alt="@alt" title="@title" src="@Umbraco.TypedMedia(url).Url" />
                             </div>
                         }
                     </td>
