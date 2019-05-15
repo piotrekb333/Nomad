@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "a609271425832c28")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c3f077a45150fc80")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1111,19 +1111,28 @@ namespace Umbraco.Web.PublishedContentModels
 		///<summary>
 		/// Image
 		///</summary>
-		[ImplementPropertyType("casinoCustomImage")]
-		public IEnumerable<IPublishedContent> CasinoCustomImage
-		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("casinoCustomImage"); }
-		}
-
-		///<summary>
-		/// Image
-		///</summary>
 		[ImplementPropertyType("casinoImage")]
 		public IPublishedContent CasinoImage
 		{
 			get { return this.GetPropertyValue<IPublishedContent>("casinoImage"); }
+		}
+
+		///<summary>
+		/// Image Alt
+		///</summary>
+		[ImplementPropertyType("casinoImageAlt")]
+		public string CasinoImageAlt
+		{
+			get { return this.GetPropertyValue<string>("casinoImageAlt"); }
+		}
+
+		///<summary>
+		/// Image Title
+		///</summary>
+		[ImplementPropertyType("casinoImageTitle")]
+		public string CasinoImageTitle
+		{
+			get { return this.GetPropertyValue<string>("casinoImageTitle"); }
 		}
 
 		///<summary>

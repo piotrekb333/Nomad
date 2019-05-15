@@ -11,12 +11,14 @@
     //var logoList = content.GetValue<List<IContent>>("footerImages");
     //var logoListString = content.GetValue("footerImages");
     IPublishedContent content = null;
-    if(Culture=="en-US"){
-        content=Umbraco.TypedContent(1057);
+    if (Culture == "en-US")
+    {
+        content = Umbraco.TypedContent(1057);
     }
-    if(Culture=="pl"){
-        content=Umbraco.TypedContent(1274);
-    }    
+    if (Culture == "pl")
+    {
+        content = Umbraco.TypedContent(1274);
+    }
     var logoList = content.GetPropertyValue<List<IPublishedContent>>("footerImages");
     var banner = content.GetPropertyValue<IPublishedContent>("mainBanner");
     var bannerLink = content.GetPropertyValue<IPublishedContent>("bannerLink");
@@ -25,14 +27,14 @@
     //IDomainService domainService = ApplicationContext.Services.DomainService;
     //var rootNodes = Umbraco.TypedContentAtRoot();
     //var rootNode = rootNodes.FirstOrDefault(x => x.DocumentTypeAlias == "home");
-    
+
     //var currentLang = domainService.GetById(rootNode.Id).LanguageIsoCode;
 
     IEnumerable<IPublishedContent> footerImagesList = content.GetPropertyValue<IEnumerable<IPublishedContent>>("footerImagesList");
     var menu = content.Children.Where(m => !m.GetPropertyValue<bool>("disabledInMenu"));
-    
+
     Uri urlMain = new Uri(Request.Url.AbsoluteUri);
-    string pathUrl = String.Format("{0}{1}{2}{3}", urlMain.Scheme, 
+    string pathUrl = String.Format("{0}{1}{2}{3}", urlMain.Scheme,
     Uri.SchemeDelimiter, urlMain.Authority, urlMain.AbsolutePath);
 }
 
@@ -48,7 +50,9 @@
     <meta name="keywords" content="@CurrentPage.seoKeywords">
     <meta name="google-site-verification" content="843AozMxXNNQHx_RKJ4-Uu7VNhIbURwb-7A-EV8EiS0" />
     <title>@CurrentPage.seoTitle</title>
-    @Styles.Render("~/bundles/bootstrap")
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+
+ 
     @Styles.Render("~/bundles/Styles")
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138151375-1"></script>
@@ -61,272 +65,748 @@
     </script>
 
 
-<link rel="canonical" href="@pathUrl">
+    <link rel="canonical" href="@pathUrl">
 </head>
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-        <header>
-            <h1><a class="navbar-brand" href="@content.Url">Casino Psycho - Insane Bonuses</a></h1>
-        </header>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-                @*
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                        <a class="nav-link" href="index.html">
-                            <i class="fa fa-fw fa-dashboard"></i>
-                            <span class="nav-link-text">Dashboard</span>
-                        </a>
-                    </li>
-                *@
-                @foreach(var item in menu)
-                {                
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@item.Name">
-                    <a class="nav-link" href="@item.Url">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">@item.Name</span>
-                    </a>
-                </li>
-                }
-                @*
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("Casinos")">
-                    <a class="nav-link" href="/en/casinos">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("Casinos")</span>
-                    </a>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("History")">
-                    <a class="nav-link" href="/en/history">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("History")</span>
-                    </a>
-                </li>
 
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("Slot Machines")">
-                    <a class="nav-link" href="/en/slot-machines">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("Slot Machines")</span>
-                    </a>
-                </li>
 
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("Bookmakers")">
-                    <a class="nav-link" href="/en/bookmakers">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("Bookmakers")</span>
-                    </a>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("Affiliate Programs")">
-                    <a class="nav-link" href="/en/affiliate-programs">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("Affiliate Programs")</span>
-                    </a>
 
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="@Umbraco.GetDictionaryValue("Contact")">
-                    <a class="nav-link" href="/en/contact-form/">
-                        <i class="fa fa-fw fa-file"></i>
-                        <span class="nav-link-text">@Umbraco.GetDictionaryValue("Contact")</span>
-                    </a>
-                </li>
-            *@
-            </ul>
-            <ul class="navbar-nav sidenav-toggler">
-                <li class="nav-item">
-                    <a class="nav-link text-center" id="sidenavToggler">
-                        <i class="fa fa-fw fa-angle-left"></i>
-                    </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <div class="language-wrapper">
-                  <a href="/en" class="language-link"><img class="img-language" src="/media/1053/gbicon.png" title="English" alt="English" /></a>
-                  <a href="/pl" class="language-link"><img class="img-language hidden" src="/media/1054/polandicon.png" title="Polski" alt="Polski" /></a>                  
+
+<body id="page-top">
+    <div id="main-content">
+        <!-- Header -->
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid px-60px">
+                <a class="navbar-brand" href="index.html">
+                    <img class="etcodes-normal-logo" src="images/logo.png" width="84" height="22" alt="Logo">
+                    <img class="etcodes-mobile-logo" src="images/logo.png" width="84" height="22" alt="Logo">
+
+                </a>
+                <button class="navbar-toggler hamburger-menu-btn" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span>toggle menu</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown mega_menu_holder">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
+                            <ul class="dropdown-menu mega_menu">
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Homepages A</a>
+                                    <ul class="dropdown-menu">
+                                        <a class="dropdown-item" href="demo-landing.html">0 - Landing Page</a>
+                                        <a class="dropdown-item" href="index.html">1 - Creative</a>
+                                        <a class="dropdown-item" href="home-2.html">2 - Creative</a>
+                                        <a class="dropdown-item" href="home-3.html">3 - Creative Business</a>
+                                        <a class="dropdown-item" href="home-4.html">4 - Portfolio</a>
+                                        <a class="dropdown-item" href="home-5.html">5 - Creative Business</a>
+                                        <a class="dropdown-item" href="home-6.html">6 - Blog Grid</a>
+                                        <a class="dropdown-item" href="home-7.html">7 - Creative Agency</a>
+                                        <a class="dropdown-item" href="home-8.html">8 - Tea Business & Shop</a>
+                                        <a class="dropdown-item" href="home-9.html">9 - Interior & Architect</a>
+                                        <a class="dropdown-item" href="home-10.html">10 - Grid Portfolio</a>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Homepages B</a>
+                                    <ul class="dropdown-menu">
+                                        <a class="dropdown-item" href="home-11.html">11 - Yoga Business</a>
+                                        <a class="dropdown-item" href="home-12.html">12 - Consulting & Coaching</a>
+                                        <a class="dropdown-item" href="home-13.html">13 - Grid Shop</a>
+                                        <a class="dropdown-item" href="home-14.html">14 - Architect Company</a>
+                                        <a class="dropdown-item" href="home-15.html">15 - Photography</a>
+                                        <a class="dropdown-item" href="home-16.html">16 - Video Production</a>
+                                        <a class="dropdown-item" href="home-17.html">17 - Consulting & Coaching</a>
+                                        <a class="dropdown-item" href="home-18.html">18 - Exhibitions & Shop</a>
+                                        <a class="dropdown-item" href="home-19.html">19 - Masonry Blog</a>
+                                        <a class="dropdown-item" href="home-20.html">20 - Interior & Architect</a>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Homepages C</a>
+                                    <ul class="dropdown-menu">
+                                        <a class="dropdown-item" href="home-21.html"> 21 - Portfolio Slider</a>
+                                        <a class="dropdown-item" href="home-22.html">22 - Portfolio Multi-Carousel</a>
+                                        <a class="dropdown-item" href="home-23.html">23 - Business Coach</a>
+                                        <a class="dropdown-item" href="home-24.html">24 - The Spa</a>
+                                        <a class="dropdown-item" href="home-25.html">25 - Plant Boutique</a>
+                                        <a class="dropdown-item" href="home-26.html">26 - Beauty Salon</a>
+                                        <a class="dropdown-item" href="home-27.html">27 - Magazine & Blog Dark</a>
+                                        <a class="dropdown-item" href="home-28.html">28 - Magazine & Blog Light</a>
+                                        <a class="dropdown-item" href="home-29.html">29 - Digital Agency</a>
+                                        <a class="dropdown-item" href="home-30.html">30 - Portfolio Carousel</a>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Homepages D</a>
+                                    <ul class="dropdown-menu">
+                                        <a class="dropdown-item" href="home-31.html">31 - Portfolio Multi Carousel</a>
+                                        <a class="dropdown-item" href="home-32.html">32 - Creative Agency</a>
+                                        <a class="dropdown-item" href="home-33.html">33 - Coworking Space</a>
+                                        <a class="dropdown-item" href="home-34.html">34 - Dog Walker</a>
+                                        <a class="dropdown-item" href="home-35.html">35 - Grid Portfolio</a>
+                                        <a class="dropdown-item" href="home-36.html">36 - Clothing Store</a>
+                                        <a class="dropdown-item" href="home-37.html">37 - Clothing Brand</a>
+                                        <a class="dropdown-item" href="home-38.html">38 - Clothing Boutique</a>
+                                        <a class="dropdown-item" href="home-39.html">39 - Clothing Store</a>
+                                        <a class="dropdown-item" href="home-40.html">40 - App Landing Page</a>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Homepages C</a>
+                                    <ul class="dropdown-menu">
+                                        <a class="dropdown-item" href="home-41.html">41 - Photography</a>
+                                        <a class="dropdown-item" href="home-42.html">42 - Parallax Portfolio</a>
+                                        <a class="dropdown-item" href="home-43.html">43 - Creative Portfolio</a>
+                                        <a class="dropdown-item" href="home-44.html">44 - Grid Overlay Blog</a>
+                                        <a class="dropdown-item" href="home-45.html">45 - Online Tutor</a>
+                                        <a class="dropdown-item" href="home-46.html">46 - Nutrition/Dietitian</a>
+                                        <a class="dropdown-item" href="home-47.html">47 - Creative Business</a>
+                                        <a class="dropdown-item" href="home-48.html">48 - Coming Soon</a>
+                                        <a class="dropdown-item" href="home-49.html">49 - Coming Soon</a>
+                                        <a class="dropdown-item" href="home-50.html">50 - Coming Soon</a>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link" aria-haspopup="true" aria-expanded="false">Pages</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item dropdown-submenu">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle dropdown-item" aria-haspopup="true">About Us</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="page-about-us.html" class="dropdown-item">About Us 1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-about-us-2.html" class="dropdown-item">About Us 2</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-about-us-3.html" class="dropdown-item">About Us 3</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-about-us-4.html" class="dropdown-item">About Us 4</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-about-us-5.html" class="dropdown-item">About Us 5</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-about-us-6.html" class="dropdown-item">About Us 6</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown-submenu">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle dropdown-item" aria-haspopup="true">Contact Us</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="page-contact.html" class="dropdown-item">Contact Us 1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-contact-2.html" class="dropdown-item">Contact Us 2</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-contact-3.html" class="dropdown-item">Contact Us 3</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-contact-4.html" class="dropdown-item">Contact Us 4</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown-submenu">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle dropdown-item" aria-haspopup="true">Services</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="page-service-1.html" class="dropdown-item">Service 1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-service-2.html" class="dropdown-item">Service 2</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-service-3.html" class="dropdown-item">Service 3</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown-submenu">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle dropdown-item" aria-haspopup="true">Team</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="page-team-1.html" class="dropdown-item">Team 1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-team-2.html" class="dropdown-item">Team 2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown-submenu">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle dropdown-item" aria-haspopup="true">Utilities</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="page-404.html" class="dropdown-item">Error 404</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-faq.html" class="dropdown-item">FAQ</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="search-result.html" class="dropdown-item">Search Result</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-pricing.html" class="dropdown-item">Pricing</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="page-maintenance.html" class="dropdown-item">Maintenance</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mega_menu_holder">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Portfolio</a>
+                            <ul class="dropdown-menu mega_menu">
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Standard</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-standard-two-col.html">Standard Two Columns</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-standard-three-col.html">Standard Three Columns</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-standard-three-col-wide.html">Standard Three Columns Wide</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-standard-four-col.html">Standard Four Columns</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-standard-four-col-wide.html">Standard Four Columns Wide</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Gallery</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-gallery-two-col.html">Gallery Two Columns</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-gallery-three-col.html">Gallery Three Columns</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-gallery-three-col-wide.html">Gallery Three Columns Wide</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-gallery-four-col.html">Gallery Four Columns</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-gallery-four-col-wide.html">Gallery Four Columns Wide</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Single Group 1</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-single-small-carousel.html">Small Slider</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-single-small-gallery.html">Small Gallery</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-single-small-images.html">Small Images</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-single-small-masonry.html">Small Masonry</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-single-big-carousel.html">Big Slider</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-single-big-gallery.html">Big Gallery</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-single-big-images.html">Big Images</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-single-big-masonry.html">Big Masonry</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Single Group 2</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-details-1.html">Portfolio Details 1</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-details-2.html">Portfolio Details 2</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="portfolio-details-3.html">Portfolio Details 3</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mega_menu_holder">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Blog</a>
+                            <ul class="dropdown-menu mega_menu">
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Blog Style Stander</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="blog-standard.html">Standard Blog</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-standard-right-sidebar.html">Standard Blog with Right Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-standard-left-sidebar.html">Standard Blog with Left Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-standard-two-col-right-sidebar.html">Standard Blog with two col Right Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-standard-two-col-left-sidebar.html">Standard Blog with two col Left Sidebar</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Blog Style</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="blog-card-three-col.html">Card Blog Three Col</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-card-two-col-right-sidebar.html">Card Blog with two col Right Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-card-two-col-left-sidebar.html">Card Blog with two col Left Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-list-right-sidebar.html">List Blog with Right Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-list-left-sidebar.html">List Blog with Left Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-overlay-three-col.html">Overlay Blog Three Col</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Single Blog Style</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="blog-single-post.html">Single Blog</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-single-post-right-sidebar.html">Single Blog with Right sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-single-post-left-sidebar.html">Single Blog with Left sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-post-single-gallery.html">Gallary Blog Post</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-post-single-video.html">Video Blog Post</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="blog-post-single-audio.html">Audio Blog Post</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkShop" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">Shop</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkShop">
+                                <a class="dropdown-item" href="shop-right-sidebar.html">Shop Right Sidebar</a>
+                                <a class="dropdown-item" href="shop-left-sidebar.html">Shop Left Sidebar</a>
+                                <a class="dropdown-item" href="shop-full-width.html">Shop Full Width</a>
+                                <a class="dropdown-item" href="shop-single-product.html">Shop Single Product</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown mega_menu_holder">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Elements</a>
+                            <ul class="dropdown-menu mega_menu">
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Typography</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="elements-accordions.html">Accordions</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-banner.html">Banner</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-blockquote.html">Blockquote</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-call-to-action.html">Call To Action</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-typography.html">Typography</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-dropcaps.html">Dropcaps</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-headings.html">Headings</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-highlights.html">Highlights</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Basic Elements</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="elements-buttons.html">Buttons</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-columns.html">Columns</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-contact-form.html">Contact Form</a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item" href="elements-google-maps.html">Google Maps</a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item" href="elements-lists.html">Lists</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-tables.html">Tables</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-tabs.html">Tabs</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-galleries.html">Galleries</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Content</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="elements-blog-post.html">Blog Post</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-clients.html">Clients</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-icon-content-box.html">Icon Content Box</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-image-content-box.html">Image Content Box</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-numbered-process.html">Numbered Process</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-pricing-table.html">Pricing Table</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-slider.html">Slider</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-social-icons.html">Social Icons</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Infographic</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="elements-counters.html">Counters</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-countdown.html">Countdown</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-progress-bar.html">Progress Bar</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-team.html">Team</a>
+                                        </li>
+
+                                        <li>
+                                            <a class="dropdown-item" href="elements-testimonials.html">Testimonials</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown mega_menu_holder">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Features</a>
+                            <ul class="dropdown-menu mega_menu">
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Header Styles</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-transparent.html">Transparent header</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-white.html">White header</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-dark.html">Dark header</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-with-top-bar.html">Header with top bar</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-with-push.html">Header with push</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-center-navigation.html">Center navigation</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-center-logo.html">Center logo</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-top-logo.html">Top logo</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-one-page-navigation.html">One page navigation</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-hamburger-menu.html">Hamburger menu</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-hamburger-menu-center-logo.html">Hamburger Center logo</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-header-sidebar-menu.html">Sidebar Menu</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Footer</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="feature-footer-standard.html">Footer standard</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-footer-standard-dark.html">Footer standard dark</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-footer-standard-2.html">Footer standard 2</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-footer-standard-2-dark.html">Footer standard 2 dark</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-footer-strip.html">Footer strip</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-footer-strip-dark.html">Footer strip dark</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-footer-center">Footer center</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-footer-center-logo.html">Footer center logo</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-footer-center-logo-dark.html">Footer center logo dark</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-footer-modern.html">Footer modern </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-footer-modern-dark.html">Footer modern dark </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">Others</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="feature-page-title-left.html">Page Title Left alignment</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-page-title-right.html">
+                                                Page Title Right alignment
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-page-title-center.html">
+                                                Page Title Center alignment
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="feature-page-title-bg-img.html">Page Title BG Image</a>
+                                        </li>
+                                        <li class="dropdown-divider m-3"></li>
+                                        <li>
+                                            <a class="dropdown-item" href="elements-animation.html">Animation</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+        </nav>
+        <!-- End Header -->
+        <!-- main -->
+        <div class="page-container scene-main scene-main--fade_In">
+            <!-- Slider -->
+            <div id="default-carousel" class="owl-carousel default-owl-carousel light-nav-dots">
 
-
-                <a href="skype:xion999x?call" class="link-skype"><img class="img-skype" src="/media/1041/skypesmall.png" title="skype" alt="skypesmall logo" /></a>
-                @*
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-fw fa-envelope"></i>
-                            <span class="d-lg-none">
-                                Messages
-                                <span class="badge badge-pill badge-primary">12 New</span>
-                            </span>
-                            <span class="indicator text-primary d-none d-lg-block">
-                                <i class="fa fa-fw fa-circle"></i>
-                            </span>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="messagesDropdown">
-                            <h6 class="dropdown-header">New Messages:</h6>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">
-                                <View all messages</a>
+                <div class="owl-carousel-item">
+                    <div class="owl-carousel-item-content">
+                        <div class="fluid-container">
+                            <div class="row align-items-center text-center all-text-content-white">
+                                <div class="col-md-8 offset-md-2">
+                                    <h1 class="h1-large font-weight-bold mb-md-20px">Great Gesign Drives Sales</h1>
+                                    <p class="lead mb_30 d-none d-md-block mb-35px px-lg-200px">
+                                        Aenean lacinia bibendum sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+                                        Fusce dapibus.
+                                    </p>
+                                    <a class="btn btn-dark rounded-0 d-none d-md-inline" href="#">Read More</a>
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                *@
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mr-lg-2" id="btnNewsletter" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-fw fa-bell"></i>
-                        <span class="d-lg-none">
-                            Newsletter
-                        </span>
-                        <span class="indicator text-warning d-none d-lg-block">
-                            <i class="fa fa-fw fa-circle"></i>
-                        </span>
-                    </a>
-                </li>
-                <!--
-                            <li class="nav-item">
-
-                <form class="form-inline my-2 my-lg-0 mr-lg-2">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Search for...">
-                        <span class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
                     </div>
-                </form>
-
-                            </li>
-                                -->
-                @*
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                            <i class="fa fa-fw fa-sign-out"></i>Logout
-                        </a>
-                    </li>
-                *@
-            </ul>
-        </div>
-    </nav>
-    <div class="content-wrapper banner-wrapper">
-
-        <a href="@CurrentPage.bannerLink">
-            <img src="@banner.Url" alt="@bannerImageAlt" title="@bannerImageTitle" />
-        </a>
-
-    </div>
-    <div class="content-wrapper">
-        <div class="container-fluid">
+                    <div class="bg-image">
+                        <img src="images/02.jpg" alt="Picture">
+                    </div>
+                </div>
+                <div class="owl-carousel-item">
+                    <div class="owl-carousel-item-content">
+                        <div class="fluid-container">
+                            <div class="row align-items-center text-center all-text-content-white">
+                                <div class="col-md-8 offset-md-2">
+                                    <h1 class="h1-large font-weight-bold mb-md-20px">Great Gesign Drives Sales</h1>
+                                    <p class="lead mb_30 d-none d-md-block mb-35px px-lg-200px">
+                                        Aenean lacinia bibendum sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+                                        Fusce dapibus.
+                                    </p>
+                                    <a class="btn btn-dark rounded-0 d-none d-md-inline" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-image">
+                        <img src="images/006.jpg" alt="Picture">
+                    </div>
+                </div>
+                <div class="owl-carousel-item">
+                    <div class="owl-carousel-item-content">
+                        <div class="fluid-container">
+                            <div class="row align-items-center text-center all-text-content-white">
+                                <div class="col-md-8 offset-md-2">
+                                    <h1 class="h1-large font-weight-bold mb-md-20px">Great Gesign Drives Sales</h1>
+                                    <p class="lead mb_30 d-none d-md-block mb-35px px-lg-200px">
+                                        Aenean lacinia bibendum sed consectetur. Etiam porta sem malesuada magna mollis euismod.
+                                        Fusce dapibus.
+                                    </p>
+                                    <a class="btn btn-dark rounded-0 d-none d-md-inline" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-image">
+                        <img src="images/005.jpg" alt="Picture">
+                    </div>
+                </div>
+            </div>
             @RenderBody()
+
+
+
+            <!-- Subscribe To The Newsletter  -->
+            <div class="bg-color-creamy pt-30px pb-5px">
+                <div class="container">
+                    <div class="row small-gutters align-items-center mb-20px">
+                        <div class="col-lg-5">
+                            <h4 class="mb-15px">Subscribe To The Newsletter</h4>
+                        </div>
+                        <div class="col-lg-6 offset-lg-1">
+                            <div class="form-group form-row  mb-0">
+                                <div class="col-sm-8 col-xs-12  mb-30px">
+                                    <input type="email" name="email" class="form-control form-solid-border validate-required validate-email" placeholder="Your email">
+                                </div>
+                                <div class="col-sm-4 col-xs-12  mb-30px">
+                                    <button type="submit" class="btn btn-outline-dark rounded-0">Subscribe</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer  -->
+            <footer class="web-footer footer bg-color-blackflame all-text-content-white">
+                <div class="footer-widgets pt-85px pb-55px">
+                    <div class="container">
+                        <div class="row large-gutters">
+                            <div class="col-lg-5 mb-30px">
+                                <div class="footer-widget">
+                                    <h3>Umda</h3>
+                                    <p class="pt-20px pt-lg-155px">© 2018 Energetic Themes</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-30px">
+                                <div class="footer-widget">
+                                    <h5 class="widget-title">Twitter Posts</h5>
+                                    <div id="twitterfeed">
+                                        <ul class="list-unstyled tweets-simple-list"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 mb-30px">
+                                <div class="footer-widget">
+                                    <h5 class="widget-title">Contact us</h5>
+                                    <p>B 425, 100 Down Streat Avenue, New York City, NY 1001</p>
+                                    <p>
+                                        08455-3354-202
+                                        <br> contact@Umda.com
+                                    </p>
+                                    <ul class="list-inline m-0">
+                                        <li class="list-inline-item">
+                                            <a href="https://www.facebook.com/energeticthemes">
+                                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://instagram.com/energeticthemes">
+                                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://behance.com/energeticthemes">
+                                                <i class="fab fa-behance" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://twitter.com/energeticthemes">
+                                                <i class="fab fa-twitter" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
-        <!-- /.container-fluid-->
-        <!-- /.content-wrapper-->
-        <footer class="sticky-footer">
-            <div class="container">
-                <div class="text-center">
-                    <div class="col-md-12">
-
-                    </div>
-                    <div class="col-md-12">
-                        <small class="float-left">Copyright 2019 © Casino Psycho</small>
-
-<script id="godaddy-security-s" src="https://cdn.sucuri.net/badge/badge.js" data-s="2043" data-i="c915b740d9fd8e8c72d021b95f241b9ad51aeb32bb" data-p="l" data-c="d" data-t="g"></script>
-
-
-                        <a href="//www.dmca.com/Protection/Status.aspx?ID=a96d485a-17c4-4239-9eb0-aa15fd08ed86" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca_protected_16_120.png?ID=a96d485a-17c4-4239-9eb0-aa15fd08ed86" alt="DMCA.com Protection Status" /></a>
-                        <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
-                        <a href="https://www.dmca.com/compliance/casinopsycho.com" title="DMCA Compliance information for casinopsycho.com"><img src="https://www.dmca.com/img/dmca-compliant-grayscale.png" /></a>
-
-                        @foreach (var logo in footerImagesList)
-                        {
-                            var url = logo.GetPropertyValue<IPublishedContent>("customMediaImage").Url;
-                            var alt = logo.GetPropertyValue<string>("customImageAlt");
-                            var title = logo.GetPropertyValue<string>("customImageTitle");
-                            <img src="@url" alt="@alt" title="@title" />
-                        }
-                        @*
-                            <span id="siteseal">
-                                <script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=CD9MoLPfmgWLxd15rSjxE6JrXb9sWbRb3eDxdEsKQaUF5eHpQ3TivpfwRyV2"></script>
-                            </span>
-                            <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-                        *@
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fa fa-angle-up"></i>
-        </a>
-        @*
-            <!-- Logout Modal-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="login.html">Logout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        *@
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        @Scripts.Render("~/bundles/MainScript")
+        <!-- End main -->
     </div>
-
-    <div class="modal fade" id="newsletterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Newsletter</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="newsletter-form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="NewsletterEmail" name="NewsletterEmail" placeholder="@Umbraco.GetDictionaryValue("Enter Email")">
-                        </div>
-                        <button id="saveToEmailBtn" type="button" class="btn btn-primary">@Umbraco.GetDictionaryValue("Subscribe")</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-    <!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml            : true,
-      version          : 'v3.3'
-    });
-  };
-
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution=setup_tool
-  page_id="345561016311160"
-  theme_color="#ffc300">
-</div>
-    
-    
-    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @Scripts.Render("~/bundles/MainScript")
 </body>
 </html>

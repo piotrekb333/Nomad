@@ -26,24 +26,21 @@ namespace Nomad
 
 
             bundles.Add(new ScriptBundle("~/bundles/MainScript").Include(
-                      "~/Scripts/jquery-1.10.2.min.js",
-                      "~/Scripts/popper.min.js",
-                      //"~/Scripts/Chart.js",
-                      "~/Scripts/bootstrap.min.js",
-                      "~/Scripts/respond.js",
-                      "~/Scripts/modernizr-*",
-                      "~/Scripts/jquery.dataTables.js",
-                      "~/Scripts/dataTables.bootstrap4.js",
-                      "~/Scripts/sb-admin.js",
-                      "~/Scripts/sb-admin-datatables.js",
-                      //"~/Scripts/sb-admin-charts.js",
-                      "~/Scripts/Newsletter/Newsletter.js",
-                      "~/Scripts/jquery.validate*",
-                      "~/Scripts/jquery.hoverGrid.js",
-                      "~/Scripts/main.js",
-                      "~/Scripts/multislider.min.js"
-
-
+                      "~/Scripts/jquery.min.js",
+                      "~/Scripts/plugins/bootstrap.bundle.min.js",
+                      "~/Scripts/plugins/aos.js",
+                      "~/Scripts/plugins/isotope.pkgd.min.js",
+                      "~/Scripts/plugins/jquery.countdown.min.js",
+                      "~/Scripts/plugins/jquery.countTo.js",
+                      "~/Scripts/plugins/jquery.easing.min.js",
+                      "~/Scripts/plugins/jquery.magnific-popup.min.js",
+                      "~/Scripts/plugins/onepage.min.js",
+                      "~/Scripts/plugins/owl.carousel.min.js",
+                      "~/Scripts/plugins/instafeed.min.js",
+                      "~/Scripts/plugins/imagesloaded.pkgd.min.js",
+                      "~/Scripts/plugins/contact-us.min.js",
+                      "~/Scripts/plugins/twitterFetcher_min.js",
+                      "~/Scripts/main.js"
                       ));
 
             var bundle=new StyleBundle("~/bundles/bootstrap").Include(
@@ -52,11 +49,13 @@ namespace Nomad
             bundle.Transforms.Clear();
             bundles.Add(new StyleBundle("~/bundles/Styles").Include(
                       //"~/css/bootstrap.min.css",
-                      "~/css/dataTables.bootstrap4.css",
-                      "~/css/font-awesome.min.css",
-                      "~/css/sb-admin.css",
-                      "~/css/jquery.hoverGrid.css",
-                      "~/css/multislider.css"
+                      "~/css/fontawesome-all.min.css",
+                      "~/css/bootstrap.min.css",
+                      "~/css/plugins/owl.carousel.min.css",
+                      "~/css/plugins/magnific-popup.css",
+                      "~/css/plugins/aos.css",
+                      "~/css/plugins/spacing-and-height.css",
+                      "~/css/theme-modules.css"
 
                       ));
             bundles.Add(bundle);

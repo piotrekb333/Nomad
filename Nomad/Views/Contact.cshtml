@@ -13,6 +13,7 @@
 
 @using (Html.BeginUmbracoForm<ContactController>("Contact", FormMethod.Post))
 {
+    @*
     <div class="form-group">
         <label for="exampleInputEmail1">@Umbraco.GetDictionaryValue("Title")</label>
         <input type="text" class="form-control" id="Title" name="Title" aria-describedby="titleHelp" placeholder="@Umbraco.GetDictionaryValue("Title")">
@@ -26,4 +27,77 @@
         <input type="text" class="form-control" id="Email" name="Email" aria-describedby="emailHelp" placeholder="@Umbraco.GetDictionaryValue("Email address")">
     </div>
     <button type="submit" class="btn btn-primary">@Umbraco.GetDictionaryValue("Submit")</button>
+    *@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Contact us  -->
+    <div class="pb-55px">
+        <div class="container">
+            <div class="row mb-20px">
+                <div class="col-lg-5 mb-40px">
+                    <h4 class="mb-15px">Contact form</h4>
+                    <p class="lead">
+                        nomadaffiliates@gmail.com
+                    </p>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <form id="contact-form" data-toggle="validator" role="form" class="form-fields-bg-transparent" method="post" action="contact.php"
+                          novalidate="true">
+                        <div class="row mb-0">
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group mb-30px">
+                                    <input type="text" id="Title" name="Title"  class="form-control" placeholder="Title" required="required" data-error="Your Name is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group mb-30px">
+                                    <input type="email" id="Email" name="Email" class="form-control" placeholder="Your email *" required="required" data-error="Valid email is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row mb-15px">
+                            <div class="form-group col-md-12">
+                                <div class="form-group mb-0">
+                                    <textarea  id="Body" name="Body" class="form-control" placeholder="Your Message *" rows="7" required="required"
+                                              data-error="Please,leave us a message."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12 align-left">
+                                <button type="submit" class="btn btn-dark rounded-0">@Umbraco.GetDictionaryValue("Submit")</button>
+                            </div>
+                        </div>
+                        <div class="loading-spinner"></div>
+                        <div class="messages mt-20px"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 }
