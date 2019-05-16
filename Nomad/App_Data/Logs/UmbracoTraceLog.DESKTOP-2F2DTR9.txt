@@ -706,3 +706,209 @@ _shutDownStack=   w System.Environment.GetStackTrace(Exception e, Boolean needFi
  2019-05-16 21:08:56,573 [P18112/D3/TServerWatchdog #1] INFO  Hangfire.Server.ServerWatchdog - 2 servers were removed due to timeout
  2019-05-16 21:19:38,638 [P18112/D3/T137] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
  2019-05-16 21:48:57,040 [P18112/D3/TServerWatchdog #1] INFO  Hangfire.Server.ServerWatchdog - 2 servers were removed due to timeout
+ 2019-05-16 22:48:04,046 [P4248/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.14.0 application starting on DESKTOP-2F2DTR9
+ 2019-05-16 22:48:04,067 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2019-05-16 22:48:04,191 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 123ms)
+ 2019-05-16 22:48:04,208 [P4248/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2019-05-16 22:48:04,209 [P4248/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2019-05-16 22:48:04,210 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:04,273 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 63ms)
+ 2019-05-16 22:48:04,273 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2019-05-16 22:48:04,274 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 0ms)
+ 2019-05-16 22:48:04,303 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:04,303 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:48:04,303 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2019-05-16 22:48:04,304 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 0ms)
+ 2019-05-16 22:48:04,304 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:04,304 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:48:04,304 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2019-05-16 22:48:04,304 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 0ms)
+ 2019-05-16 22:48:04,309 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:04,313 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 3ms)
+ 2019-05-16 22:48:04,313 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2019-05-16 22:48:04,314 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 0ms)
+ 2019-05-16 22:48:04,314 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:04,314 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:48:04,314 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2019-05-16 22:48:04,315 [P4248/D2/T1] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 0ms)
+ 2019-05-16 22:48:05,456 [P4248/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2019-05-16 22:48:05,877 [P4248/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2019-05-16 22:48:05,949 [P4248/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2019-05-16 22:48:05,949 [P4248/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2019-05-16 22:48:06,404 [P4248/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Start installing Hangfire SQL objects...
+ 2019-05-16 22:48:06,586 [P4248/D2/T1] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Hangfire SQL objects installed.
+ 2019-05-16 22:48:06,593 [P4248/D2/T1] INFO  Hangfire.BackgroundJobServer - Starting Hangfire Server using job storage: 'SQL Server: 188.121.44.214@Nomad'
+ 2019-05-16 22:48:06,600 [P4248/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+ 2019-05-16 22:48:06,600 [P4248/D2/T1] INFO  Hangfire.BackgroundJobServer - Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+ 2019-05-16 22:48:06,818 [P4248/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 2814ms)
+ 2019-05-16 22:48:06,998 [P4248/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:4248:fad17966 successfully announced in 350,392 ms
+ 2019-05-16 22:48:07,010 [P4248/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:4248:fad17966 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+ 2019-05-16 22:48:07,088 [P4248/D2/TServerWatchdog #1] INFO  Hangfire.Server.ServerWatchdog - 2 servers were removed due to timeout
+ 2019-05-16 22:48:07,248 [P4248/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:4248:fad17966 all the dispatchers started
+ 2019-05-16 22:48:07,298 [P4248/D2/T12] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:58484/umbraco
+ 2019-05-16 22:48:07,298 [P4248/D2/T12] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:58484/umbraco (UmbracoModule request)
+ 2019-05-16 22:48:08,096 [P4248/D2/T12] INFO  umbraco.content - Load Xml from file...
+ 2019-05-16 22:48:08,103 [P4248/D2/T12] INFO  umbraco.content - Loaded Xml from file.
+ 2019-05-16 22:48:09,956 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:09,957 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:48:09,957 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2019-05-16 22:48:09,958 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 0ms)
+ 2019-05-16 22:48:09,962 [P4248/D2/T8] INFO  Umbraco.Core.Manifest.ManifestWatcher - manifest has changed, app pool is restarting (C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\App_Plugins\ModelsBuilder\package.manifest)
+ 2019-05-16 22:48:09,970 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Terminating
+ 2019-05-16 22:48:09,971 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Waiting for tasks to complete
+ 2019-05-16 22:48:09,971 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [HealthCheckNotifier] Tasks completed, terminated
+ 2019-05-16 22:48:09,974 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Terminating
+ 2019-05-16 22:48:09,974 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Waiting for tasks to complete
+ 2019-05-16 22:48:09,974 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2019-05-16 22:48:09,975 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2019-05-16 22:48:09,975 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2019-05-16 22:48:09,975 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2019-05-16 22:48:09,975 [P4248/D2/T13] INFO  Umbraco.Core.MainDom - Stopping...
+ 2019-05-16 22:48:09,976 [P4248/D2/T42] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [InstructionProcessing] Tasks completed, terminated
+ 2019-05-16 22:48:09,976 [P4248/D2/T42] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2019-05-16 22:48:09,976 [P4248/D2/T42] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2019-05-16 22:48:09,998 [P4248/D2/T13] INFO  Umbraco.Web.ExamineStartup - Examine shutting down
+ 2019-05-16 22:48:10,000 [P4248/D2/T13] INFO  Umbraco.Web.ExamineStartup - Complete (took 1ms)
+ 2019-05-16 22:48:10,000 [P4248/D2/T13] INFO  Umbraco.Core.MainDom - Released MainDom.
+ 2019-05-16 22:48:10,000 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2019-05-16 22:48:10,000 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2019-05-16 22:48:10,000 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2019-05-16 22:48:10,000 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2019-05-16 22:48:10,000 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2019-05-16 22:48:10,001 [P4248/D2/T13] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2019-05-16 22:48:10,000 [P4248/D2/T42] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2019-05-16 22:48:10,001 [P4248/D2/T42] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2019-05-16 22:48:10,001 [P4248/D2/T42] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2019-05-16 22:48:12,591 [P4248/D2/T12] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 22:48:13,150 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:13,150 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:48:13,150 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2019-05-16 22:48:13,151 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper (took 0ms)
+ 2019-05-16 22:48:13,614 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:13,614 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:48:13,615 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Deploy.IServiceConnector
+ 2019-05-16 22:48:13,615 [P4248/D2/T12] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Deploy.IServiceConnector (took 0ms)
+ 2019-05-16 22:48:25,185 [P4248/D3/T5] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.14.0 application starting on DESKTOP-2F2DTR9
+ 2019-05-16 22:48:25,202 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2019-05-16 22:48:25,333 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Hash determined (took 130ms)
+ 2019-05-16 22:48:25,399 [P4248/D3/T5] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2019-05-16 22:48:25,401 [P4248/D3/T5] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2019-05-16 22:48:25,402 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:25,444 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 41ms)
+ 2019-05-16 22:48:25,444 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IApplicationStartupHandler
+ 2019-05-16 22:48:25,445 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IApplicationStartupHandler (took 0ms)
+ 2019-05-16 22:48:25,464 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:25,465 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:48:25,465 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2019-05-16 22:48:25,465 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter (took 0ms)
+ 2019-05-16 22:48:25,465 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:25,465 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:48:25,466 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2019-05-16 22:48:25,467 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IPropertyValueConverter (took 1ms)
+ 2019-05-16 22:48:25,479 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:25,480 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:48:25,480 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.Mvc.SurfaceController
+ 2019-05-16 22:48:25,481 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.Mvc.SurfaceController (took 0ms)
+ 2019-05-16 22:48:25,481 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:48:25,481 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:48:25,481 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Web.WebApi.UmbracoApiController
+ 2019-05-16 22:48:25,482 [P4248/D3/T5] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Web.WebApi.UmbracoApiController (took 0ms)
+ 2019-05-16 22:48:26,794 [P4248/D3/T5] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2019-05-16 22:48:27,299 [P4248/D3/T5] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2019-05-16 22:48:27,434 [P4248/D3/T5] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2019-05-16 22:48:27,434 [P4248/D3/T5] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2019-05-16 22:48:27,962 [P4248/D3/T5] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Start installing Hangfire SQL objects...
+ 2019-05-16 22:48:28,139 [P4248/D3/T5] INFO  Hangfire.SqlServer.SqlServerObjectsInstaller - Hangfire SQL objects installed.
+ 2019-05-16 22:48:28,200 [P4248/D3/T5] INFO  Hangfire.BackgroundJobServer - Starting Hangfire Server using job storage: 'SQL Server: 188.121.44.214@Nomad'
+ 2019-05-16 22:48:28,200 [P4248/D3/T5] INFO  Hangfire.BackgroundJobServer - Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+ 2019-05-16 22:48:28,200 [P4248/D3/T5] INFO  Hangfire.BackgroundJobServer - Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+ 2019-05-16 22:48:28,390 [P4248/D3/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:4248:c338fffa successfully announced in 164,6508 ms
+ 2019-05-16 22:48:28,394 [P4248/D3/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:4248:c338fffa is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+ 2019-05-16 22:48:28,528 [P4248/D3/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:4248:c338fffa all the dispatchers started
+ 2019-05-16 22:48:28,704 [P4248/D3/T5] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 3622ms)
+ 2019-05-16 22:48:28,910 [P4248/D3/T42] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - New ApplicationUrl detected: http://localhost:58484/umbraco
+ 2019-05-16 22:48:28,911 [P4248/D3/T42] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:58484/umbraco (UmbracoModule request)
+ 2019-05-16 22:48:40,006 [P4248/D2/T43] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: UnloadAppDomainCalled
+
+_shutDownMessage=User code called UnloadAppDomain
+HostingEnvironment initiated shutdown
+Element HostingEnvironment spowodował zamknięcie
+
+_shutDownStack=   w System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   w System.Environment.get_StackTrace()
+   w System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   w System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   w System.Web.HttpRuntime.ShutdownAppDomain(String stackTrace)
+   w System.Web.HttpRuntime.UnloadAppDomain()
+   w Umbraco.Core.Manifest.ManifestWatcher.FswChanged(Object sender, FileSystemEventArgs e)
+   w System.IO.FileSystemWatcher.OnChanged(FileSystemEventArgs e)
+   w System.IO.FileSystemWatcher.NotifyFileSystemEventArgs(Int32 action, String name)
+   w System.IO.FileSystemWatcher.CompletionStatusChanged(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* overlappedPointer)
+   w System.Threading._IOCompletionCallback.IOCompletionCallback_Context(Object state)
+   w System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   w System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   w System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)
+ 2019-05-16 22:48:40,007 [P4248/D2/T43] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:4248:fad17966 caught stopping signal...
+ 2019-05-16 22:48:40,033 [P4248/D2/T42] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:4248:fad17966 caught stopped signal...
+ 2019-05-16 22:48:40,359 [P4248/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:4248:fad17966 All dispatchers stopped
+ 2019-05-16 22:48:40,520 [P4248/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:4248:fad17966 successfully reported itself as stopped in 149,3261 ms
+ 2019-05-16 22:48:40,521 [P4248/D2/TBackgroundServerProcess #1] INFO  Hangfire.Server.BackgroundServerProcess - Server desktop-2f2dtr9:4248:fad17966 has been stopped in total 512,913 ms
+ 2019-05-16 22:49:27,101 [P4248/D3/T11] INFO  umbraco.content - Load Xml from file...
+ 2019-05-16 22:49:27,103 [P4248/D3/T11] INFO  umbraco.content - Loaded Xml from file.
+ 2019-05-16 22:49:28,458 [P4248/D3/T11] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:49:28,458 [P4248/D3/T11] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:49:28,458 [P4248/D3/T11] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.PropertyEditors.IParameterEditor
+ 2019-05-16 22:49:28,459 [P4248/D3/T11] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.PropertyEditors.IParameterEditor (took 0ms)
+ 2019-05-16 22:49:30,076 [P4248/D3/T75] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:49:30,077 [P4248/D3/T75] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:49:30,077 [P4248/D3/T75] INFO  Umbraco.Core.PluginManager - Resolving [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper
+ 2019-05-16 22:49:30,077 [P4248/D3/T75] INFO  Umbraco.Core.PluginManager - Resolved [Umbraco.Core.Persistence.Mappers.MapperForAttribute]Umbraco.Core.Persistence.Mappers.BaseMapper (took 0ms)
+ 2019-05-16 22:49:30,260 [P4248/D3/T73] INFO  umbraco.BusinessLogic.Log - Log scrubbed.  Removed all items older than 2019-05-15 22:49:29
+ 2019-05-16 22:49:31,836 [P4248/D3/T11] INFO  Umbraco.Core.PluginManager - Resolving umbraco.interfaces.IDiscoverable
+ 2019-05-16 22:49:31,836 [P4248/D3/T11] INFO  Umbraco.Core.PluginManager - Resolved umbraco.interfaces.IDiscoverable (took 0ms)
+ 2019-05-16 22:49:31,837 [P4248/D3/T11] INFO  Umbraco.Core.PluginManager - Resolving Umbraco.Core.Deploy.IServiceConnector
+ 2019-05-16 22:49:31,837 [P4248/D3/T11] INFO  Umbraco.Core.PluginManager - Resolved Umbraco.Core.Deploy.IServiceConnector (took 0ms)
+ 2019-05-16 22:49:40,096 [P4248/D3/T79] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 22:51:04,609 [P4248/D3/T85] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 22:51:31,232 [P4248/D3/T13] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 22:53:28,129 [P4248/D3/T10] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 22:53:35,407 [P4248/D3/T13] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 22:54:17,274 [P4248/D3/T13] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 22:54:24,545 [P4248/D3/T88] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:00:04,965 [P4248/D3/T24] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:01:02,030 [P4248/D3/T19] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:06:03,181 [P4248/D3/T119] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:09:09,652 [P4248/D3/T41] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:12:41,351 [P4248/D3/T106] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:18:20,236 [P4248/D3/T22] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:18:43,651 [P4248/D3/T102] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:19:06,960 [P4248/D3/T42] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:21:20,554 [P4248/D3/T105] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:22:02,080 [P4248/D3/T112] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:23:28,808 [P4248/D3/TServerWatchdog #1] INFO  Hangfire.Server.ServerWatchdog - 2 servers were removed due to timeout
+ 2019-05-16 23:23:39,041 [P4248/D3/T23] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:23:47,571 [P4248/D3/T23] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:27:14,199 [P4248/D3/T77] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:29:41,802 [P4248/D3/T13] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:30:50,829 [P4248/D3/T77] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:33:48,839 [P4248/D3/T21] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:34:59,709 [P4248/D3/T22] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:35:35,425 [P4248/D3/T88] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:35:53,442 [P4248/D3/T96] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:36:59,819 [P4248/D3/T22] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:37:17,478 [P4248/D3/T22] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:37:23,136 [P4248/D3/T22] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:39:17,136 [P4248/D3/T117] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:39:47,053 [P4248/D3/T79] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:39:59,074 [P4248/D3/T117] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:40:20,572 [P4248/D3/T26] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:40:25,567 [P4248/D3/T89] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.
+ 2019-05-16 23:40:58,088 [P4248/D3/T78] WARN  Umbraco.Web.Mvc.RenderRouteHandler - The current Document Type home matches a locally declared controller of type Nomad.Controllers.HomeController. Custom Controllers for Umbraco routing must implement 'Umbraco.Web.Mvc.IRenderController' and inherit from 'System.Web.Mvc.ControllerBase'.

@@ -32,11 +32,8 @@
 {
     var logoList = carousel.Where(x => x.IsVisible());
     <!-- Testimonials -->
-    <div class="bg-color-graish pt-80px pb-100px">
+    <div class="bg-color-graish pt-10px pb-100px">
         <div class="container">
-            <div class="text-center mb-15px">
-                <h4>What our awesome customers say ?</h4>
-            </div>
             <div class="row">
                 <div class="col-md-12">
                     <div id="testimonials_box" class="owl-carousel testimonials testimonials_box">
@@ -157,152 +154,155 @@
 
 <div class="pt-40px">
     <div class="container">
-        <div class="reviews-table reviews-table-desktop">
-            @foreach (var item in reviewChildrens)
-            {
-                var rating = int.Parse(item.GetValue("casinoRating").ToString());
-                var url = item.GetValue("casinoImage");
-                string link = "";
-                string reviewLink = "";
-                string alt = "";
-                string title = "";
-                if (url == null)
+        <div data-aos="flip-left">
+            <div class="reviews-table reviews-table-desktop">
+                @foreach (var item in reviewChildrens)
                 {
-                    continue;
-                }
-                <div class="review-item">
-                    <div class="row">
-                        <div class="col-sm-3 col-xs-3 review-td-position">
-                            <img class="review-image" src="@Umbraco.TypedMedia(url).Url" />
-                        </div>
-                        <div class="col-sm-3 col-xs-3 review-td-position">
-                            test
-                        </div>
-                        <div class="col-sm-3 col-xs-3 review-td-position">
-                            <div class="review-rating">
-                                <div>
-                                    <div>
-                                        test
-                                    </div>
-                                    <div>
-                                        @for (int i = 0; i < 5; i++)
-                                        {
-                                            if (i < rating)
-                                            {
-                                                <span class="fa fa-star checked"></span>
-                                            }
-                                            else
-                                            {
-                                                <span class="fa fa-star"></span>
-                                            }
-                                        }
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div>
-                                        test2
-                                    </div>
-                                    <div>
-                                        @for (int i = 0; i < 5; i++)
-                                        {
-                                            if (i < rating)
-                                            {
-                                                <span class="fa fa-star checked"></span>
-                                            }
-                                            else
-                                            {
-                                                <span class="fa fa-star"></span>
-                                            }
-                                        }
-                                    </div>
-                                </div>
-
+                    var rating = int.Parse(item.GetValue("casinoRating").ToString());
+                    var url = item.GetValue("casinoImage");
+                    string link = "";
+                    string reviewLink = "";
+                    string alt = "";
+                    string title = "";
+                    if (url == null)
+                    {
+                        continue;
+                    }
+                    <div class="review-item">
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-3 review-td-position">
+                                <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title"/>
                             </div>
-                        </div>
+                            <div class="col-sm-3 col-xs-3 review-td-position">
+                                test
+                            </div>
+                            <div class="col-sm-3 col-xs-3 review-td-position">
+                                <div class="review-rating">
+                                    <div>
+                                        <div>
+                                            test
+                                        </div>
+                                        <div>
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                if (i < rating)
+                                                {
+                                                    <span class="fa fa-star checked"></span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fa fa-star"></span>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
 
-                        <div class="col-sm-3 col-xs-3 review-td-position">
-                            <div class="review-buttons-container">
-                                <a href="@reviewLink" class="btn m-1 btn-danger btn-sm review-link">Review</a>
-                                <a href="@link" class="btn m-1 btn-danger btn-sm review-link">Register</a>
+                                    <div>
+                                        <div>
+                                            test2
+                                        </div>
+                                        <div>
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                if (i < rating)
+                                                {
+                                                    <span class="fa fa-star checked"></span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fa fa-star"></span>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 col-xs-3 review-td-position">
+                                <div class="review-buttons-container">
+                                    <a href="@reviewLink" class="btn m-1 btn-danger btn-sm review-link">Review</a>
+                                    <a href="@link" class="btn m-1 btn-danger btn-sm review-link">Register</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
 
-
-        <div class="reviews-table reviews-table-mobile">
-            @foreach (var item in reviewChildrens)
-            {
-                var rating = int.Parse(item.GetValue("casinoRating").ToString());
-                var url = item.GetValue("casinoImage");
-                string link = "";
-                string reviewLink = "";
-                string alt = "";
-                string title = "";
-                if (url == null)
+        <div data-aos="flip-left">
+            <div class="reviews-table reviews-table-mobile">
+                @foreach (var item in reviewChildrens)
                 {
-                    continue;
-                }
-                <div class="review-item">
-                    <div class="row">
-                        <div class="col-sm-4 col-xs-4 review-td-position">
-                            <img class="review-image" src="@Umbraco.TypedMedia(url).Url" />
-                        </div>
-                        <div class="col-sm-4 col-xs-4 review-td-position">
-                            test
-                        </div>
-                        <div class="col-sm-4 col-xs-4 review-td-position review-rating-links">
-                            <div class="review-rating">
-                                <div>
-                                    <div>
-                                        test
-                                    </div>
-                                    <div>
-                                        @for (int i = 0; i < 5; i++)
-                                        {
-                                            if (i < rating)
-                                            {
-                                                <span class="fa fa-star checked"></span>
-                                            }
-                                            else
-                                            {
-                                                <span class="fa fa-star"></span>
-                                            }
-                                        }
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <div>
-                                        test2
-                                    </div>
-                                    <div>
-                                        @for (int i = 0; i < 5; i++)
-                                        {
-                                            if (i < rating)
-                                            {
-                                                <span class="fa fa-star checked"></span>
-                                            }
-                                            else
-                                            {
-                                                <span class="fa fa-star"></span>
-                                            }
-                                        }
-                                    </div>
-                                </div>
-
+                    var rating = int.Parse(item.GetValue("casinoRating").ToString());
+                    var url = item.GetValue("casinoImage");
+                    string link = "";
+                    string reviewLink = "";
+                    string alt = "";
+                    string title = "";
+                    if (url == null)
+                    {
+                        continue;
+                    }
+                    <div class="review-item">
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-4 review-td-position">
+                                <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title" />
                             </div>
-                            <div class="review-buttons-container">
-                                <a href="@reviewLink" class="btn m-1 btn-danger btn-sm review-link">Review</a>
-                                <a href="@link" class="btn m-1 btn-danger btn-sm review-link">Register</a>
+                            <div class="col-sm-4 col-xs-4 review-td-position">
+                                test
+                            </div>
+                            <div class="col-sm-4 col-xs-4 review-td-position review-rating-links">
+                                <div class="review-rating">
+                                    <div>
+                                        <div>
+                                            test
+                                        </div>
+                                        <div>
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                if (i < rating)
+                                                {
+                                                    <span class="fa fa-star checked"></span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fa fa-star"></span>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div>
+                                            test2
+                                        </div>
+                                        <div>
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                if (i < rating)
+                                                {
+                                                    <span class="fa fa-star checked"></span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fa fa-star"></span>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="review-buttons-container">
+                                    <a href="@reviewLink" class="btn m-1 btn-danger btn-sm review-link">Review</a>
+                                    <a href="@link" class="btn m-1 btn-danger btn-sm review-link">Register</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
+            </div>
         </div>
     </div>
-</div>

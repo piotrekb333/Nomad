@@ -8,20 +8,21 @@
 
 <!-- Blogs -->
 <div class="blog-page bg-color-gray">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="row blog_posts stander_blog blog-list">
-                    @foreach (var item in Model)
-                    {
-                        var body = HtmlRemoval.StripTagsRegex(item.Body);
-                        string[] words = body.Split();
-                        var wordsString = words.Take(5);
-                        string subTitle = string.Join(" ", wordsString) + " ...";
-                        if (string.IsNullOrEmpty(subTitle))
+    <div data-aos="fade-down">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row blog_posts stander_blog blog-list">
+                        @foreach (var item in Model)
                         {
-                            subTitle = "More...";
-                        }
+                            var body = HtmlRemoval.StripTagsRegex(item.Body);
+                            string[] words = body.Split();
+                            var wordsString = words.Take(5);
+                            string subTitle = string.Join(" ", wordsString) + " ...";
+                            if (string.IsNullOrEmpty(subTitle))
+                            {
+                                subTitle = "More...";
+                            }
                             <div class="col-md-6 col-lg-4 blog-item">
                                 <article class="blog-article">
                                     <div class="card-blog-content">
@@ -41,10 +42,11 @@
                                     </div>
                                 </article>
                             </div>
-                        }                
+                        }
                     </div>
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
 </div>
