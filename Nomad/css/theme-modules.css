@@ -5187,3 +5187,21 @@ screen and (max-height: 800px) {
         flex-direction:column;
     }
 }
+
+
+
+.blog-article {
+    height: 100%;
+    margin-bottom:0px !important;
+    display:flex;
+}
+.blog-list{
+    margin-bottom:20px;
+    margin-top:20px;
+}
+.blog-item{
+    margin-bottom:20px;
+}
+.card-blog-content{
+    width:100%;
+}
