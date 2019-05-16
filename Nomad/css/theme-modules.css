@@ -5120,3 +5120,70 @@ screen and (max-height: 800px) {
 .font-size-18 {
     font-size: 18px;
 }
+
+
+
+/*reviews*/
+.review-item {
+    min-height: 150px;
+    text-align: center;
+    background-color: #eaeef0;
+    margin-bottom: 10px;
+}
+
+.review-item .row{
+    min-height: 150px;
+}
+
+.review-image {
+    max-height: 150px;
+    max-width: 200px;
+    margin:auto;
+}
+
+.review-td-position {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-link{
+    width:155px;
+}
+.reviews-table-mobile{
+    display:none;
+}
+@media (max-width: 991px) {
+    .review-image {
+        max-height: 150px;
+        max-width: 150px;
+        margin: auto;
+    }
+
+    .review-link {
+        padding: 0.3rem 0rem;
+        width: 130px;
+    }
+}
+
+@media (max-width: 768px) {
+    .review-image {
+        max-height: 150px;
+        max-width: 150px;
+        margin: auto;
+    }
+    .review-link {
+        padding: 0.3rem 0rem;
+        width: 130px;
+    }
+    .reviews-table-desktop{
+        display:none;
+    }
+    .reviews-table-mobile{
+        display:block;
+    }
+    .review-rating-links{
+        display:flex;
+        flex-direction:column;
+    }
+}
