@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c3f077a45150fc80")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e6e2ffe8e1e8f030")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -236,6 +236,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Header Images
+		///</summary>
+		[ImplementPropertyType("headerImages")]
+		public IEnumerable<IPublishedContent> HeaderImages
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("headerImages"); }
+		}
+
+		///<summary>
 		/// Banner
 		///</summary>
 		[ImplementPropertyType("mainBanner")]
@@ -251,6 +260,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString PageBody
 		{
 			get { return this.GetPropertyValue<IHtmlString>("pageBody"); }
+		}
+
+		///<summary>
+		/// Top logo
+		///</summary>
+		[ImplementPropertyType("topLogo")]
+		public IEnumerable<IPublishedContent> TopLogo
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("topLogo"); }
 		}
 
 		///<summary>

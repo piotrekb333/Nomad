@@ -159,6 +159,8 @@
                 @foreach (var item in reviewChildrens)
                 {
                     var rating = int.Parse(item.GetValue("casinoRating").ToString());
+                    var rating2 = int.Parse(item.GetValue("casinoRating2").ToString());
+
                     var url = item.GetValue("casinoImage");
                     string link = "";
                     string reviewLink = "";
@@ -204,7 +206,7 @@
                                         <div>
                                             @for (int i = 0; i < 5; i++)
                                             {
-                                                if (i < rating)
+                                                if (i < rating2)
                                                 {
                                                     <span class="fa fa-star checked"></span>
                                                 }
@@ -236,6 +238,8 @@
                 @foreach (var item in reviewChildrens)
                 {
                     var rating = int.Parse(item.GetValue("casinoRating").ToString());
+                    var rating2 = int.Parse(item.GetValue("casinoRating2").ToString());
+
                     var url = item.GetValue("casinoImage");
                     string link = "";
                     string reviewLink = "";
@@ -281,7 +285,7 @@
                                         <div>
                                             @for (int i = 0; i < 5; i++)
                                             {
-                                                if (i < rating)
+                                                if (i < rating2)
                                                 {
                                                     <span class="fa fa-star checked"></span>
                                                 }

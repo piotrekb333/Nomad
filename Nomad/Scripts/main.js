@@ -751,7 +751,7 @@
         et_nav_menu();
         et_animate_item();
         Instafeed_int();
-        twitterfeeds_int();
+        //twitterfeeds_int();
         sticky_header();
     });
 
