@@ -5121,7 +5121,11 @@ screen and (max-height: 800px) {
     font-size: 18px;
 }
 
-
+/*footer*/
+.footer-menu-container{
+    display:flex;
+    justify-content:space-between;
+}
 
 /*reviews*/
 .review-item {
@@ -5150,9 +5154,15 @@ screen and (max-height: 800px) {
 .review-link{
     width:155px;
 }
+
 .reviews-table-mobile{
     display:none;
 }
+
+.fa.fa-star.checked {
+    color: #ffa500;
+}
+
 @media (max-width: 991px) {
     .review-image {
         max-height: 150px;
@@ -5195,13 +5205,16 @@ screen and (max-height: 800px) {
     margin-bottom:0px !important;
     display:flex;
 }
+
 .blog-list{
     margin-bottom:20px;
     margin-top:20px;
 }
+
 .blog-item{
     margin-bottom:20px;
 }
+
 .card-blog-content{
     width:100%;
 }
