@@ -158,8 +158,8 @@
             <div class="reviews-table reviews-table-desktop">
                 @foreach (var item in reviewChildrens)
                 {
-                    var rating = int.Parse(item.GetValue("casinoRating").ToString());
-                    var rating2 = int.Parse(item.GetValue("casinoRating2").ToString());
+                    var rating =  int.Parse(item.GetValue("casinoRating").ToString());
+                    var rating2 = item.HasProperty("casinoRating2") ? int.Parse(item.GetValue("casinoRating2").ToString()) : 0;
 
                     var url = item.GetValue("casinoImage");
                     string link = "";

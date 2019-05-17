@@ -8,7 +8,7 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e6e2ffe8e1e8f030")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e0946fa60f12be2")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
@@ -1160,6 +1160,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public decimal CasinoRating
 		{
 			get { return this.GetPropertyValue<decimal>("casinoRating"); }
+		}
+
+		///<summary>
+		/// Rating2
+		///</summary>
+		[ImplementPropertyType("casinoRating2")]
+		public decimal CasinoRating2
+		{
+			get { return this.GetPropertyValue<decimal>("casinoRating2"); }
 		}
 
 		///<summary>
