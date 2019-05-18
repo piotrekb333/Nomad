@@ -40,7 +40,8 @@ namespace Nomad
                       "~/Scripts/plugins/imagesloaded.pkgd.min.js",
                       "~/Scripts/plugins/contact-us.min.js",
                       "~/Scripts/plugins/twitterFetcher_min.js",
-                      "~/Scripts/main.js"
+                      "~/Scripts/main.js",
+                      "~/Scripts//Newsletter/Newsletter.js"
                       ));
 
             var bundle=new StyleBundle("~/bundles/bootstrap").Include(

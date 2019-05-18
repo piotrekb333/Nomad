@@ -5129,14 +5129,14 @@ screen and (max-height: 800px) {
 
 /*reviews*/
 .review-item {
-    min-height: 150px;
+    min-height: 125px;
     text-align: center;
     background-color: #eaeef0;
     margin-bottom: 10px;
 }
 
 .review-item .row{
-    min-height: 150px;
+    min-height: 125px;
 }
 
 .review-image {

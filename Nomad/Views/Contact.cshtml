@@ -1,7 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Nomad.Models.Contact
 @using Nomad.Controllers
 @{
     Layout = "Master.cshtml";
+    ContactViewModel contactModel = new ContactViewModel();
 }
 
 @if (ViewBag.WasSent != null && (Convert.ToBoolean(ViewBag.WasSent)) == true)
@@ -65,23 +67,22 @@
                         <div class="row mb-0">
                             <div class="col-sm-6 col-xs-12">
                                 <div class="form-group mb-30px">
-                                    <input type="text" id="Title" name="Title"  class="form-control" placeholder="Title" required="required" data-error="Your Name is required.">
-                                    <div class="help-block with-errors"></div>
+                                    @Html.TextBoxFor(m=> contactModel.Title,htmlAttributes:new {@id= "Title", @name="Title",@placeholder="Title", @class="form-control" })
+                                    @Html.ValidationMessageFor(m => contactModel.Title)
                                 </div>
                             </div>
                             <div class="col-sm-6 col-xs-12">
                                 <div class="form-group mb-30px">
-                                    <input type="email" id="Email" name="Email" class="form-control" placeholder="Your email *" required="required" data-error="Valid email is required.">
-                                    <div class="help-block with-errors"></div>
+                                    @Html.TextBoxFor(m => contactModel.Email, htmlAttributes: new { @id = "Email", @name = "Email", @placeholder = "Your email *", @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => contactModel.Email)
                                 </div>
                             </div>
                         </div>
                         <div class="form-row mb-15px">
                             <div class="form-group col-md-12">
                                 <div class="form-group mb-0">
-                                    <textarea  id="Body" name="Body" class="form-control" placeholder="Your Message *" rows="7" required="required"
-                                              data-error="Please,leave us a message."></textarea>
-                                    <div class="help-block with-errors"></div>
+                                    @Html.TextAreaFor(m => contactModel.Body, htmlAttributes: new { @id = "Body", @name = "Body", @placeholder = "Your Message *", @class = "form-control", @rows = "7" })
+                                    @Html.ValidationMessageFor(m => contactModel.Body)
                                 </div>
                             </div>
                         </div>
