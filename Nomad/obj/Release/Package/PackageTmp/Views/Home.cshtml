@@ -8,99 +8,305 @@
     string carouselId = "galleryImages";
     IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);
     //Response.Redirect("/Casinos");
+    string guidstr = "";
+    if (Culture == "en-US")
+    {
+        guidstr = "380435a1-a234-41c8-af6c-5600b44f2061";
+    }
+    if (Culture == "pl")
+    {
+        guidstr = "21cb3b79-5a9b-4c3d-a68a-9cf62ca858af";
+    }
+    Guid guid = new Guid(guidstr);
+    var cs = ApplicationContext.Services.ContentService;
+    var reviewChildrens = cs.GetById(guid).Children();
 
 }
+
+
+
+
 
 
 @if (carousel != null && carousel.Any())
 {
     var logoList = carousel.Where(x => x.IsVisible());
-    <div id="imageGallery">
-        <div class="MS-content">
-            @foreach (var logo in logoList)
-            {
-                string title = logo.HasValue("slideTitle") ? logo.GetPropertyValue<string>("slideTitle") : "";
-                string subtitle = logo.HasValue("slideSubtitle") ? logo.GetPropertyValue<string>("slideSubtitle") : "";
-                string imageUrl = logo.HasValue("slideImage") ? logo.GetPropertyValue<IPublishedContent>("slideImage").Url : "/img/carousel.jpg";
-                //IEnumerable<RelatedLink> links = logo.GetPropertyValue<IEnumerable<RelatedLink>>("slideLink");
-                //RelatedLink link = links != null ? links.FirstOrDefault() : null;
-                string link = logo.HasValue("slideLink") ? logo.GetPropertyValue<string>("slideLink") : "";
+    <!-- Testimonials -->
+    <div class="bg-color-graish pt-10px pb-100px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="testimonials_box" class="owl-carousel testimonials testimonials_box">
+                        @foreach (var logo in logoList)
+                        {
+                            string title = logo.HasValue("slideTitle") ? logo.GetPropertyValue<string>("slideTitle") : "";
+                            string subtitle = logo.HasValue("slideSubtitle") ? logo.GetPropertyValue<string>("slideSubtitle") : "";
+                            string imageTitle = logo.HasValue("slideImageTitle") ? logo.GetPropertyValue<string>("slideImageTitle") : "";
+                            string imageAlt = logo.HasValue("slideImageAlt") ? logo.GetPropertyValue<string>("slideImageAlt") : "";
+                            string imageUrl = logo.HasValue("slideImage") ? logo.GetPropertyValue<IPublishedContent>("slideImage").Url : "/img/carousel.jpg";
+                            string link = logo.HasValue("slideLink") ? logo.GetPropertyValue<string>("slideLink") : "";
 
-
-
-                @*
-                    <div class="item"><img style="width: auto; height: auto;max-width: 250px;max-height: 250px" src="@logo.Url" alt="@logo.Name logo" title="@logo.Name logo" /> </div>
-                    <div class="item"><img style="width: auto; height: auto;max-width: 250px;max-height: 250px" src="@logo.Url" alt="@logo.Name logo" title="@logo.Name logo" /> </div>
-                    <div class="item"><img style="width: auto; height: auto;max-width: 250px;max-height: 250px" src="@logo.Url" alt="@logo.Name logo" title="@logo.Name logo" /> </div>
-                    <div class="item"><img style="width: auto; height: auto;max-width: 250px;max-height: 250px" src="@logo.Url" alt="@logo.Name logo" title="@logo.Name logo" /> </div>
-                *@
-
-                <div class="item">
-                    <div class="imgTitle">
-                        <h2 class="blogTitle">@title</h2>
-                        <img src="@(imageUrl)" alt="" />
+                            <div class="testimonial">
+                                <div class="row small-gutters align-items-center mb-25px">
+                                    <div class="col-12">
+                                        <div class="testimonial-img">
+                                            <a href="@link">
+                                                <img class="img-rectangle" src="@imageUrl" alt="@imageAlt" title="@title">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="client">
+                                            <div class="client-info client-info-position">
+                                                <span class="client-name">
+                                                    <a href="@link">@title</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>
+                                    @subtitle
+                                </p>
+                            </div>
+                        }
                     </div>
-                    <p>@subtitle</p>
-                    <a href="@link">Read More</a>
                 </div>
-
-
-
-
-            }
-        </div>
-        <div class="MS-controls">
-            <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-            <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+            </div>
         </div>
     </div>
 }
 
-@CurrentPage.
-
 
 @*
-    @if (Model.Content.HasValue("sliderImages"))
-    {
-        var logoList = Model.Content.GetPropertyValue<List<IPublishedContent>>("sliderImages");
+    <div class="pt-40px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-bordered mb-40px">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in reviewChildrens)
+                            {
+                                var rating = int.Parse(item.GetValue("casinoRating").ToString());
+                                var url = item.GetValue("casinoImage");
+                                string link = "";
+                                string reviewLink = "";
+                                string alt = "";
+                                string title = "";
+                                if (item.GetValue("casinoRegisterLink") != null)
+                                {
+                                    link = item.GetValue("casinoRegisterLink").ToString();
+                                }
+                                if (item.GetValue("casinoReviewLink") != null)
+                                {
+                                    reviewLink = item.GetValue("casinoReviewLink").ToString();
+                                }
+                                if (item.GetValue("casinoImageAlt") != null)
+                                {
+                                    alt = item.GetValue("casinoImageAlt").ToString();
+                                }
+                                if (item.GetValue("casinoImageTitle") != null)
+                                {
+                                    title = item.GetValue("casinoImageTitle").ToString();
+                                }
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                @for (int i = 0; i < logoList.Count; i++)
-                {
-                    string active = i == 0 ? "active" : "";
-                    <li data-target="#myCarousel" data-slide-to="@i" class="@active"></li>
-                }
-            </ol>
+                                <tr>
+                                    <td>
+                                        @if (url != null)
+                                        {
+                                            <div class="review-image-wrapper">
+                                                <img class="reviews-image" alt="@alt" title="@title" src="@Umbraco.TypedMedia(url).Url" />
+                                            </div>
+                                        }
+                                    </td>
+                                    <td>
+                                        <div class="review-rating">
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                if (i < rating)
+                                                {
+                                                    <span class="fa fa-star checked"></span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fa fa-star"></span>
+                                                }
+                                            }
+                                        </div>
+                                    </td>
+                                    <td>mdo</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+*@
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                @foreach (var logo in logoList)
+<div class="pt-40px">
+    <div class="container">
+        <div data-aos="flip-left">
+            <div class="reviews-table reviews-table-desktop">
+                @foreach (var item in reviewChildrens)
                 {
-                    string active = j == 0 ? " active " : "";
-                    <div class="item @active">
-                        <img src="@logo.Url" alt="@logo.Name logo" />
+                    var rating =  int.Parse(item.GetValue("casinoRating").ToString());
+                    var rating2 = item.HasProperty("casinoRating2") ? int.Parse(item.GetValue("casinoRating2").ToString()) : 0;
+
+                    var url = item.GetValue("casinoImage");
+                    string link = "";
+                    string reviewLink = "";
+                    string alt = "";
+                    string title = "";
+                    if (url == null)
+                    {
+                        continue;
+                    }
+                    <div class="review-item">
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-3 review-td-position">
+                                <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title"/>
+                            </div>
+                            <div class="col-sm-3 col-xs-3 review-td-position">
+                                test
+                            </div>
+                            <div class="col-sm-3 col-xs-3 review-td-position">
+                                <div class="review-rating">
+                                    <div>
+                                        <div>
+                                            test
+                                        </div>
+                                        <div>
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                if (i < rating)
+                                                {
+                                                    <span class="fa fa-star checked"></span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fa fa-star"></span>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div>
+                                            test2
+                                        </div>
+                                        <div>
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                if (i < rating2)
+                                                {
+                                                    <span class="fa fa-star checked"></span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fa fa-star"></span>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-3 col-xs-3 review-td-position">
+                                <div class="review-buttons-container">
+                                    <a href="@reviewLink" class="btn m-1 btn-danger btn-sm review-link">Review</a>
+                                    <a href="@link" class="btn m-1 btn-danger btn-sm review-link">Register</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    j++;
                 }
             </div>
-
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-    }
-*@
 
+        <div data-aos="flip-left">
+            <div class="reviews-table reviews-table-mobile">
+                @foreach (var item in reviewChildrens)
+                {
+                    var rating = int.Parse(item.GetValue("casinoRating").ToString());
+                    var rating2 = int.Parse(item.GetValue("casinoRating2").ToString());
 
+                    var url = item.GetValue("casinoImage");
+                    string link = "";
+                    string reviewLink = "";
+                    string alt = "";
+                    string title = "";
+                    if (url == null)
+                    {
+                        continue;
+                    }
+                    <div class="review-item">
+                        <div class="row">
+                            <div class="col-sm-4 col-xs-4 review-td-position">
+                                <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title" />
+                            </div>
+                            <div class="col-sm-4 col-xs-4 review-td-position">
+                                test
+                            </div>
+                            <div class="col-sm-4 col-xs-4 review-td-position review-rating-links">
+                                <div class="review-rating">
+                                    <div>
+                                        <div>
+                                            test
+                                        </div>
+                                        <div>
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                if (i < rating)
+                                                {
+                                                    <span class="fa fa-star checked"></span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fa fa-star"></span>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
 
-@*
-    @Html.Raw(CurrentPage.homeBody)
-*@
+                                    <div>
+                                        <div>
+                                            test2
+                                        </div>
+                                        <div>
+                                            @for (int i = 0; i < 5; i++)
+                                            {
+                                                if (i < rating2)
+                                                {
+                                                    <span class="fa fa-star checked"></span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="fa fa-star"></span>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="review-buttons-container">
+                                    <a href="@reviewLink" class="btn m-1 btn-danger btn-sm review-link">Review</a>
+                                    <a href="@link" class="btn m-1 btn-danger btn-sm review-link">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            </div>
+        </div>
+    </div>

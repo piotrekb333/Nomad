@@ -1,0 +1,17 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    Layout = null;
+    Response.AddHeader("Content-Type", "text/xml");
+    var rootNodes = Umbraco.TypedContentAtRoot().Where(m=>m.DocumentTypeAlias== "home" && m.IsVisible());
+
+}
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+@foreach(var item in rootNodes)
+{
+<sitemap>
+    <loc>@item.UrlWithDomain()sitemap.xml</loc>
+</sitemap>
+}
+</sitemapindex>
+

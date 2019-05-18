@@ -158,14 +158,15 @@
             <div class="reviews-table reviews-table-desktop">
                 @foreach (var item in reviewChildrens)
                 {
-                    var rating =  int.Parse(item.GetValue("casinoRating").ToString());
+                    var rating = int.Parse(item.GetValue("casinoRating").ToString());
                     var rating2 = item.HasProperty("casinoRating2") ? int.Parse(item.GetValue("casinoRating2").ToString()) : 0;
 
                     var url = item.GetValue("casinoImage");
-                    string link = "";
-                    string reviewLink = "";
-                    string alt = "";
-                    string title = "";
+                    var link = item.GetValue("casinoRegisterLink");
+                    var reviewLink = item.GetValue("casinoReviewLink");
+                    var alt = item.GetValue("casinoImageAlt");
+                    var title = item.GetValue("casinoImageTitle");
+                    var desc = item.GetValue("casinoDescription");
                     if (url == null)
                     {
                         continue;
@@ -173,10 +174,10 @@
                     <div class="review-item">
                         <div class="row">
                             <div class="col-sm-3 col-xs-3 review-td-position">
-                                <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title"/>
+                                <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title" />
                             </div>
                             <div class="col-sm-3 col-xs-3 review-td-position">
-                                test
+                                @Html.Raw(desc);
                             </div>
                             <div class="col-sm-3 col-xs-3 review-td-position">
                                 <div class="review-rating">
@@ -241,10 +242,11 @@
                     var rating2 = int.Parse(item.GetValue("casinoRating2").ToString());
 
                     var url = item.GetValue("casinoImage");
-                    string link = "";
-                    string reviewLink = "";
-                    string alt = "";
-                    string title = "";
+                    var link = item.GetValue("casinoRegisterLink");
+                    var reviewLink = item.GetValue("casinoReviewLink");
+                    var alt = item.GetValue("casinoImageAlt");
+                    var title = item.GetValue("casinoImageTitle");
+                    var desc = item.GetValue("casinoDescription");
                     if (url == null)
                     {
                         continue;
@@ -255,7 +257,7 @@
                                 <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title" />
                             </div>
                             <div class="col-sm-4 col-xs-4 review-td-position">
-                                test
+                                @Html.Raw(desc)
                             </div>
                             <div class="col-sm-4 col-xs-4 review-td-position review-rating-links">
                                 <div class="review-rating">
@@ -307,6 +309,6 @@
                     </div>
                 }
             </div>
-            </div>
         </div>
     </div>
+</div>

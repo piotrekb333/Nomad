@@ -2,18 +2,41 @@
 @using Umbraco.Core
 @using ClientDependency.Core.Mvc;
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Umbraco.Core.Models;
+@using Umbraco.Core.Services;
 @{
     Layout = null;
 
     //IContent content = ApplicationContext.Current.Services.ContentService.GetById(1057);
     //var logoList = content.GetValue<List<IContent>>("footerImages");
     //var logoListString = content.GetValue("footerImages");
-    var content = Umbraco.TypedContent(1057);
+    IPublishedContent content = null;
+    if (Culture == "en-US")
+    {
+        content = Umbraco.TypedContent(1057);
+    }
+    if (Culture == "pl")
+    {
+        content = Umbraco.TypedContent(1274);
+    }
     var logoList = content.GetPropertyValue<List<IPublishedContent>>("footerImages");
     var banner = content.GetPropertyValue<IPublishedContent>("mainBanner");
+    var bannerLink = content.GetPropertyValue<IPublishedContent>("bannerLink");
+    var bannerImageTitle = content.GetPropertyValue<IPublishedContent>("bannerImageTitle");
+    var bannerImageAlt = content.GetPropertyValue<IPublishedContent>("bannerImageAlt");
+
+    IEnumerable<IPublishedContent> footerImagesList = content.GetPropertyValue<IEnumerable<IPublishedContent>>("footerImagesList");
+    IEnumerable<IPublishedContent> headerImagesList = content.GetPropertyValue<IEnumerable<IPublishedContent>>("headerImages");
+
+    var menu = content.Children.Where(m => !m.GetPropertyValue<bool>("disabledInMenu"));
+
+    Uri urlMain = new Uri(Request.Url.AbsoluteUri);
+    string pathUrl = String.Format("{0}{1}{2}{3}", urlMain.Scheme,
+    Uri.SchemeDelimiter, urlMain.Authority, urlMain.AbsolutePath);
 }
 
-
+<!DOCTYPE html>
+<html lang="@Umbraco.GetDictionaryValue("Language shortcut")">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,8 +45,11 @@
     <meta name="author" content="">
     <meta name="title" content="@CurrentPage.seoTitle">
     <meta name="keywords" content="@CurrentPage.seoKeywords">
+    <meta name="google-site-verification" content="843AozMxXNNQHx_RKJ4-Uu7VNhIbURwb-7A-EV8EiS0" />
+    <title>@CurrentPage.seoTitle</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
 
-    <title>Casino Psycho - Play Like a Psycho, Win like a Pro!</title>
+ 
     @Styles.Render("~/bundles/Styles")
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138151375-1"></script>
@@ -36,222 +62,199 @@
     </script>
 
 
-
+    <link rel="canonical" href="@pathUrl">
 </head>
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-        <a class="navbar-brand" href="/">Casino Psycho - Insane Bonuses</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-                @*
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                        <a class="nav-link" href="index.html">
-                            <i class="fa fa-fw fa-dashboard"></i>
-                            <span class="nav-link-text">Dashboard</span>
-                        </a>
-                    </li>
-                *@
-
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Online Casinos - Reviews">
-                    <a class="nav-link" href="/online-casinos-reviews">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">Casinos</span>
-                    </a>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="history-ocm">
-                    <a class="nav-link" href="/history-ocm">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">History</span>
-                    </a>
-                </li>
-
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Slot Machines">
-                    <a class="nav-link" href="/slot-machines">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">Slot Machines</span>
-                    </a>
-                </li>
-
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bookmakers">
-                    <a class="nav-link" href="/Bookmakers">
-                        <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">Bookmakers</span>
-                    </a>
-                </li>
 
 
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Contact">
-                    <a class="nav-link" href="/Contact">
-                        <i class="fa fa-fw fa-file"></i>
-                        <span class="nav-link-text">Contact</span>
+
+
+<body id="page-top">
+    <div id="main-content">
+        <!-- Header -->
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid px-60px">
+                @if (banner != null)
+                {
+                    <a class="navbar-brand" href="@bannerLink">
+                        <img class="etcodes-normal-logo" src="@banner.Url" alt="@bannerImageAlt" title="@bannerImageTitle" width="84" height="22">
+
                     </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav sidenav-toggler">
-                <li class="nav-item">
-                    <a class="nav-link text-center" id="sidenavToggler">
-                        <i class="fa fa-fw fa-angle-left"></i>
-                    </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                @*
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-fw fa-envelope"></i>
-                            <span class="d-lg-none">
-                                Messages
-                                <span class="badge badge-pill badge-primary">12 New</span>
-                            </span>
-                            <span class="indicator text-primary d-none d-lg-block">
-                                <i class="fa fa-fw fa-circle"></i>
-                            </span>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="messagesDropdown">
-                            <h6 class="dropdown-header">New Messages:</h6>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">
-                                <strong>David Miller</strong>
-                                <span class="small float-right text-muted">11:21 AM</span>
-                                <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">
-                                <strong>Jane Smith</strong>
-                                <span class="small float-right text-muted">11:21 AM</span>
-                                <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">
-                                <strong>John Doe</strong>
-                                <span class="small float-right text-muted">11:21 AM</span>
-                                <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item small" href="#">View all messages</a>
+                }
+
+                <button class="navbar-toggler hamburger-menu-btn" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span>toggle menu</span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a href="/en/casinos" class="dropdown-toggle nav-link">Casinos</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="/en/bookmakers" class="dropdown-toggle nav-link">Bookmakers</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="/en/slot-machines" class="dropdown-toggle nav-link">Slot Machines</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="/en/affiliate-programs" class="dropdown-toggle nav-link">Affiliate Programs</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="/en/history" class="dropdown-toggle nav-link">History</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="/en/contact" class="dropdown-toggle nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Header -->
+        <!-- main -->
+        <div class="page-container scene-main scene-main--fade_In">
+            <!-- Slider -->
+            <div id="default-carousel" class="owl-carousel default-owl-carousel light-nav-dots">
+                @if (headerImagesList != null)
+                {
+                    foreach (var item in headerImagesList)
+                    {
+                        var url = item.GetPropertyValue<IPublishedContent>("slideImage").Url;
+                        var alt = item.GetPropertyValue<string>("slideImageAlt");
+                        var title = item.GetPropertyValue<string>("slideImageTitle");
+                        string link = item.HasValue("slideLink") ? item.GetPropertyValue<string>("slideLink") : "";
+                        <div class="owl-carousel-item">
+                            <div class="bg-image">
+                                <a href="@link">
+                                    <img src="@url" alt="@alt" title="@title">
+                                </a>
+                            </div>
                         </div>
-                    </li>
-                *@
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle mr-lg-2" id="btnNewsletter" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-fw fa-bell"></i>
-                        <span class="d-lg-none">
-                            Newsletter
-                        </span>
-                        <span class="indicator text-warning d-none d-lg-block">
-                            <i class="fa fa-fw fa-circle"></i>
-                        </span>
-                    </a>
-                </li>
-                <!--
-                            <li class="nav-item">
+                    }
+                }
+            </div>
 
-                <form class="form-inline my-2 my-lg-0 mr-lg-2">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Search for...">
-                        <span class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-
-                            </li>
-                                -->
-                @*
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                            <i class="fa fa-fw fa-sign-out"></i>Logout
-                        </a>
-                    </li>
-                *@
-            </ul>
-        </div>
-    </nav>
-    <div class="content-wrapper banner-wrapper">
-        @if (banner != null)
-        {
-            <img src="@banner.Url" />
-        }
-    </div>
-    <div class="content-wrapper">
-        <div class="container-fluid">
             @RenderBody()
-        </div>
-        <!-- /.container-fluid-->
-        <!-- /.content-wrapper-->
-        <footer class="sticky-footer">
-            <div class="container">
-                <div class="text-center">
-                    <div class="col-md-12">
 
-                    </div>
-                    <div class="col-md-12">
-                        <small class="float-left">Copyright 2019 © CasinoPsycho</small>
-                        @foreach (var logo in logoList)
-                        {
-                            <img src="@logo.Url" alt="@logo.Name logo" />
-                        }
-                        @*
-                            <span id="siteseal">
-                                <script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=CD9MoLPfmgWLxd15rSjxE6JrXb9sWbRb3eDxdEsKQaUF5eHpQ3TivpfwRyV2"></script>
-                            </span>
-                            <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
-                        *@
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fa fa-angle-up"></i>
-        </a>
-        <!-- Logout Modal-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        @Scripts.Render("~/bundles/MainScript")
-    </div>
-
-    <div class="modal fade" id="newsletterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Newsletter</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="newsletter-form">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email Address</label>
-                            <input type="email" class="form-control" id="NewsletterEmail" name="NewsletterEmail" placeholder="Enter email">
+            <!-- Subscribe To The Newsletter  -->
+            <div class="bg-color-creamy pt-30px pb-5px">
+                <div class="container">
+                    <div class="row small-gutters align-items-center mb-20px">
+                        <div class="col-lg-5">
+                            <h4 class="mb-15px">Subscribe To The Newsletter</h4>
                         </div>
-                        <button id="saveToEmailBtn" type="button" class="btn btn-primary">Subscribe</button>
-                    </form>
+                        <div class="col-lg-6 offset-lg-1">
+                            <form id="newsletter-form">
+                                <div class="form-group form-row  mb-0">
+                                    <div class="col-sm-8 col-xs-12  mb-30px">
+                                        <input type="email" name="NewsletterEmail" id="NewsletterEmail" class="form-control form-solid-border validate-required validate-email" placeholder="Your email">
+                                    </div>
+                                    <div class="col-sm-4 col-xs-12  mb-30px">
+                                        <button type="button" id="saveToEmailBtn" class="btn btn-outline-dark rounded-0">Subscribe</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- footer  -->
+            <footer class="web-footer footer bg-color-blackflame all-text-content-white">
+                <div class="footer-widgets pt-85px pb-55px">
+                    <div class="container">
+                        <div class="row large-gutters">
+                            <div class="col-lg-5 mb-30px">
+                                <div class="footer-widget">
+                                    <h3>Nomad</h3>
+                                    <p class="pt-20px pt-lg-155px">©2019 Casino Psycho</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 mb-30px">
+                                <div class="footer-widget">
+                                    <h5 class="widget-title">Menu</h5>
+                                    <div class="footer-menu-container">
+                                        <div>
+                                            <ul class="list-unstyled tweets-simple-list">
+                                                <li class="media">
+                                                    <a href="/en/Casinos">
+                                                        Casinos
+                                                    </a>
+                                                </li>
+                                                <li class="media">
+                                                    <a href="/Bookmakers">
+                                                        Bookmakers
+                                                    </a>
+                                                </li>
+                                                <li class="media">
+                                                    <a href="/en/Slot Machines">
+                                                        Slot Machines
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <ul class="list-unstyled tweets-simple-list">
+                                                <li class="media">
+                                                    <a href="/en/affiliate-programs">
+                                                        Affiliate Programs
+                                                    </a>
+                                                </li>
+                                                <li class="media">
+                                                    <a href="/en/history">
+                                                        History
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 mb-30px">
+                                <div class="footer-widget">
+                                    <h5 class="widget-title">Contact us</h5>
+                                    <p>
+                                        nomadaffiliates@gmail.com
+                                    </p>
+                                    <ul class="list-unstyled tweets-simple-list">
+                                        <li class="media">
+                                            <a href="/en/Casinos">
+                                                Contact Form
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="list-inline m-0">
+                                        <li class="list-inline-item">
+                                            <a href="skype:xion999x?call">
+                                                <i class="fab fa-skype" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://www.facebook.com/CasinoPsychocom-345561016311160/">
+                                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://instagram.com/energeticthemes">
+                                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="https://twitter.com/casino_nomads">
+                                                <i class="fab fa-twitter" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
+        <!-- End main -->
     </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    @Scripts.Render("~/bundles/MainScript")
+    @Scripts.Render("~/bundles/jqueryval")
 </body>
+</html>

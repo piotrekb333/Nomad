@@ -1,7 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Nomad.Models.Contact
 @using Nomad.Controllers
 @{
     Layout = "Master.cshtml";
+    ContactViewModel contactModel = new ContactViewModel();
 }
 
 @if (ViewBag.WasSent != null && (Convert.ToBoolean(ViewBag.WasSent)) == true)
@@ -13,17 +15,90 @@
 
 @using (Html.BeginUmbracoForm<ContactController>("Contact", FormMethod.Post))
 {
+    @*
     <div class="form-group">
-        <label for="exampleInputEmail1">Title</label>
-        <input type="text" class="form-control" id="Title" name="Title" aria-describedby="titleHelp" placeholder="Enter title">
+        <label for="exampleInputEmail1">@Umbraco.GetDictionaryValue("Title")</label>
+        <input type="text" class="form-control" id="Title" name="Title" aria-describedby="titleHelp" placeholder="@Umbraco.GetDictionaryValue("Title")">
     </div>
     <div class="form-group">
-        <label for="exampleTextarea">Message</label>
+        <label for="exampleTextarea">@Umbraco.GetDictionaryValue("Message")</label>
         <textarea class="form-control" id="Body" name="Body" rows="3"></textarea>
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="text" class="form-control" id="Email" name="Email" aria-describedby="emailHelp" placeholder="Enter email">
+        <label for="exampleInputEmail1">@Umbraco.GetDictionaryValue("Email address")</label>
+        <input type="text" class="form-control" id="Email" name="Email" aria-describedby="emailHelp" placeholder="@Umbraco.GetDictionaryValue("Email address")">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">@Umbraco.GetDictionaryValue("Submit")</button>
+    *@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Contact us  -->
+    <div class="pb-55px pt-55px">
+        <div class="container">
+            <div class="row mb-20px">
+                <div class="col-lg-5 mb-40px">
+                    <h4 class="mb-15px">Contact form</h4>
+                    <p class="lead">
+                        nomadaffiliates@gmail.com
+                    </p>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <form id="contact-form" data-toggle="validator" role="form" class="form-fields-bg-transparent" method="post" action="contact.php"
+                          novalidate="true">
+                        <div class="row mb-0">
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group mb-30px">
+                                    @Html.TextBoxFor(m=> contactModel.Title,htmlAttributes:new {@id= "Title", @name="Title",@placeholder="Title", @class="form-control" })
+                                    @Html.ValidationMessageFor(m => contactModel.Title)
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group mb-30px">
+                                    @Html.TextBoxFor(m => contactModel.Email, htmlAttributes: new { @id = "Email", @name = "Email", @placeholder = "Your email *", @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => contactModel.Email)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row mb-15px">
+                            <div class="form-group col-md-12">
+                                <div class="form-group mb-0">
+                                    @Html.TextAreaFor(m => contactModel.Body, htmlAttributes: new { @id = "Body", @name = "Body", @placeholder = "Your Message *", @class = "form-control", @rows = "7" })
+                                    @Html.ValidationMessageFor(m => contactModel.Body)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12 align-left">
+                                <button type="submit" class="btn btn-dark rounded-0">@Umbraco.GetDictionaryValue("Submit")</button>
+                            </div>
+                        </div>
+                        <div class="loading-spinner"></div>
+                        <div class="messages mt-20px"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 }

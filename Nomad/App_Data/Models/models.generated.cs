@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "e0946fa60f12be2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "8c13c01a03002a77")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -1108,6 +1108,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Casino, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Description
+		///</summary>
+		[ImplementPropertyType("casinoDescription")]
+		public IHtmlString CasinoDescription
+		{
+			get { return this.GetPropertyValue<IHtmlString>("casinoDescription"); }
 		}
 
 		///<summary>

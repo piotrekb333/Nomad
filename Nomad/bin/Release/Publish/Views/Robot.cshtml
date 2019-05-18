@@ -1,0 +1,8 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Robot>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = null;
+
+    umbraco.library.ChangeContentType("text/plain");
+}
+@(Model.Content.GetPropertyValue<string>("content"))

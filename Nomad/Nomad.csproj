@@ -331,6 +331,9 @@
     <Content Include="fonts\Pe-icon-7-stroke.svg" />
     <Content Include="Global.asax" />
     <Content Include="css\.DS_Store" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -1750,6 +1753,18 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacConfig.cs" />
@@ -2027,6 +2042,12 @@
     <Content Include="Views\SlotMachines.cshtml" />
     <Content Include="Views\Sportsbetting.cshtml" />
     <Content Include="Views\Tips.cshtml" />
+    <Content Include="Views\AffiliatePrograms.cshtml" />
+    <Content Include="Views\BasePage.cshtml" />
+    <Content Include="Views\CarouselSlide.cshtml" />
+    <Content Include="Views\Robot.cshtml" />
+    <Content Include="Views\XMLSitemap.cshtml" />
+    <Content Include="Views\XMLSitemapRoot.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2040,7 +2061,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
-    <Folder Include="webfonts\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
