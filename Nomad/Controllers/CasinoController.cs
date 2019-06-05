@@ -15,6 +15,7 @@ namespace Nomad.Controllers
     {
         public ActionResult RenderCasinos()
         {
+
             try
             {
                 var list = CurrentPage?.Children.ToList();
