@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "8c13c01a03002a77")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "eee34edc09f5785c")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -1406,6 +1406,68 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 	}
 
+	/// <summary>Sports</summary>
+	[PublishedContentModel("sports")]
+	public partial class Sports : PublishedContentModel, IBasePage, ISeo
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "sports";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Sports(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Sports, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Disabled in menu
+		///</summary>
+		[ImplementPropertyType("disabledInMenu")]
+		public bool DisabledInMenu
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Description
+		///</summary>
+		[ImplementPropertyType("seoDescription")]
+		public string SeoDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
+		}
+
+		///<summary>
+		/// Keywords
+		///</summary>
+		[ImplementPropertyType("seoKeywords")]
+		public string SeoKeywords
+		{
+			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
+		}
+
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("seoTitle")]
+		public string SeoTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
+		}
+	}
+
 	/// <summary>Folder</summary>
 	[PublishedContentModel("Folder")]
 	public partial class Folder : PublishedContentModel
@@ -1464,6 +1526,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Image, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Alt: Alternative image text
+		///</summary>
+		[ImplementPropertyType("alt")]
+		public string Alt
+		{
+			get { return this.GetPropertyValue<string>("alt"); }
 		}
 
 		///<summary>
