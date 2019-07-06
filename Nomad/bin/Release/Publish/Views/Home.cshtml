@@ -2,6 +2,8 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @using Umbraco.Web.Models
 @{
+    /**/
+
     int j = 0;
 
     Layout = "Master.cshtml";
@@ -27,130 +29,87 @@
 
 
 
+@*
+    @if (carousel != null && carousel.Any())
+    {
+        var logoList = carousel.Where(x => x.IsVisible());
+        <!-- Testimonials -->
+        <div class="bg-color-graish pt-10px pb-100px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="testimonials_box" class="owl-carousel testimonials testimonials_box">
+                            @foreach (var logo in logoList)
+                            {
+                                string title = logo.HasValue("slideTitle") ? logo.GetPropertyValue<string>("slideTitle") : "";
+                                string subtitle = logo.HasValue("slideSubtitle") ? logo.GetPropertyValue<string>("slideSubtitle") : "";
+                                string imageTitle = logo.HasValue("slideImageTitle") ? logo.GetPropertyValue<string>("slideImageTitle") : "";
+                                string imageAlt = logo.HasValue("slideImageAlt") ? logo.GetPropertyValue<string>("slideImageAlt") : "";
+                                string imageUrl = logo.HasValue("slideImage") ? logo.GetPropertyValue<IPublishedContent>("slideImage").Url : "/img/carousel.jpg";
+                                string link = logo.HasValue("slideLink") ? logo.GetPropertyValue<string>("slideLink") : "";
+
+                                <div class="testimonial">
+                                    <div class="row small-gutters align-items-center mb-25px">
+                                        <div class="col-12">
+                                            <div class="testimonial-img">
+                                                <a href="@link">
+                                                    <img class="img-rectangle" src="@imageUrl" alt="@imageAlt" title="@title">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="client">
+                                                <div class="client-info client-info-position">
+                                                    <span class="client-name">
+                                                        <a href="@link">@title</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        @subtitle
+                                    </p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+*@
 
 @if (carousel != null && carousel.Any())
 {
     var logoList = carousel.Where(x => x.IsVisible());
-    <!-- Testimonials -->
-    <div class="bg-color-graish pt-10px pb-100px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="testimonials_box" class="owl-carousel testimonials testimonials_box">
-                        @foreach (var logo in logoList)
-                        {
-                            string title = logo.HasValue("slideTitle") ? logo.GetPropertyValue<string>("slideTitle") : "";
-                            string subtitle = logo.HasValue("slideSubtitle") ? logo.GetPropertyValue<string>("slideSubtitle") : "";
-                            string imageTitle = logo.HasValue("slideImageTitle") ? logo.GetPropertyValue<string>("slideImageTitle") : "";
-                            string imageAlt = logo.HasValue("slideImageAlt") ? logo.GetPropertyValue<string>("slideImageAlt") : "";
-                            string imageUrl = logo.HasValue("slideImage") ? logo.GetPropertyValue<IPublishedContent>("slideImage").Url : "/img/carousel.jpg";
-                            string link = logo.HasValue("slideLink") ? logo.GetPropertyValue<string>("slideLink") : "";
+    <div class="fluid-container px-40px">
+        <div class="row no-gutters">
+            <div class="col-12 my-10px">
+                <ul id="loop_carousel" class="owl-carousel client-logo-list px-20px">
 
-                            <div class="testimonial">
-                                <div class="row small-gutters align-items-center mb-25px">
-                                    <div class="col-12">
-                                        <div class="testimonial-img">
-                                            <a href="@link">
-                                                <img class="img-rectangle" src="@imageUrl" alt="@imageAlt" title="@title">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="client">
-                                            <div class="client-info client-info-position">
-                                                <span class="client-name">
-                                                    <a href="@link">@title</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <p>
-                                    @subtitle
-                                </p>
-                            </div>
-                        }
-                    </div>
-                </div>
+                    @foreach (var logo in logoList)
+                    {
+                        string title = logo.HasValue("slideTitle") ? logo.GetPropertyValue<string>("slideTitle") : "";
+                        string subtitle = logo.HasValue("slideSubtitle") ? logo.GetPropertyValue<string>("slideSubtitle") : "";
+                        string imageTitle = logo.HasValue("slideImageTitle") ? logo.GetPropertyValue<string>("slideImageTitle") : "";
+                        string imageAlt = logo.HasValue("slideImageAlt") ? logo.GetPropertyValue<string>("slideImageAlt") : "";
+                        string imageUrl = logo.HasValue("slideImage") ? logo.GetPropertyValue<IPublishedContent>("slideImage").Url : "/img/carousel.jpg";
+                        string link = logo.HasValue("slideLink") ? logo.GetPropertyValue<string>("slideLink") : "";
+
+                        <li>
+                            <a href="@link">
+                                <img src="@imageUrl" alt="@imageAlt" title="@imageTitle">
+                            </a>
+                        </li>
+                    }
+
+                </ul>
             </div>
         </div>
     </div>
 }
 
-
-@*
-    <div class="pt-40px">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <table class="table table-bordered mb-40px">
-                        <thead>
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in reviewChildrens)
-                            {
-                                var rating = int.Parse(item.GetValue("casinoRating").ToString());
-                                var url = item.GetValue("casinoImage");
-                                string link = "";
-                                string reviewLink = "";
-                                string alt = "";
-                                string title = "";
-                                if (item.GetValue("casinoRegisterLink") != null)
-                                {
-                                    link = item.GetValue("casinoRegisterLink").ToString();
-                                }
-                                if (item.GetValue("casinoReviewLink") != null)
-                                {
-                                    reviewLink = item.GetValue("casinoReviewLink").ToString();
-                                }
-                                if (item.GetValue("casinoImageAlt") != null)
-                                {
-                                    alt = item.GetValue("casinoImageAlt").ToString();
-                                }
-                                if (item.GetValue("casinoImageTitle") != null)
-                                {
-                                    title = item.GetValue("casinoImageTitle").ToString();
-                                }
-
-                                <tr>
-                                    <td>
-                                        @if (url != null)
-                                        {
-                                            <div class="review-image-wrapper">
-                                                <img class="reviews-image" alt="@alt" title="@title" src="@Umbraco.TypedMedia(url).Url" />
-                                            </div>
-                                        }
-                                    </td>
-                                    <td>
-                                        <div class="review-rating">
-                                            @for (int i = 0; i < 5; i++)
-                                            {
-                                                if (i < rating)
-                                                {
-                                                    <span class="fa fa-star checked"></span>
-                                                }
-                                                else
-                                                {
-                                                    <span class="fa fa-star"></span>
-                                                }
-                                            }
-                                        </div>
-                                    </td>
-                                    <td>mdo</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-*@
 
 <div class="pt-40px">
     <div class="container">
@@ -158,14 +117,15 @@
             <div class="reviews-table reviews-table-desktop">
                 @foreach (var item in reviewChildrens)
                 {
-                    var rating =  int.Parse(item.GetValue("casinoRating").ToString());
+                    var rating = int.Parse(item.GetValue("casinoRating").ToString());
                     var rating2 = item.HasProperty("casinoRating2") ? int.Parse(item.GetValue("casinoRating2").ToString()) : 0;
 
                     var url = item.GetValue("casinoImage");
-                    string link = "";
-                    string reviewLink = "";
-                    string alt = "";
-                    string title = "";
+                    var link = item.GetValue("casinoRegisterLink");
+                    var reviewLink = item.GetValue("casinoReviewLink");
+                    var alt = item.GetValue("casinoImageAlt");
+                    var title = item.GetValue("casinoImageTitle");
+                    var desc = item.GetValue("casinoDescription");
                     if (url == null)
                     {
                         continue;
@@ -173,10 +133,10 @@
                     <div class="review-item">
                         <div class="row">
                             <div class="col-sm-3 col-xs-3 review-td-position">
-                                <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title"/>
+                                <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title" />
                             </div>
                             <div class="col-sm-3 col-xs-3 review-td-position">
-                                test
+                                @Html.Raw(desc)
                             </div>
                             <div class="col-sm-3 col-xs-3 review-td-position">
                                 <div class="review-rating">
@@ -241,10 +201,11 @@
                     var rating2 = int.Parse(item.GetValue("casinoRating2").ToString());
 
                     var url = item.GetValue("casinoImage");
-                    string link = "";
-                    string reviewLink = "";
-                    string alt = "";
-                    string title = "";
+                    var link = item.GetValue("casinoRegisterLink");
+                    var reviewLink = item.GetValue("casinoReviewLink");
+                    var alt = item.GetValue("casinoImageAlt");
+                    var title = item.GetValue("casinoImageTitle");
+                    var desc = item.GetValue("casinoDescription");
                     if (url == null)
                     {
                         continue;
@@ -255,7 +216,7 @@
                                 <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title" />
                             </div>
                             <div class="col-sm-4 col-xs-4 review-td-position">
-                                test
+                                @Html.Raw(desc)
                             </div>
                             <div class="col-sm-4 col-xs-4 review-td-position review-rating-links">
                                 <div class="review-rating">
@@ -307,6 +268,6 @@
                     </div>
                 }
             </div>
-            </div>
         </div>
     </div>
+</div>

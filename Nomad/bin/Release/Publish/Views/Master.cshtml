@@ -11,9 +11,11 @@
     //var logoList = content.GetValue<List<IContent>>("footerImages");
     //var logoListString = content.GetValue("footerImages");
     IPublishedContent content = null;
+    IPublishedContent casinos = null;
     if (Culture == "en-US")
     {
         content = Umbraco.TypedContent(1057);
+        casinos = Umbraco.TypedContent(1061);
     }
     if (Culture == "pl")
     {
@@ -33,6 +35,8 @@
     Uri urlMain = new Uri(Request.Url.AbsoluteUri);
     string pathUrl = String.Format("{0}{1}{2}{3}", urlMain.Scheme,
     Uri.SchemeDelimiter, urlMain.Authority, urlMain.AbsolutePath);
+
+
 }
 
 <!DOCTYPE html>
@@ -49,7 +53,7 @@
     <title>@CurrentPage.seoTitle</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
 
- 
+
     @Styles.Render("~/bundles/Styles")
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138151375-1"></script>
@@ -74,20 +78,24 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid px-60px">
-                @if (banner != null)
-                {
-                    <a class="navbar-brand" href="@bannerLink">
-                        <img class="etcodes-normal-logo" src="@banner.Url" alt="@bannerImageAlt" title="@bannerImageTitle" width="84" height="22">
+                @*
+                    @if (banner != null)
+                    {
+                        <a class="navbar-brand" href="@bannerLink">
+                            <img class="etcodes-normal-logo" src="@banner.Url" alt="@bannerImageAlt" title="@bannerImageTitle" width="84" height="22">
 
-                    </a>
-                }
-
+                        </a>
+                    }
+                *@
                 <button class="navbar-toggler hamburger-menu-btn" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span>toggle menu</span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a href="/en" class="dropdown-toggle nav-link">Home</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a href="/en/casinos" class="dropdown-toggle nav-link">Casinos</a>
                         </li>
@@ -104,6 +112,9 @@
                             <a href="/en/history" class="dropdown-toggle nav-link">History</a>
                         </li>
                         <li class="nav-item dropdown">
+                            <a href="/en/sports" class="dropdown-toggle nav-link">Sports</a>
+                        </li>
+                        <li class="nav-item dropdown">
                             <a href="/en/contact" class="dropdown-toggle nav-link">Contact</a>
                         </li>
                     </ul>
@@ -113,27 +124,36 @@
         <!-- End Header -->
         <!-- main -->
         <div class="page-container scene-main scene-main--fade_In">
-            <!-- Slider -->
-            <div id="default-carousel" class="owl-carousel default-owl-carousel light-nav-dots">
-                @if (headerImagesList != null)
-                {
-                    foreach (var item in headerImagesList)
-                    {
-                        var url = item.GetPropertyValue<IPublishedContent>("slideImage").Url;
-                        var alt = item.GetPropertyValue<string>("slideImageAlt");
-                        var title = item.GetPropertyValue<string>("slideImageTitle");
-                        string link = item.HasValue("slideLink") ? item.GetPropertyValue<string>("slideLink") : "";
-                        <div class="owl-carousel-item">
-                            <div class="bg-image">
-                                <a href="@link">
-                                    <img src="@url" alt="@alt" title="@title">
-                                </a>
-                            </div>
-                        </div>
-                    }
-                }
-            </div>
 
+            @*
+                <!-- Slider -->
+                <div id="default-carousel" class="owl-carousel default-owl-carousel light-nav-dots">
+                    @if (headerImagesList != null)
+                    {
+                        foreach (var item in headerImagesList)
+                        {
+                            var url = item.GetPropertyValue<IPublishedContent>("slideImage").Url;
+                            var alt = item.GetPropertyValue<string>("slideImageAlt");
+                            var title = item.GetPropertyValue<string>("slideImageTitle");
+                            string link = item.HasValue("slideLink") ? item.GetPropertyValue<string>("slideLink") : "";
+
+
+
+
+                                            <div class="owl-carousel-item">
+                          <a href="@link">
+                        <div class="bg-image">
+
+                            <img src="@url" alt="Picture">
+
+                        </div>
+                        </a>
+                    </div>
+
+                        }
+                    }
+                </div>
+            *@
             @RenderBody()
 
             <!-- Subscribe To The Newsletter  -->
@@ -165,8 +185,16 @@
                         <div class="row large-gutters">
                             <div class="col-lg-5 mb-30px">
                                 <div class="footer-widget">
-                                    <h3>Nomad</h3>
-                                    <p class="pt-20px pt-lg-155px">©2019 Casino Psycho</p>
+                                    <ul class="list-unstyled tweets-simple-list">
+                                        @foreach (var item in casinos.Children.Where(m => m.IsVisible()))
+                                        {
+                                            <li class="media">
+                                                <a href="@item.Url">
+                                                    @item.Name
+                                                </a>
+                                            </li>
+                                        }
+                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-3 mb-30px">
@@ -181,12 +209,12 @@
                                                     </a>
                                                 </li>
                                                 <li class="media">
-                                                    <a href="/Bookmakers">
+                                                    <a href="/en/Bookmakers">
                                                         Bookmakers
                                                     </a>
                                                 </li>
                                                 <li class="media">
-                                                    <a href="/en/Slot Machines">
+                                                    <a href="/en/Slot-Machines">
                                                         Slot Machines
                                                     </a>
                                                 </li>
@@ -213,11 +241,11 @@
                                 <div class="footer-widget">
                                     <h5 class="widget-title">Contact us</h5>
                                     <p>
-                                        nomadaffiliates@gmail.com
+                                        onlinecasinomilion@gmail.com
                                     </p>
                                     <ul class="list-unstyled tweets-simple-list">
                                         <li class="media">
-                                            <a href="/en/Casinos">
+                                            <a href="/en/Contact">
                                                 Contact Form
                                             </a>
                                         </li>
@@ -234,7 +262,7 @@
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="https://instagram.com/energeticthemes">
+                                            <a href="https://instagram.com/">
                                                 <i class="fab fa-instagram" aria-hidden="true"></i>
                                             </a>
                                         </li>

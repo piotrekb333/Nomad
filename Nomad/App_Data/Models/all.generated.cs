@@ -8,8 +8,8 @@ using  Umbraco.Web;
 using  Umbraco.ModelsBuilder;
 using  Umbraco.ModelsBuilder.Umbraco;
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "eee34edc09f5785c")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "4dc80db05bce0b2")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -281,6 +281,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
+		}
+
+		///<summary>
 		/// Description
 		///</summary>
 		[ImplementPropertyType("seoDescription")]
@@ -340,6 +349,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
 		}
 
 		///<summary>
@@ -405,6 +423,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
+		}
+
+		///<summary>
 		/// Description
 		///</summary>
 		[ImplementPropertyType("seoDescription")]
@@ -464,6 +491,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
 		}
 
 		///<summary>
@@ -529,6 +565,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
+		}
+
+		///<summary>
 		/// Description
 		///</summary>
 		[ImplementPropertyType("seoDescription")]
@@ -588,6 +633,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
 		}
 
 		///<summary>
@@ -706,6 +760,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
+		}
+
+		///<summary>
 		/// Description
 		///</summary>
 		[ImplementPropertyType("seoDescription")]
@@ -765,6 +828,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
 		}
 
 		///<summary>
@@ -830,6 +902,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
+		}
+
+		///<summary>
 		/// Description
 		///</summary>
 		[ImplementPropertyType("seoDescription")]
@@ -889,6 +970,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
 		}
 	}
 
@@ -1098,6 +1188,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
 		}
 	}
 
@@ -1314,6 +1413,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
+		}
+
+		///<summary>
 		/// Description
 		///</summary>
 		[ImplementPropertyType("seoDescription")]
@@ -1347,6 +1455,9 @@ namespace Umbraco.Web.PublishedContentModels
 	{
 		/// <summary>Disabled in menu</summary>
 		bool DisabledInMenu { get; }
+
+		/// <summary>Redirects Viewer</summary>
+		object RedirectsViewer { get; }
 	}
 
 	/// <summary>Base Page</summary>
@@ -1385,6 +1496,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Disabled in menu</summary>
 		public static bool GetDisabledInMenu(IBasePage that) { return that.GetPropertyValue<bool>("disabledInMenu"); }
+
+		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return GetRedirectsViewer(this); }
+		}
+
+		/// <summary>Static getter for Redirects Viewer</summary>
+		public static object GetRedirectsViewer(IBasePage that) { return that.GetPropertyValue("redirectsViewer"); }
 	}
 
 	/// <summary>XMLSitemapRoot</summary>
@@ -1420,6 +1543,15 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
 		}
+
+		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
+		}
 	}
 
 	/// <summary>Sports</summary>
@@ -1454,6 +1586,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
 		}
 
 		///<summary>

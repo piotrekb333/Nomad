@@ -295,3 +295,5 @@ C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\Ha
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\es\Hangfire.Core.resources.dll
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\zh\Hangfire.Core.resources.dll
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\zh-TW\Hangfire.Core.resources.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\Our.Umbraco.RedirectsViewer.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad\bin\Our.Umbraco.RedirectsViewer.pdb
