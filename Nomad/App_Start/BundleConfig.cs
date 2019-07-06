@@ -25,26 +25,35 @@ namespace Nomad
                       ));
 
 
+            var bundle2 = new StyleBundle("~/bundles/MainScriptNotMinify").Include(
+          "~/Scripts/jquery.min.js",
+          "~/Scripts/plugins/bootstrap.bundle.min.js",
+          "~/Scripts/plugins/isotope.pkgd.min.js",
+          "~/Scripts/plugins/jquery.countdown.min.js",
+          "~/Scripts/plugins/jquery.easing.min.js",
+          "~/Scripts/plugins/jquery.magnific-popup.min.js",
+          "~/Scripts/plugins/onepage.min.js",
+          "~/Scripts/plugins/owl.carousel.min.js",
+          "~/Scripts/plugins/instafeed.min.js",
+          "~/Scripts/plugins/contact-us.min.js",
+          "~/Scripts/plugins/imagesloaded.pkgd.min.js",
+          "~/Scripts/plugins/twitterFetcher_min.js",
+          "~/Scripts/plugins/aos.js"
+
+          );
+
+
+            bundle2.Transforms.Clear();
+
+            bundles.Add(bundle2);
+
             bundles.Add(new ScriptBundle("~/bundles/MainScript").Include(
-                      "~/Scripts/jquery.min.js",
-                      "~/Scripts/plugins/bootstrap.bundle.min.js",
-                      "~/Scripts/plugins/aos.js",
-                      "~/Scripts/plugins/isotope.pkgd.min.js",
-                      "~/Scripts/plugins/jquery.countdown.min.js",
                       "~/Scripts/plugins/jquery.countTo.js",
-                      "~/Scripts/plugins/jquery.easing.min.js",
-                      "~/Scripts/plugins/jquery.magnific-popup.min.js",
-                      "~/Scripts/plugins/onepage.min.js",
-                      "~/Scripts/plugins/owl.carousel.min.js",
-                      "~/Scripts/plugins/instafeed.min.js",
-                      "~/Scripts/plugins/imagesloaded.pkgd.min.js",
-                      "~/Scripts/plugins/contact-us.min.js",
-                      "~/Scripts/plugins/twitterFetcher_min.js",
                       "~/Scripts/main.js",
                       "~/Scripts//Newsletter/Newsletter.js"
                       ));
 
-            var bundle=new StyleBundle("~/bundles/bootstrap").Include(
+            var bundle = new StyleBundle("~/bundles/bootstrap").Include(
                       "~/css/bootstrap.min.css"
                       );
             bundle.Transforms.Clear();
