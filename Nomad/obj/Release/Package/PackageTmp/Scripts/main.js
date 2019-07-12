@@ -448,7 +448,7 @@
                 smartSpeed: 1000,
                 dotsSpeed: 1000,
                 dragEndSpeed: true,
-                dragEndSpeed: 800,
+                //dragEndSpeed: 800,
                 responsive: {
                     0: {
                         items: 1

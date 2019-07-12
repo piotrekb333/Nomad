@@ -35,7 +35,6 @@ namespace Nomad
           "~/Scripts/plugins/onepage.min.js",
           "~/Scripts/plugins/owl.carousel.min.js",
           "~/Scripts/plugins/instafeed.min.js",
-          "~/Scripts/plugins/contact-us.min.js",
           "~/Scripts/plugins/imagesloaded.pkgd.min.js",
           "~/Scripts/plugins/twitterFetcher_min.js",
           "~/Scripts/plugins/aos.js"
