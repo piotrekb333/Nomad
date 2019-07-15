@@ -5,14 +5,15 @@
     var banner = CurrentPage.GetPropertyValue<IPublishedContent>("articleBanner");
     var bannerUrl = banner != null ? banner.Url : "";
     //var bannerLink = content.GetPropertyValue<IPublishedContent>("bannerLink");
-    var bannerImageTitle = CurrentPage.GetPropertyValue<IPublishedContent>("articleImageTitle");
-    var bannerImageAlt = CurrentPage.GetPropertyValue<IPublishedContent>("articleImageAlt");
+    var bannerImageTitle = CurrentPage.articleBannerTitle;
+    var bannerImageAlt = CurrentPage.articleBannerAlt;
+
 }
 
 
 <!-- Blog post -->
- @if (bannerUrl != "")
- {
+@if (bannerUrl != "")
+{
     <div class="container">
         <div class="row">
             <div class="col-md-12">

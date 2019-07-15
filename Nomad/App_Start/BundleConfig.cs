@@ -52,18 +52,20 @@ namespace Nomad
                       "~/Scripts//Newsletter/Newsletter.js"
                       ));
 
-            var bundle = new StyleBundle("~/bundles/bootstrap").Include(
-                      "~/css/bootstrap.min.css"
+            var bundle = new StyleBundle("~/bundles/bootstrapNotMinify").Include(
+                      "~/css/bootstrap.min.css",
+                      "~/css/fontawesome-all.min.css",
+                      "~/css/plugins/owl.carousel.min.css",
+                      "~/css/plugins/spacing-and-height.css"
                       );
             bundle.Transforms.Clear();
             bundles.Add(new StyleBundle("~/bundles/Styles").Include(
+                      //"~/css/fontawesome-all.min.css",
                       //"~/css/bootstrap.min.css",
-                      "~/css/fontawesome-all.min.css",
-                      "~/css/bootstrap.min.css",
-                      "~/css/plugins/owl.carousel.min.css",
+                      //"~/css/plugins/owl.carousel.min.css",
                       "~/css/plugins/magnific-popup.css",
                       "~/css/plugins/aos.css",
-                      "~/css/plugins/spacing-and-height.css",
+                      //"~/css/plugins/spacing-and-height.css",
                       "~/css/theme-modules.css"
 
                       ));
