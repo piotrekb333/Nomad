@@ -26,5 +26,9 @@ namespace Nomad.Models.ArticleModels
         public DateTime? DatePublished { get; set; }
         public string SiteUrl { get; set; }
         public int CategoryId { get; set; }
+        public string ImageInListPath { get; set; }
+        public string ImageInListTitle { get; set; }
+        public string ImageInListAlt { get; set; }
+
     }
 }

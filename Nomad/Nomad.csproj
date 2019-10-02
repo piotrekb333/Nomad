@@ -1799,6 +1799,8 @@
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\NewsletterController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
+    <Compile Include="Filters\LogFilterAttribute.cs" />
+    <Compile Include="Filters\LogHttpHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

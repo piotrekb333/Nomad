@@ -7,42 +7,56 @@
 }
 
 <!-- Blogs -->
-<div class="blog-page bg-color-gray">
+<div class="blog-page bg-color-gray pt-40px">
     <div data-aos="fade-down">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="row blog_posts stander_blog blog-list">
+                    <div class="row blog_posts stander_blog">
                         @foreach (var item in Model)
                         {
                             var body = HtmlRemoval.StripTagsRegex(item.Body);
                             string[] words = body.Split();
-                            var wordsString = words.Take(5);
+                            var wordsString = words.Take(20);
                             string subTitle = string.Join(" ", wordsString) + " ...";
                             if (string.IsNullOrEmpty(subTitle))
                             {
                                 subTitle = "More...";
                             }
-                            <div class="col-md-6 col-lg-4 blog-item">
-                                <article class="blog-article">
-                                    <div class="card-blog-content">
-                                        <h5 class="post_title">
-                                            <a href="@item.SiteUrl">
-                                                @Html.Raw(item.Title)
-                                            </a>
-                                        </h5>
-                                        <div class="post_meta_top">
-                                            <span class="post_meta_date">@(item.DatePublished.HasValue ? item.DatePublished.Value.ToString("MMM dd, yyyy") : "")</span>
-                                        </div>
-                                        <div class="post_content">
-                                            <p>
-                                                @subTitle
+
+                            <div class="col-md-12">
+                                <article>
+                                    <div class="row align-items-center border">
+                                        @if (!string.IsNullOrEmpty(item.ImageInListPath))
+                                        {
+                                            <div class="col-md-3">
+                                                <img width="150" height="150" src="@item.ImageInListPath" alt="@item.ImageInListAlt" title="@item.ImageInListTitle"/>
+                                            </div>
+                                        }
+                                        <div class="@(string.IsNullOrEmpty(item.ImageInListPath) ? "col-sm-12" : "col-sm-9")">
+                                            <h5 class="post_title">
+                                                <a href="@item.SiteUrl">@Html.Raw(item.Title)</a>
+                                            </h5>
+                                            <div class="post_meta_top">
+                                                <span class="post_meta_category">
+                                                    <a href="@item.SiteUrl"></a>
+                                                </span>
+                                                <span class="post_meta_date">@(item.DatePublished.HasValue ? item.DatePublished.Value.ToString("MMM dd, yyyy") : "")</span>
+                                            </div>
+                                            <div class="post_content">
+                                                <p>
+                                                    @subTitle
                                             </p>
                                         </div>
+                                        <a href="@item.SiteUrl" class="link-arrow">
+                                            Read More
+                                            <i class="fas fa-long-arrow-alt-right ml-1"></i>
+                                        </a>
                                     </div>
-                                </article>
-                            </div>
-                        }
+                                </div>
+                            </article>
+                        </div>
+                    }
                     </div>
                 </div>
             </div>

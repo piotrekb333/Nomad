@@ -120,3 +120,4 @@ C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\es\Hangfire.Core.resources.dll
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\zh\Hangfire.Core.resources.dll
 C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\zh-TW\Hangfire.Core.resources.dll
+C:\Users\piotr\OneDrive\Documents\Visual Studio 2017\Projects\Nomad\Nomad.Tests\bin\Debug\System.Net.Http.dll
