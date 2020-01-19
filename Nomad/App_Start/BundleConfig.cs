@@ -49,7 +49,8 @@ namespace Nomad
             bundles.Add(new ScriptBundle("~/bundles/MainScript").Include(
                       "~/Scripts/plugins/jquery.countTo.js",
                       "~/Scripts/main.js",
-                      "~/Scripts//Newsletter/Newsletter.js"
+                      "~/Scripts//Newsletter/Newsletter.js",
+                      "~/Scripts/jquery-eu-cookie-law-popup.js"
                       ));
 
             var bundle = new StyleBundle("~/bundles/bootstrapNotMinify").Include(
@@ -66,7 +67,8 @@ namespace Nomad
                       "~/css/plugins/magnific-popup.css",
                       "~/css/plugins/aos.css",
                       //"~/css/plugins/spacing-and-height.css",
-                      "~/css/theme-modules.css"
+                      "~/css/theme-modules.css",
+                      "~/css/jquery-eu-cookie-law-popup.css"
 
                       ));
             bundles.Add(bundle);

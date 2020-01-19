@@ -334,6 +334,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\customer-comp.css" />
     <Content Include="css\fontawesome-all.min.css" />
+    <Content Include="css\jquery-eu-cookie-law-popup.css" />
     <Content Include="css\plugins\aos.css" />
     <Content Include="css\plugins\magnific-popup.css" />
     <Content Include="css\plugins\owl.carousel.min.css" />
@@ -346,6 +347,7 @@
     <Content Include="fonts\Pe-icon-7-stroke.svg" />
     <Content Include="Global.asax" />
     <Content Include="css\.DS_Store" />
+    <Content Include="Scripts\jquery-eu-cookie-law-popup.js" />
     <Content Include="webfonts\fa-brands-400.svg" />
     <Content Include="webfonts\fa-regular-400.svg" />
     <Content Include="webfonts\fa-solid-900.svg" />
