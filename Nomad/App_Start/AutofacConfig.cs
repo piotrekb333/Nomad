@@ -13,6 +13,8 @@ using System.Reflection;
 using Umbraco.Web;
 using Nomad.Services.Interfaces;
 using Nomad.Services.Implementations;
+using DAL.Context;
+using System.Data.Entity;
 
 namespace Nomad.App_Start
 {
@@ -67,6 +69,15 @@ namespace Nomad.App_Start
             .As<IMessageRepository>()
             .InstancePerRequest();
             //builder.RegisterModule<WebModule>();
+            builder.RegisterType<CasinoDbContext>()
+           .As<ICasinoDbContext>()
+           .InstancePerRequest();
+
+            builder
+              .RegisterType<DbContext>()
+              .AsImplementedInterfaces()
+              .InstancePerLifetimeScope();
+
             var container = builder.Build();
 
 

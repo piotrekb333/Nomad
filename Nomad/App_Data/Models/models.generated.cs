@@ -19,7 +19,7 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7ebc08e300c7fbe6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "fc2ad40181b30754")]
 [assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedContentModels
@@ -101,6 +101,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public DateTime ArticlePublishedDate
 		{
 			get { return this.GetPropertyValue<DateTime>("articlePublishedDate"); }
+		}
+
+		///<summary>
+		/// Tags
+		///</summary>
+		[ImplementPropertyType("articleTags")]
+		public IEnumerable<string> ArticleTags
+		{
+			get { return this.GetPropertyValue<IEnumerable<string>>("articleTags"); }
 		}
 
 		///<summary>
@@ -274,6 +283,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
+		}
+
+		///<summary>
 		/// Redirects Viewer
 		///</summary>
 		[ImplementPropertyType("redirectsViewer")]
@@ -342,6 +360,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
 		}
 
 		///<summary>
@@ -416,6 +443,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
+		}
+
+		///<summary>
 		/// Redirects Viewer
 		///</summary>
 		[ImplementPropertyType("redirectsViewer")]
@@ -484,6 +520,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
 		}
 
 		///<summary>
@@ -558,6 +603,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
+		}
+
+		///<summary>
 		/// Redirects Viewer
 		///</summary>
 		[ImplementPropertyType("redirectsViewer")]
@@ -626,6 +680,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
 		}
 
 		///<summary>
@@ -753,6 +816,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
+		}
+
+		///<summary>
 		/// Redirects Viewer
 		///</summary>
 		[ImplementPropertyType("redirectsViewer")]
@@ -821,6 +893,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
 		}
 
 		///<summary>
@@ -895,6 +976,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
+		}
+
+		///<summary>
 		/// Redirects Viewer
 		///</summary>
 		[ImplementPropertyType("redirectsViewer")]
@@ -963,6 +1053,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
 		}
 
 		///<summary>
@@ -1181,6 +1280,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public bool DisabledInMenu
 		{
 			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
 		}
 
 		///<summary>
@@ -1406,6 +1514,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
+		}
+
+		///<summary>
 		/// Redirects Viewer
 		///</summary>
 		[ImplementPropertyType("redirectsViewer")]
@@ -1449,6 +1566,9 @@ namespace Umbraco.Web.PublishedContentModels
 		/// <summary>Disabled in menu</summary>
 		bool DisabledInMenu { get; }
 
+		/// <summary>Display Name</summary>
+		string DisplayName { get; }
+
 		/// <summary>Redirects Viewer</summary>
 		object RedirectsViewer { get; }
 	}
@@ -1489,6 +1609,18 @@ namespace Umbraco.Web.PublishedContentModels
 
 		/// <summary>Static getter for Disabled in menu</summary>
 		public static bool GetDisabledInMenu(IBasePage that) { return that.GetPropertyValue<bool>("disabledInMenu"); }
+
+		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return GetDisplayName(this); }
+		}
+
+		/// <summary>Static getter for Display Name</summary>
+		public static string GetDisplayName(IBasePage that) { return that.GetPropertyValue<string>("displayName"); }
 
 		///<summary>
 		/// Redirects Viewer
@@ -1538,6 +1670,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
+		}
+
+		///<summary>
 		/// Redirects Viewer
 		///</summary>
 		[ImplementPropertyType("redirectsViewer")]
@@ -1582,6 +1723,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
+		}
+
+		///<summary>
 		/// Redirects Viewer
 		///</summary>
 		[ImplementPropertyType("redirectsViewer")]
@@ -1615,6 +1765,139 @@ namespace Umbraco.Web.PublishedContentModels
 		public string SeoTitle
 		{
 			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
+		}
+	}
+
+	/// <summary>Faq</summary>
+	[PublishedContentModel("faq")]
+	public partial class Faq : PublishedContentModel, IBasePage, ISeo
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "faq";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public Faq(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Faq, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Disabled in menu
+		///</summary>
+		[ImplementPropertyType("disabledInMenu")]
+		public bool DisabledInMenu
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisabledInMenu(this); }
+		}
+
+		///<summary>
+		/// Display Name
+		///</summary>
+		[ImplementPropertyType("displayName")]
+		public string DisplayName
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetDisplayName(this); }
+		}
+
+		///<summary>
+		/// Redirects Viewer
+		///</summary>
+		[ImplementPropertyType("redirectsViewer")]
+		public object RedirectsViewer
+		{
+			get { return Umbraco.Web.PublishedContentModels.BasePage.GetRedirectsViewer(this); }
+		}
+
+		///<summary>
+		/// Description
+		///</summary>
+		[ImplementPropertyType("seoDescription")]
+		public string SeoDescription
+		{
+			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoDescription(this); }
+		}
+
+		///<summary>
+		/// Keywords
+		///</summary>
+		[ImplementPropertyType("seoKeywords")]
+		public string SeoKeywords
+		{
+			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoKeywords(this); }
+		}
+
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("seoTitle")]
+		public string SeoTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.Seo.GetSeoTitle(this); }
+		}
+	}
+
+	/// <summary>Faq Item</summary>
+	[PublishedContentModel("faqItem")]
+	public partial class FaqItem : PublishedContentModel
+	{
+#pragma warning disable 0109 // new is redundant
+		public new const string ModelTypeAlias = "faqItem";
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+#pragma warning restore 0109
+
+		public FaqItem(IPublishedContent content)
+			: base(content)
+		{ }
+
+#pragma warning disable 0109 // new is redundant
+		public new static PublishedContentType GetModelContentType()
+		{
+			return PublishedContentType.Get(ModelItemType, ModelTypeAlias);
+		}
+#pragma warning restore 0109
+
+		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<FaqItem, TValue>> selector)
+		{
+			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Answer
+		///</summary>
+		[ImplementPropertyType("answer")]
+		public IHtmlString Answer
+		{
+			get { return this.GetPropertyValue<IHtmlString>("answer"); }
+		}
+
+		///<summary>
+		/// Group
+		///</summary>
+		[ImplementPropertyType("group")]
+		public string Group
+		{
+			get { return this.GetPropertyValue<string>("group"); }
+		}
+
+		///<summary>
+		/// Title
+		///</summary>
+		[ImplementPropertyType("title")]
+		public string Title
+		{
+			get { return this.GetPropertyValue<string>("title"); }
 		}
 	}
 

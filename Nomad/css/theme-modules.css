@@ -5218,3 +5218,61 @@ screen and (max-height: 800px) {
 .card-blog-content{
     width:100%;
 }
+
+.footer-image{
+	max-height:200px;
+	max-width:200px;
+}
+.footer-container{
+	    align-items: center;
+}
+.footer-col{
+	padding:20px;
+}
+
+
+.footer-widget{
+	margin:auto;
+}
+
+.fab{
+	font-size:40px;
+}	
+
+
+.list-inline-item{
+	margin-right: 4.5rem !important;
+}
+
+
+.btn-floating{
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0;
+    margin: 10px;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    width: 47px;
+    height: 47px;
+}
+
+
+.slider-arrow-position{
+    display: inline-block;
+    width: inherit;
+    color: red;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 47px;
+}
+
+.controls-top{
+	text-align:center;
+}

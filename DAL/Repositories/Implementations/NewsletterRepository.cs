@@ -12,12 +12,10 @@ namespace DAL.Repositories.Implementations
 {
     public class NewsletterRepository : Repository<Newsletter>,INewsletterRepository
     {
-        private readonly CasinoDbContext _context;
-        public NewsletterRepository()
+        private readonly ICasinoDbContext _context;
+        public NewsletterRepository(ICasinoDbContext context):base(context)
         {
-            this._context = new CasinoDbContext();
-            this._context.Configuration.AutoDetectChangesEnabled = false;
-            this._context.Configuration.LazyLoadingEnabled = false;
+            this._context = context;//new CasinoDbContext();
         }
         public bool EmailExistsInNewsletter(string email)
         {

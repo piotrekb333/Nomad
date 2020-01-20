@@ -7,13 +7,12 @@
     //var bannerLink = content.GetPropertyValue<IPublishedContent>("bannerLink");
     var bannerImageTitle = CurrentPage.articleBannerTitle;
     var bannerImageAlt = CurrentPage.articleBannerAlt;
-
 }
 
 
 <!-- Blog post -->
-@if (bannerUrl != "")
-{
+ @if (bannerUrl != "")
+ {
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -29,9 +28,9 @@
         <div class="col-lg-10 offset-lg-1 mt-10px">
             <div class="blog_posts stander_blog_single_post">
                 <article>
-                    <h3 class="post_title">
+                    <h1 class="post_title">
                         <a href="@CurrentPage.articleUrl">@Html.Raw(CurrentPage.articleTitle)</a>
-                    </h3>
+                    </h1>
                     <div class="post_meta_top">
 
                         <span class="post_meta_date">@(CurrentPage.articlePublishedDate != null ? CurrentPage.articlePublishedDate.ToString("MMM dd, yyyy") : "")</span>

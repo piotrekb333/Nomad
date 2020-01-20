@@ -1,0 +1,156 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+    var items=Model.Content.Children.GroupBy(m => m.GetPropertyValue("group"));
+    int counter=0;
+}
+
+
+<!-- Accordions  -->
+<div class="container mb-80px mt-80px">
+    <div class="row">
+        @foreach (var item in items)
+        {
+            <div class="col-md-6">
+                <h4>@item.Key</h4>
+                <div class="accordion" role="tablist" aria-multiselectable="true">
+                    @foreach (var item2 in item)
+                    {
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading_@counter">
+                                    <h5 class="mb-0px">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_@counter" aria-expanded="false" aria-controls="collapse_@counter">
+                                        @item2.GetPropertyValue("title")
+                                        </a>
+                                    </h5>
+                                </div>
+                                <div id="collapse_@counter" class="collapse" role="tabpanel" aria-labelledby="heading_@counter">
+                                    <div class="card-block">
+                                    @item2.GetPropertyValue("answer")
+
+                                    </div>
+                                </div>
+                            </div>                        
+                        counter++;
+                    }
+                </div>
+            </div>
+        }
+
+
+        @*
+                <div class="col-md-6">
+                    <h4>Test</h4>
+                    <div id="accordion" class="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <h5 class="mb-0px">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Collapsible Group Item 1
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="card-block">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                                    aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                                    dolor in
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingTwo">
+                                <h5 class="mb-0px">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Collapsible Group Item 2
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="card-block">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                                    aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                                    dolor in
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree2">
+                                <h5 class="mb-0px">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Collapsible Group Item 3
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree2">
+                                <div class="card-block">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                                    aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                                    dolor in
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="accordion2" class="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingone2">
+                                <h5 class="mb-0px">
+                                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
+                                        Collapsible Group Item 1
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapsefour" class="collapse show" role="tabpanel" aria-labelledby="headingone2">
+                                <div class="card-block">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                                    aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                                    dolor in
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingTwoB">
+                                <h5 class="mb-0px">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                                        Collapsible Group Item 2
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapsefive" class="collapse" role="tabpanel" aria-labelledby="headingTwoB">
+                                <div class="card-block">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                                    aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                                    dolor in
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <h5 class="mb-0px">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                                        Collapsible Group Item 3
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapsesix" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="card-block">
+                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+                                    aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+                                    suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
+                                    dolor in
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            *@
+            </div>
+        </div>
+      

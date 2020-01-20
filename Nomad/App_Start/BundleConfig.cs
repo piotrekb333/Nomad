@@ -72,7 +72,7 @@ namespace Nomad
 
                       ));
             bundles.Add(bundle);
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

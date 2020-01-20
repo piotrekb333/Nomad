@@ -9,6 +9,7 @@
     Layout = "Master.cshtml";
     string carouselId = "galleryImages";
     IEnumerable<IPublishedContent> carousel = Umbraco.AssignedContentItem.GetPropertyValue<IEnumerable<IPublishedContent>>(carouselId);
+    IEnumerable<IContent> reviewChildrens = null;
     //Response.Redirect("/Casinos");
     string guidstr = "";
     if (Culture == "en-US")
@@ -17,12 +18,23 @@
     }
     if (Culture == "pl")
     {
-        guidstr = "21cb3b79-5a9b-4c3d-a68a-9cf62ca858af";
+        //guidstr = "21cb3b79-5a9b-4c3d-a68a-9cf62ca858af";
     }
-    Guid guid = new Guid(guidstr);
-    var cs = ApplicationContext.Services.ContentService;
-    var reviewChildrens = cs.GetById(guid).Children();
 
+    if (guidstr != "")
+    {
+        Guid guid = new Guid(guidstr);
+        var cs = ApplicationContext.Services.ContentService;
+        reviewChildrens = cs.GetById(guid).Children();
+    }
+
+    var logoListSave = carousel.Where(x => x.IsVisible());
+    var logoListSaveGroup = logoListSave.Select((x, i) => new { Index = i, Value = x })
+            .GroupBy(x => x.Index / 3)
+            .Select(x => x.Select(v => v.Value).ToList())
+            .ToList();
+    int counter = 0;
+    string active = "active";
 }
 
 
@@ -80,6 +92,133 @@
     }
 *@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container my-4">
+
+
+    <hr class="my-4">
+
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+        <!--Controls-->
+        <div class="controls-top">
+            <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="slider-arrow-position fa fa-chevron-left"></i></a>
+            <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="slider-arrow-position fa fa-chevron-right"></i></a>
+        </div>
+        <!--/.Controls-->
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            @foreach (var item in logoListSave)
+            {
+                <li data-target="#multi-item-example" data-slide-to="@counter"></li>
+                counter++;
+            }
+        </ol>
+        <!--/.Indicators-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+
+
+
+            @foreach (var items in logoListSaveGroup)
+            {
+                <div class="carousel-item @active">
+                    <div class="row">
+                        @foreach (var item in items)
+                        {
+                        string title = item.HasValue("slideTitle") ? item.GetPropertyValue<string>("slideTitle") : "";
+                        string subtitle = item.HasValue("slideSubtitle") ? item.GetPropertyValue<string>("slideSubtitle") : "";
+                        string imageTitle = item.HasValue("slideImageTitle") ? item.GetPropertyValue<string>("slideImageTitle") : "";
+                        string imageAlt = item.HasValue("slideImageAlt") ? item.GetPropertyValue<string>("slideImageAlt") : "";
+                        string imageUrl = item.HasValue("slideImage") ? item.GetPropertyValue<IPublishedContent>("slideImage").Url : "/img/carousel.jpg";
+                        string link = item.HasValue("slideLink") ? item.GetPropertyValue<string>("slideLink") : "";
+                            <div class="col-md-4">
+                                <div class="card mb-2">
+                                    <a href="@link">
+                                        <img class="card-img-top" src="@imageUrl" alt="@imageAlt" title="@imageTitle">
+    
+                                        <div class="card-body">
+                                            <h4 class="card-title">title</h4>
+                                            <p class="card-text">
+                                                Check!
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                active = "";
+            }
+
+
+
+
+
+        </div>
+        <!--/.Slides-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
 @if (carousel != null && carousel.Any())
 {
     var logoList = carousel.Where(x => x.IsVisible());
@@ -109,165 +248,210 @@
         </div>
     </div>
 }
-
+*@
 
 <div class="pt-40px">
     <div class="container">
         <div data-aos="flip-left">
             <div class="reviews-table reviews-table-desktop">
-                @foreach (var item in reviewChildrens)
+                <div class="review-item">
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-3 review-td-position">
+                            <b>@Umbraco.GetDictionaryValue("Brand")</b>
+                        </div>
+                        <div class="col-sm-3 col-xs-3 review-td-position">
+                            <b>@Umbraco.GetDictionaryValue("Welcome Bonus")</b>
+                        </div>
+                        <div class="col-sm-3 col-xs-3 review-td-position">
+                            <b>@Umbraco.GetDictionaryValue("Rating")</b>
+                        </div>
+
+                        <div class="col-sm-3 col-xs-3 review-td-position">
+                            <b>@Umbraco.GetDictionaryValue("Links")</b>
+                        </div>
+                    </div>
+                </div>
+                @if (reviewChildrens != null)
                 {
-                    var rating = int.Parse(item.GetValue("casinoRating").ToString());
-                    var rating2 = item.HasProperty("casinoRating2") ? int.Parse(item.GetValue("casinoRating2").ToString()) : 0;
-
-                    var url = item.GetValue("casinoImage");
-                    var link = item.GetValue("casinoRegisterLink");
-                    var reviewLink = item.GetValue("casinoReviewLink");
-                    var alt = item.GetValue("casinoImageAlt");
-                    var title = item.GetValue("casinoImageTitle");
-                    var desc = item.GetValue("casinoDescription");
-                    if (url == null)
+                    foreach (var item in reviewChildrens)
                     {
-                        continue;
-                    }
-                    <div class="review-item">
-                        <div class="row">
-                            <div class="col-sm-3 col-xs-3 review-td-position">
-                                <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title" />
-                            </div>
-                            <div class="col-sm-3 col-xs-3 review-td-position">
-                                @Html.Raw(desc)
-                            </div>
-                            <div class="col-sm-3 col-xs-3 review-td-position">
-                                <div class="review-rating">
-                                    <div>
-                                        <div>
-                                            test
-                                        </div>
-                                        <div>
-                                            @for (int i = 0; i < 5; i++)
-                                            {
-                                                if (i < rating)
-                                                {
-                                                    <span class="fa fa-star checked"></span>
-                                                }
-                                                else
-                                                {
-                                                    <span class="fa fa-star"></span>
-                                                }
-                                            }
-                                        </div>
-                                    </div>
+                        var rating = int.Parse(item.GetValue("casinoRating").ToString());
+                        var rating2 = item.HasProperty("casinoRating2") ? int.Parse(item.GetValue("casinoRating2").ToString()) : 0;
 
-                                    <div>
-                                        <div>
-                                            test2
-                                        </div>
-                                        <div>
-                                            @for (int i = 0; i < 5; i++)
-                                            {
-                                                if (i < rating2)
-                                                {
-                                                    <span class="fa fa-star checked"></span>
-                                                }
-                                                else
-                                                {
-                                                    <span class="fa fa-star"></span>
-                                                }
-                                            }
-                                        </div>
-                                    </div>
-
+                        var url = item.GetValue("casinoImage");
+                        var link = item.GetValue("casinoRegisterLink");
+                        var reviewLink = item.GetValue("casinoReviewLink");
+                        var alt = item.GetValue("casinoImageAlt");
+                        var title = item.GetValue("casinoImageTitle");
+                        var desc = item.GetValue("casinoDescription");
+                        if (url == null)
+                        {
+                            continue;
+                        }
+                        <div class="review-item">
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-3 review-td-position">
+                                    <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title" />
                                 </div>
-                            </div>
+                                <div class="col-sm-3 col-xs-3 review-td-position">
+                                    @Html.Raw(desc)
+                                </div>
+                                <div class="col-sm-3 col-xs-3 review-td-position">
+                                    <div class="review-rating">
+                                        <div>
+                                            <div>
+                                                @Umbraco.GetDictionaryValue("User Experience")
+                                            </div>
+                                            <div>
+                                                @for (int i = 0; i < 10; i++)
+                                                {
+                                                    if (i < rating)
+                                                    {
+                                                        <span class="fa fa-star checked"></span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="fa fa-star"></span>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
 
-                            <div class="col-sm-3 col-xs-3 review-td-position">
-                                <div class="review-buttons-container">
-                                    <a href="@reviewLink" class="btn m-1 btn-danger btn-sm review-link">Review</a>
-                                    <a href="@link" class="btn m-1 btn-danger btn-sm review-link">Register</a>
+                                        <div>
+                                            <div>
+                                                @Umbraco.GetDictionaryValue("Bonus")
+                                            </div>
+                                            <div>
+                                                @for (int i = 0; i < 10; i++)
+                                                {
+                                                    if (i < rating2)
+                                                    {
+                                                        <span class="fa fa-star checked"></span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="fa fa-star"></span>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-3 col-xs-3 review-td-position">
+                                    <div class="review-buttons-container">
+                                        <a href="@link" class="btn m-1 btn-danger btn-sm review-link">@Umbraco.GetDictionaryValue("Register")</a>
+                                        <a href="@reviewLink" class="btn m-1 btn-danger btn-sm review-link">@Umbraco.GetDictionaryValue("Review")</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
                 }
             </div>
         </div>
 
         <div data-aos="flip-left">
             <div class="reviews-table reviews-table-mobile">
-                @foreach (var item in reviewChildrens)
-                {
-                    var rating = int.Parse(item.GetValue("casinoRating").ToString());
-                    var rating2 = int.Parse(item.GetValue("casinoRating2").ToString());
-
-                    var url = item.GetValue("casinoImage");
-                    var link = item.GetValue("casinoRegisterLink");
-                    var reviewLink = item.GetValue("casinoReviewLink");
-                    var alt = item.GetValue("casinoImageAlt");
-                    var title = item.GetValue("casinoImageTitle");
-                    var desc = item.GetValue("casinoDescription");
-                    if (url == null)
-                    {
-                        continue;
-                    }
-                    <div class="review-item">
-                        <div class="row">
-                            <div class="col-sm-4 col-xs-4 review-td-position">
-                                <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title" />
+                <div class="review-item">
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-4 review-td-position">
+                            <b>@Umbraco.GetDictionaryValue("Brand")</b>
+                        </div>
+                        <div class="col-sm-4 col-xs-4 review-td-position">
+                            <b>@Umbraco.GetDictionaryValue("Welcome Bonus")</b>
+                        </div>
+                        <div class="col-sm-4 col-xs-4 review-td-position review-rating-links">
+                            <div class="review-rating">
+                                <b>@Umbraco.GetDictionaryValue("Rating")</b>
                             </div>
-                            <div class="col-sm-4 col-xs-4 review-td-position">
-                                @Html.Raw(desc)
-                            </div>
-                            <div class="col-sm-4 col-xs-4 review-td-position review-rating-links">
-                                <div class="review-rating">
-                                    <div>
-                                        <div>
-                                            test
-                                        </div>
-                                        <div>
-                                            @for (int i = 0; i < 5; i++)
-                                            {
-                                                if (i < rating)
-                                                {
-                                                    <span class="fa fa-star checked"></span>
-                                                }
-                                                else
-                                                {
-                                                    <span class="fa fa-star"></span>
-                                                }
-                                            }
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div>
-                                            test2
-                                        </div>
-                                        <div>
-                                            @for (int i = 0; i < 5; i++)
-                                            {
-                                                if (i < rating2)
-                                                {
-                                                    <span class="fa fa-star checked"></span>
-                                                }
-                                                else
-                                                {
-                                                    <span class="fa fa-star"></span>
-                                                }
-                                            }
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="review-buttons-container">
-                                    <a href="@reviewLink" class="btn m-1 btn-danger btn-sm review-link">Review</a>
-                                    <a href="@link" class="btn m-1 btn-danger btn-sm review-link">Register</a>
-                                </div>
+                            <div class="review-buttons-container">
+                                <b>@Umbraco.GetDictionaryValue("Links")</b>
                             </div>
                         </div>
                     </div>
+                </div>
+                @if (reviewChildrens != null)
+                {
+                    foreach (var item in reviewChildrens)
+                    {
+                        var rating = int.Parse(item.GetValue("casinoRating").ToString());
+                        var rating2 = int.Parse(item.GetValue("casinoRating2").ToString());
+
+                        var url = item.GetValue("casinoImage");
+                        var link = item.GetValue("casinoRegisterLink");
+                        var reviewLink = item.GetValue("casinoReviewLink");
+                        var alt = item.GetValue("casinoImageAlt");
+                        var title = item.GetValue("casinoImageTitle");
+                        var desc = item.GetValue("casinoDescription");
+                        if (url == null)
+                        {
+                            continue;
+                        }
+                        <div class="review-item">
+                            <div class="row">
+                                <div class="col-sm-4 col-xs-4 review-td-position">
+                                    <img class="review-image" src="@Umbraco.TypedMedia(url).Url" alt="@alt" title="@title" />
+                                </div>
+                                <div class="col-sm-4 col-xs-4 review-td-position">
+                                    @Html.Raw(desc)
+                                </div>
+                                <div class="col-sm-4 col-xs-4 review-td-position review-rating-links">
+                                    <div class="review-rating">
+                                        <div>
+                                            <div>
+                                                @Umbraco.GetDictionaryValue("User Experience")
+                                            </div>
+                                            <div>
+                                                @for (int i = 0; i < 10; i++)
+                                                {
+                                                    if (i < rating)
+                                                    {
+                                                        <span class="fa fa-star checked"></span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="fa fa-star"></span>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div>
+                                                @Umbraco.GetDictionaryValue("Bonus")
+                                            </div>
+                                            <div>
+                                                @for (int i = 0; i < 10; i++)
+                                                {
+                                                    if (i < rating2)
+                                                    {
+                                                        <span class="fa fa-star checked"></span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="fa fa-star"></span>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="review-buttons-container">
+                                        <a href="@link" class="btn m-1 btn-danger btn-sm review-link">@Umbraco.GetDictionaryValue("Register")</a>
+
+                                        <a href="@reviewLink" class="btn m-1 btn-danger btn-sm review-link">@Umbraco.GetDictionaryValue("Review")</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
                 }
             </div>
+        </div>
+        <div>
+            @Html.Raw(CurrentPage.homePart1)
         </div>
     </div>
 </div>

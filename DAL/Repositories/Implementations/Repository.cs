@@ -12,21 +12,16 @@ namespace DAL.Repositories.Implementations
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly DbContext _context;
+        private readonly ICasinoDbContext _context;
         private IDbSet<T> _entities;
 
-        public Repository(DbContext context)
+        public Repository(ICasinoDbContext context)
         {
             this._context = context;
-            this._context.Configuration.AutoDetectChangesEnabled = false;
-            this._context.Configuration.LazyLoadingEnabled = false;
+            //this._context.Configuration.AutoDetectChangesEnabled = false;
+            //this._context.Configuration.LazyLoadingEnabled = false;
         }
-        public Repository()
-        {
-            this._context = new CasinoDbContext();
-            this._context.Configuration.AutoDetectChangesEnabled = false;
-            this._context.Configuration.LazyLoadingEnabled = false;
-        }
+
         public T GetById(object id)
         {
             return this.Entities.Find(id);

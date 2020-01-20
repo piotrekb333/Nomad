@@ -14,5 +14,7 @@ namespace DAL.Context
         DbSet<Newsletter> Newsletters { get; set; }
         int SaveChanges();
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
+        DbSet<TEntity> Set<TEntity>() where TEntity : class;
+
     }
 }
