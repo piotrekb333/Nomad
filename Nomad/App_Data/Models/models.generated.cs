@@ -19,8 +19,8 @@ using Umbraco.ModelsBuilder;
 using Umbraco.ModelsBuilder.Umbraco;
 
 [assembly: PureLiveAssembly]
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "fc2ad40181b30754")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "c016a160aea77bac")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.3")]
 
 namespace Umbraco.Web.PublishedContentModels
 {
@@ -244,6 +244,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IHtmlString HomePart1
 		{
 			get { return this.GetPropertyValue<IHtmlString>("homePart1"); }
+		}
+
+		///<summary>
+		/// LatestArticles
+		///</summary>
+		[ImplementPropertyType("latestArticles")]
+		public IEnumerable<IPublishedContent> LatestArticles
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("latestArticles"); }
 		}
 
 		///<summary>

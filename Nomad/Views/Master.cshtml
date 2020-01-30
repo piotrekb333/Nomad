@@ -9,9 +9,7 @@
 
     Layout = null;
 
-    //IContent content = ApplicationContext.Current.Services.ContentService.GetById(1057);
-    //var logoList = content.GetValue<List<IContent>>("footerImages");
-    //var logoListString = content.GetValue("footerImages");
+
     IPublishedContent content = null;
     IPublishedContent casinos = null;
     IPublishedContent bookmakers = null;
@@ -42,6 +40,11 @@
 
     IEnumerable<IPublishedContent> footerImagesList = content.GetPropertyValue<IEnumerable<IPublishedContent>>("footerImagesList");
     IEnumerable<IPublishedContent> headerImagesList = content.GetPropertyValue<IEnumerable<IPublishedContent>>("headerImages");
+
+
+    var latestArticles=content.GetPropertyValue<IEnumerable<IPublishedContent>>("latestArticles");
+
+
 
     var menu = content.Children.Where(m => !m.GetPropertyValue<bool>("disabledInMenu"));
 
@@ -105,276 +108,1010 @@
 </head>
 
 
-<body id="page-top" class="eupopup eupopup-top">
-    <div id="main-content">
-        <!-- Header -->
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid px-60px">
 
-                @if (banner != null)
-                {
-                    <a class="navbar-brand" href="@bannerLink">
-                        <img class="etcodes-normal-logo" src="@banner.Url" alt="@bannerImageAlt" title="@bannerImageTitle" width="120" height="22">
+<body class="has-fixed-header ">
+    <header id="layout_header">
+        <div id="custom_header">
+            <div class="left">
+                <div class="mobile-menu-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a class="custom_header_logo" href="/">
+                    <img src="/build/site/v1/media/header/ag-logo.5fc6e123ee86f704bbde79476c0c8707.svg"
+                         srcset="/build/site/v1/media/header/ag-logo.5fc6e123ee86f704bbde79476c0c8707.svg 1x,
+                             /build/site/v1/media/header/ag-logo.5fc6e123ee86f704bbde79476c0c8707.svg 2x"
+                         alt="AskGamblers Logo"
+                         class="logo_large" />
+                    <img src="/build/site/v1/media/header/ag-logo-icon.86de654c9dbf959a993ceb0bb2bbea2c.svg"
+                         srcset="/build/site/v1/media/header/ag-logo-icon.86de654c9dbf959a993ceb0bb2bbea2c.svg 1x,
+                             /build/site/v1/media/header/ag-logo-icon.86de654c9dbf959a993ceb0bb2bbea2c.svg 2x"
+                         alt="AskGamblers Logo Small"
+                         class="logo_icon" />
+                </a>
+                <div id="custom_header_search">
+                    <div id="custom_header_search_dropdown">
+                        <button type="button" class="search-place-select">
+                            <span class="search-place-icon invisible">
+                                <img src="/build/site/v1/media/header/Mobile-Search-Casino-b.c88f92c8667471c6403b022bda606c1e.svg" alt="icon">
+                                <img src="/build/site/v1/media/header/Mobile-Search-Casino-w.4fdafcd4ea1a8aecd74be19d822ca346.svg" alt="icon">
+                            </span>
+                            <span class="search-place" data-url="">All</span>
+                            <span class="search-place-caret"></span>
+                        </button>
+                        <ul id="search-place-list">
+                            <li>
+                                <button type="button">
+                                    <span class="search-place-icon invisible">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Casino-b.c88f92c8667471c6403b022bda606c1e.svg" alt="icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Casino-w.4fdafcd4ea1a8aecd74be19d822ca346.svg" alt="icon">
+                                    </span>
+                                    <span class="search-place" data-url="">All</span>
+                                    <span class="search-place-caret"></span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="search-place-icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Casino-b.c88f92c8667471c6403b022bda606c1e.svg" alt="icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Casino-w.4fdafcd4ea1a8aecd74be19d822ca346.svg" alt="icon">
+                                    </span>
+                                    <span class="search-place" data-url="casino-review">Casinos</span>
+                                    <span class="search-place-caret"></span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="search-place-icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Complaints-b.8dd6f033bcee592329c89e48f573e8f3.svg" alt="icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Complaints-w.da6104b90d85c0942a1251d32bbc85eb.svg" alt="icon">
+                                    </span>
+                                    <span class="search-place" data-url="complaints">Complaints</span>
+                                    <span class="search-place-caret"></span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="search-place-icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Bonuses-b.cfc5752ecb6d5d6f4a6a5183c7b82795.svg" alt="icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Bonuses-w.900021b41a9016de9543b591763efe9d.svg" alt="icon">
+                                    </span>
+                                    <span class="search-place" data-url="bonus">Bonuses</span>
+                                    <span class="search-place-caret"></span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="search-place-icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Slot-b.b7aebf6e2141fe0478fa2584b1cd56c5.svg" alt="icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Slot-w.db6eaa130025b22a97875062de9f1e05.svg" alt="icon">
+                                    </span>
+                                    <span class="search-place" data-url="game-review">Slots</span>
+                                    <span class="search-place-caret"></span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="search-place-icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-News-b.5be08e8d1e7584cbe3f012daf3535486.svg" alt="icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-News-w.0768038617e3831c9cf6307c33dc79d1.svg" alt="icon">
+                                    </span>
+                                    <span class="search-place" data-url="news">News</span>
+                                    <span class="search-place-caret"></span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="search-place-icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Affiliate-b.87a5d287f3eb577736c24a1f4eb3bf2f.svg" alt="icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Affiliate-w.e8ef6b70d9096bd861212a48d6b5beea.svg" alt="icon">
+                                    </span>
+                                    <span class="search-place" data-url="casino-affiliate-programs">Affiliate Programs</span>
+                                    <span class="search-place-caret"></span>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="search-place-icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Forum-b.86b0d4aa213b5b9b549f880565499f3d.svg" alt="icon">
+                                        <img src="/build/site/v1/media/header/Mobile-Search-Forum-w.c878b96cc26a1570ac69e1947776c5c2.svg" alt="icon">
+                                    </span>
+                                    <span class="search-place" data-url="/forum/api/core/search" data-query="c17c4e814e379901a37ce4a6bbc5cacb">Forum</span>
+                                    <span class="search-place-caret"></span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <span class="search-icon"></span>
+                    <input type="text"
+                           placeholder=""
+                           data-placeholderCollapsed="Search"
+                           data-placeholderExpanded="Search">
+                    <div class="dropdown">
+                        <div class="search-promo">
+
+                            <a class="search-promo-headline">
+                                <img class="search-promo-headline-icon" src="https://www.askgamblers.com/uploads/tinify/original/other/e9/53/c1/7749e1ba9c1cf7799da15facda733feafb/search-drop-down-icon-hottest-casinos-this-week-transparency.png" />
+                                <p class="search-promo-headline-text">
+                                    Hottest Casinos This Week 👇
+
+                                </p>
+
+                            </a>
+                            <div class="search-promo-chosens">
+                                <a href="/visit/casino-review/true-flip-casino-box"
+                                   target="_blank"
+                                   rel="nofollow"
+                                   class="autocomplete-suggestion">
+                                    <div class="content">
+                                        <img src="https://www.askgamblers.com/uploads/casino_logos/casinoreview_logo/90/6c/c4/0e702dfcd9f7d6f9b79e65c29233040aaf/true-flip-casino-logo.png" srcset="https://www.askgamblers.com/uploads/casino_logos/casinoreview_logo/90/6c/c4/0e702dfcd9f7d6f9b79e65c29233040aaf/true-flip-casino-logo.png 1x, https://www.askgamblers.com/uploads/casino_logos_retina/casinoreview_logo/90/6c/c4/0e702dfcd9f7d6f9b79e65c29233040aaf/true-flip-casino-logo.png 2x" alt="">
+                                        <p class="content-right">
+                                            <span class="category"></span>
+                                            <span class="title">True Flip Casino</span>
+                                        </p>
+                                    </div>
+                                </a>
+                                <a href="/visit/casino-review/konung-casino-box"
+                                   target="_blank"
+                                   rel="nofollow"
+                                   class="autocomplete-suggestion">
+                                    <div class="content">
+                                        <img src="https://www.askgamblers.com/uploads/casino_logos/casinoreview_logo/72/40/90/e95ab414b2bdfde9f360fcbca17986f48f/konung-casino-logo-4.png" srcset="https://www.askgamblers.com/uploads/casino_logos/casinoreview_logo/72/40/90/e95ab414b2bdfde9f360fcbca17986f48f/konung-casino-logo-4.png 1x, https://www.askgamblers.com/uploads/casino_logos_retina/casinoreview_logo/72/40/90/e95ab414b2bdfde9f360fcbca17986f48f/konung-casino-logo-4.png 2x" alt="">
+                                        <p class="content-right">
+                                            <span class="category"></span>
+                                            <span class="title">Konung Casino</span>
+                                        </p>
+                                    </div>
+                                </a>
+                                <a href="/visit/casino-review/boo-casino-box"
+                                   target="_blank"
+                                   rel="nofollow"
+                                   class="autocomplete-suggestion">
+                                    <div class="content">
+                                        <img src="https://www.askgamblers.com/uploads/casino_logos/other/19/b1/87/f542a76be23de989e2b3142f33565932df/boo-casino-logo.png" srcset="https://www.askgamblers.com/uploads/casino_logos/other/19/b1/87/f542a76be23de989e2b3142f33565932df/boo-casino-logo.png 1x, https://www.askgamblers.com/uploads/casino_logos_retina/other/19/b1/87/f542a76be23de989e2b3142f33565932df/boo-casino-logo.png 2x" alt="">
+                                        <p class="content-right">
+                                            <span class="category"></span>
+                                            <span class="title">Boo Casino</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="recent">
+                            <p>Recent Searches</p>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+
+                        <div class="error-message">We couldn't find any results for your query.</div>
+
+                        <div class="spinner"><span></span></div>
+
+                        <ul class="results">
+                            <li>
+                                <a href="#">
+                                    <img>
+                                    <p class="title"></p>
+                                    <p class="type"></p>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="all-results-button">
+                            <a href="#">View All Results</a>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li id="mobile-menu-login">
+                            <div class="navigation-icon" style="background-image: url(/build/site/v1/media/default/avatar.462937afa3a2e59c4595fd89521e3af0.png);"></div>
+                            <a href="/login-p46" title="Browse our categories">
+                                Login
+                            </a>
+                        </li>
+                        <li class="navigation-item panel navigation-item--desktop navigation-item--tablet navigation-item--mobile">
+                            <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-casinos-ba452c349b924499d003af617e6355da-40-5df2276304c1e279d9506642.svg');"></div>
+                            <a title="Browse our categories">Casinos</a>
+                            <ul>
+                                <div class="submenu-header">
+                                    <div class="heading">
+                                        <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-casinos-ba452c349b924499d003af617e6355da-40-5df2276304c1e279d9506642.svg');"></div>
+                                        <p>Casinos</p>
+                                    </div>
+                                    <p class="back-button">Back</p>
+                                </div>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="See all online casinos"
+                                       href="/online-casinos">Online Casinos</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Read unbiased casino reviews"
+                                       href="/online-casinos/reviews">Casino Reviews</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Discover new online casinos"
+                                       href="/online-casinos/new">Newest Casinos</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Browse casinos with our Certificate"
+                                       href="/online-casinos/certified">Certified Casinos</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="AG Coin Casinos"
+                                       href="/online-casinos/ag-coin">AG Coin Casinos</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Play online casino on your phone"
+                                       href="/online-casinos/mobile">Mobile Casinos</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Play casinos instantly"
+                                       href="/online-casinos/instant-play">Instant Play Casinos</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Use downloadable casinos"
+                                       href="/online-casinos/download">Download Casinos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation-item panel navigation-item--desktop navigation-item--tablet navigation-item--mobile">
+                            <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-bonuses-dfaaa8f56fc34ed295cb44e632a05e0a-40-5df2276404c1e279d9506643.svg');"></div>
+                            <a title="Claim your casino bonus">Bonuses</a>
+                            <ul>
+                                <div class="submenu-header">
+                                    <div class="heading">
+                                        <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-bonuses-dfaaa8f56fc34ed295cb44e632a05e0a-40-5df2276404c1e279d9506643.svg');"></div>
+                                        <p>Bonuses</p>
+                                    </div>
+                                    <p class="back-button">Back</p>
+                                </div>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="The latest casino bonuses"
+                                       href="/casino-bonuses">Casino Bonuses</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Find all bonus codes and reviews"
+                                       href="/online-casino-bonus">Bonus Reviews</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Get our exclusive bonus codes"
+                                       href="/exclusive/yes">Exclusive Bonuses</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="See all casino sign-up bonuses"
+                                       href="/welcome-bonus">Welcome Bonuses</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Casino bonuses that match your deposit"
+                                       href="/deposit-match-bonus">Match Deposit</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation-item panel navigation-item--desktop navigation-item--tablet navigation-item--mobile">
+                            <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-slots-828d639c79ac36e2cefa7a02ddb75816-40-5df2276404c1e279d9506644.svg');"></div>
+                            <a title="Online casino slots">Slots</a>
+                            <ul>
+                                <div class="submenu-header">
+                                    <div class="heading">
+                                        <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-slots-828d639c79ac36e2cefa7a02ddb75816-40-5df2276404c1e279d9506644.svg');"></div>
+                                        <p>Slots</p>
+                                    </div>
+                                    <p class="back-button">Back</p>
+                                </div>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Best online casino slots"
+                                       href="/slot-games">Online Slots</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Read honest online slots reviews"
+                                       href="/free-online-slots">Slot Reviews</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="See the best video slots"
+                                       href="/free-slots/video">Video Slots</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Get the taste of classic slot play"
+                                       href="/free-slots/classic">Classic Slots</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Play progressive slot games"
+                                       href="/free-slots/progressive">Progressive Slots</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation-item panel navigation-item--desktop navigation-item--tablet navigation-item--mobile">
+                            <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-complaints-466e1f96530885090086019d862db95d-40-5df2276404c1e279d9506645.svg');"></div>
+                            <a title="Get help with online casino issues">Complaints</a>
+                            <ul>
+                                <div class="submenu-header">
+                                    <div class="heading">
+                                        <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-complaints-466e1f96530885090086019d862db95d-40-5df2276404c1e279d9506645.svg');"></div>
+                                        <p>Complaints</p>
+                                    </div>
+                                    <p class="back-button">Back</p>
+                                </div>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Get Help"
+                                       href="https://support.askgamblers.com/hc/en-us">Get Help</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="File a complaint"
+                                       href="/submit-complaint">Submit Complaint</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Online casino complaints"
+                                       href="/casino-complaints">Casino Complaints</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="File a casino bonus complaint"
+                                       href="/casino-complaints/bonuses-issues">Bonus Issues</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Software glitch or other problems"
+                                       href="/casino-complaints/software-issues">Software Issues</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Resolve your deposit problems"
+                                       href="/casino-complaints/deposits-issues">Deposit Issues</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Get help with any payment issue"
+                                       href="/casino-complaints/payment-issues">Payment Issues</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Online casino account help"
+                                       href="/casino-complaints/accounts-handling">Account Handling</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Various complaints you might have"
+                                       href="/casino-complaints/other-issues">Other Issues</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Complaint History"
+                                       href="/casino-complaints-history">Complaint History</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation-item panel navigation-item--desktop navigation-item--tablet navigation-item--mobile">
+                            <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-news-a1e56ad89e489bbfb231635d25cfcb91-40-5df2276404c1e279d9506646.svg');"></div>
+                            <a title="The latest updates">News</a>
+                            <ul>
+                                <div class="submenu-header">
+                                    <div class="heading">
+                                        <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-news-a1e56ad89e489bbfb231635d25cfcb91-40-5df2276404c1e279d9506646.svg');"></div>
+                                        <p>News</p>
+                                    </div>
+                                    <p class="back-button">Back</p>
+                                </div>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Follow our news and promotions"
+                                       href="/news">Casino News</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="The latest online gambling news"
+                                       href="/gambling-news">Latest News</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Learn about latest online casino deals"
+                                       href="/gambling-news/promotions">Promotions</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Inspirational gambling success stories"
+                                       href="/gambling-news/big-win">Big Win</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Read AskGamblers-Related News"
+                                       href="/gambling-news/ag-news">AG News</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Diverse topics about online gambling"
+                                       href="/gambling-news/blog">Casino Blog</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Gambling industry"
+                                       href="/gambling-news/industry">Industry News</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation-item panel navigation-item--desktop navigation-item--tablet navigation-item--mobile">
+                            <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-affiliates-965d61c553dffaadc6143ce6aa2bcadd-40-5df2276404c1e279d9506647.svg');"></div>
+                            <a title="Affiliate program deals and ratings">Affiliates</a>
+                            <ul>
+                                <div class="submenu-header">
+                                    <div class="heading">
+                                        <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-affiliates-965d61c553dffaadc6143ce6aa2bcadd-40-5df2276404c1e279d9506647.svg');"></div>
+                                        <p>Affiliates</p>
+                                    </div>
+                                    <p class="back-button">Back</p>
+                                </div>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Read about casino affiliate programs"
+                                       href="/affiliate-programs">Affiliate Programs</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Ratings of casino affiliate programs"
+                                       href="/casino-affiliate-programs">Affiliate Program Reviews</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Exclusive casino affiliate programs"
+                                       href="/casino-affiliate-programs/exclusive">Exclusive Deals</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Affiliate program issues"
+                                       href="/affiliate-complaints">Affiliate Complaints</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="New Casino Affiliate Programs"
+                                       href="/casino-affiliate-programs/new">New Affiliate Programs</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="navigation-item collapse-disabled navigation-item--desktop navigation-item--tablet navigation-item--mobile">
+                            <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-forum-67239409d4ac850125e86e8e654aba90-40-5df2276504c1e279d9506648.svg');"></div>
+                            <a title="Browse our forum"
+                               href="/forum/">Forum</a>
+                        </li>
+                        <li class="navigation-item panel navigation-item--desktop navigation-item--tablet navigation-item--mobile">
+                            <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-more-01943e0b2df500d2b20ff4f765e72edd-40-5df2276504c1e279d9506649.svg');"></div>
+                            <a title="Read more about us">More</a>
+                            <ul>
+                                <div class="submenu-header">
+                                    <div class="heading">
+                                        <div class="navigation-icon" style="background-image: url('/uploads/menu-icon-more-01943e0b2df500d2b20ff4f765e72edd-40-5df2276504c1e279d9506649.svg');"></div>
+                                        <p>More</p>
+                                    </div>
+                                    <p class="back-button">Back</p>
+                                </div>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="About AskGamblers"
+                                       href="/about">About</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="How it all began"
+                                       href="/story">Story</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Testimonials"
+                                       href="/testimonials">Testimonials</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Surveys"
+                                       href="/surveys">Surveys</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Our exclusive loyalty program"
+                                       href="/together">Loyalty</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Gambling Guide"
+                                       href="/gambling-guide">Gambling Guide</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Careers"
+                                       href="/careers">Careers</a>
+                                </li>
+                                <li class="navigation-childItem navigation-childItem--desktop navigation-childItem--tablet navigation-childItem--mobile">
+                                    <a title="Contact us"
+                                       href="/contact">Contact</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+            <div class="right">
+                <a href="https://awards.askgamblers.com" class="ag-awards-page" target="_blank">
+                    <img src="/build/site/v1/media/ag-awards/ag-award-goblet.e3a647149037df284a11e18c12194580.svg" class="ag-awards-page-icon">
+                    <span class="ag-awards-page-text">Ag Awards</span>
+                </a>
+                <div id="newsletter_subscribe">
+                    <a id="header-subscribe">
+                        <img src="/build/site/v1/media/mailwhite.bbca72b152c34154a1b7dfc850344f9a.svg" class="header-subscribe-icon" />
+                    </a>
+                    <div class="dropdown">
+                        <div class="header-subscribe-wrapper">
+                            <div class="header-subscribe-title">SIGN UP FOR +100 NO DEPOSIT SPINS!</div>
+                            <p>Sign up to get the industry's best deals.</p>
+                            <form class="header-subscribe-form" action="/subscribe-to-newsletter" method="post">
+                                <input name="newsletter_subscription[email]" type="email" placeholder="Enter your email" class="header-subscribe-input">
+                                <span class='error_text'></span>
+                                <button type="submit">
+                                    <svg class="icon-email-small" role="img" aria-labelledby="title">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/build/site/v1/media/icons.8073fc9ba99c6fd523c0.svg#send-icon"></use>
+                                    </svg>
+                                </button>
+                                <div class="header-subscribe-disclaimer">
+                                    <svg class="icon icon--18plus" role="img" aria-labelledby="title">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/build/site/v1/media/icons.8073fc9ba99c6fd523c0.svg#18plus-dark"></use>
+                                    </svg>
+                                    <p class="header-subscribe-disclaimer-text">
+                                        By subscribing you are certifying that you are over the age of 18.
+                                    </p>
+                                    <p class="header-subscribe-disclaimer-text header-subscribe-disclaimer-desc">
+                                        This offer is not applicable to residents of Great Britain.
+                                    </p>
+                                    <p class="header-subscribe-disclaimer-text header-subscribe-disclaimer-desc header-subscribe-disclaimer-links">
+                                        By subscribing you are certifying that you have reviewed and accepted our updated <a href="/privacy-policy-p64">Privacy</a> and <a href="/legal/cookie-policy">Cookie Policy</a>
+                                    </p>
+                                </div>
+                                <span class="loading">
+                                    <span class="spinner center" id="change-email-spinner">
+                                        <span class="bounce bounce1"></span>
+                                        <span class="bounce bounce2"></span>
+                                        <span class="bounce bounce3"></span>
+                                    </span>
+                                </span>
+                            </form>
+
+                            <p class="header-subscribe-social-title">Connect with us</p>
+                            <div class="header-subscribe-social">
+                                <ul>
+                                    <li>
+                                        <a id="header-subscribe-social-facebook" href="https://www.facebook.com/askgamblers" target="_blank" rel="nofollow">
+                                            <svg class="icon icon--sub-facebook" role="img" aria-labelledby="title">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/build/site/v1/media/icons.8073fc9ba99c6fd523c0.svg#sub-facebook"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a id="header-subscribe-social-twitter" href="https://www.twitter.com/askgamblers" target="_blank" rel="nofollow">
+                                            <svg class="icon icon--sub-twitter" role="img" aria-labelledby="title">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/build/site/v1/media/icons.8073fc9ba99c6fd523c0.svg#sub-twitter"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a id="header-subscribe-social-google" href="https://plus.google.com/+askgamblers" target="_blank" rel="nofollow">
+                                            <svg class="icon icon--sub-gplus" role="img" aria-labelledby="title">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/build/site/v1/media/icons.8073fc9ba99c6fd523c0.svg#sub-gplus"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="notifications">
+                    <a>Notifications<span class="news-bubble"></span></a>
+                    <div class="dropdown">
+
+                        <div class="content-wrapper">
+                            <p id="news-title">What's new</p>
+
+                            <div id="news-list" class="list-wrapper">
+
+
+                                <ul class="tab-list">
+                                    @foreach(var item in latestArticles)
+                                    {
+                                    <li>
+                                        <a href="@item.Url">
+                                            <span class="item-info">
+                                                <p class="description">@item.Name</p>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    }
+
+                                </ul>
+
+                                <div class="notifications-error">
+                                    <div>
+                                        <div class="broken-bell"></div>
+                                        <p>Notifications<br> failed to load.</p>
+                                        <button class="reload-notifications">Reload</button>
+                                    </div>
+                                </div>
+
+                                <div class="no-notifications-error">
+                                    <div>
+                                        <div class="broken-bell"></div>
+                                        <p>You don't<br> have any<br> notifications.</p>
+                                        <button class="reload-notifications">Reload</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="/gambling-news/ag-news" class="view-all-news-btn">View all</a>
+
+
+
+
+                    </div>
+                </div>
+                <div id="log_in">
+                    <a href="/login-p46">
+                        Login
+                    </a>
+                    <div class="dropdown">
+                        <form action="/inline-login" method="post">
+
+                            <input type="text" placeholder="Username or Email" name="inlineLogInForm[username]">
+                            <span class='error__text'></span>
+
+                            <input type="password" placeholder="Password" name="inlineLogInForm[password]">
+                            <span class='error__text'></span>
+
+                            <a href="/forgot">Forgot password?</a>
+
+                            <input class="checkbox" id="remember-me" type="checkbox" name="_remember_me" value="1">
+                            <label for="remember-me" class="label--checkbox">Keep me logged in</label>
+
+                            <button type="submit" class="submit">Log in</button>
+
+                            <button class="loading" disabled>
+                                <span class="spinner center" id="change-email-spinner">
+                                    <span class="bounce bounce1"></span>
+                                    <span class="bounce bounce2"></span>
+                                    <span class="bounce bounce3"></span>
+                                </span>
+                            </button>
+
+                        </form>
+
+                        <div class="login-new-account">
+                            <p class="login-new-account-text">
+                                If you don't have an account, please create one first.
+                            </p>
+                            <a href="/join-p53" class="btn btn--fixed btn--skeleton">Create Account</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="language">
+                    <a href="#"><span>en</span></a>
+                    <div class="dropdown">
+                        <ul class="languages-list">
+                            <li id="language-item-italian">
+                                <a href="/it/" title="AskGamblers in Italian.">
+                                    <span>Italiano</span>
+                                </a>
+                            </li>
+                            <li id="language-item-german">
+                                <a href="/de/" title="AskGamblers in German">
+                                    <span>Deutsch</span>
+                                </a>
+                            </li>
+                            <li id="language-item-japanese">
+                                <a href="/jp/" title="AskGamblers in Japanese">
+                                    <span>日本語</span>
+                                </a>
+                            </li>
+                            <li id="language-item-portuguese">
+                                <a href="/pt/" title="AskGamblers in Portuguese">
+                                    <span>Português (BR)</span>
+                                </a>
+                            </li>
+                            <li id="language-item-spanish">
+                                <a href="/es/" title="AskGamblers in Spanish">
+                                    <span>Español</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div id="mobile-buttons">
+                    <div id="notifications-mobile-button"><span class="news-bubble"></span></div>
+
+                    <div id="search-mobile-button"></div>
+                    <div id="language-mobile-button"><span>en</span></div>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu-curtain"></div>
+    </header>
+    <div class="site-container site-container--full site-container--full_slider group">
+        @RenderBody()
+    </div>
+
+
+
+    <div class="site-footer">
+
+        <div class="site-footer__navs group">
+
+            <div class="footer-newsletter">
+                <div class="footer-newsletter__title">
+                    Sign up for +100 No Deposit Spins!
+                </div>
+                <form id="newsletter_subscription-footer" class="footer-newsletter__form" data-url="/subscribe-to-newsletter">
+                    <div class="site-newsletter__fields">
+                        <input name="newsletter_subscription[email]"
+                               type="text"
+                               placeholder="Enter your email to get free spins"
+                               class="footer-newsletter__input newsletter_subscription_email">
+                        <button type="submit"
+                                class="footer-newsletter__submit do-subscribe-to-newsletter footer-newsletter__submit--yellow">
+                            Sign up
+                        </button>
+                    </div>
+                    <span class="site-newsletter__spinner center">
+                        <span class="bounce bounce1"></span>
+                        <span class="bounce bounce2"></span>
+                        <span class="bounce bounce3"></span>
+                    </span>
+                    <div class="footer-newsletter__disclaimer footer-newsletter__desc">
+                        <p>By subscribing you are certifying that you are over the age of 18.</p><p>This offer is not applicable to residents of Great Britain.</p><p>By subscribing you are certifying that you have reviewed and accepted our updated <a class="internal-link" href="/privacy-policy-p64">Privacy</a> and <a class="internal-link" href="/legal/cookie-policy">Cookie Policy</a></p>
+                    </div>
+                    <div class="site-newsletter__thanks is-hidden">
+                        Thank you!
+                    </div>
+                </form>
+            </div>
+
+            <div class="site-footer__nav site-footer__nav--wrapper">
+
+                <ul class="site-footer__nav site-footer__nav--main">
+                    <li class="site-footer__nav-item ">
+
+                        <a href="/online-casinos">Casinos</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+                        <a href="/slot-games">Slots</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+                        <a href="/casino-bonuses">Bonuses</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+                        <a href="/news">News</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+                        <a href="/forum/">Forum</a>
+
+                    </li>
+                </ul>
+
+                <ul class="site-footer__nav site-footer__nav--about">
+                    <li class="site-footer__nav-item ">
+
+                        <a href="#tour-modal"
+                           class="do-take-a-tour"
+                           data-fetch-tour-modal-url="/fetch-tour-modal">Take a Tour</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+                        <a href="/about">About</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+                        <a href="/story">Story</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+                        <a href="/contact">Contact</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+                        <a href="/careers">Careers</a>
+
+                    </li>
+                </ul>
+
+                <ul class="site-footer__nav site-footer__nav--support">
+                    <li class="site-footer__nav-item ">
+
+
+                        <a href="http://support.askgamblers.com/hc/en-us">Knowledge Base</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+
+                        <a href="/submit-complaint">Submit Complaint</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+
+                        <a href="/contact">Submit Ticket</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+
+                        <a href="/terms-conditions-p74">Terms</a>
+
+                        &amp;
+
+                        <a href="/privacy-policy-p64">Privacy</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+
+                        <a href="/legal/cookie-policy">Cookie Policy</a>
+
+                    </li>
+                    <li class="site-footer__nav-item ">
+
+
+                        <a href="/responsible-gambling">Responsible Gambling</a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="site-footer__middle">
+            <ul class="site-footer__nav--awards">
+                <li class="site-footer__nav-item site-footer__nav-item--live-chat">
+                    <div id="lcqualitybadge"></div>
+                </li>
+                <li class="site-footer__nav-item ">
+                    <img class="icon" src="/uploads/igb-9000b7d273d79cd887ff17aed0cbfd3e-79-5df2277404c1e279fd2d3472.svg" alt="" />
+
+                    <span>
+                        2010, 2012, 2015, 2019
+                        </br>
+                        <span>Best Casino Affiliate</span>
+
+                    </span>
+                </li>
+                <li class="site-footer__nav-item ">
+                    <img class="icon" src="/uploads/igb-9000b7d273d79cd887ff17aed0cbfd3e-80-5df2277404c1e279fd2d3473.svg" alt="" />
+
+                    <span>
+                        2016, 2017, 2019
+                        </br>
+                        <span>Best Casino Website</span>
+
+                    </span>
+                </li>
+                <li class="site-footer__nav-item ">
+                    <img class="icon" src="/uploads/egr-9fc5a19b484f7cbac29fcc08b6c8a1b8-40-5df2277404c1e279fd2d3474.svg" alt="" />
+
+                    <span>
+                        2010, 2011, 2012, 2014, 2015, 2016, 2017, 2018
+                        </br>
+                        <span>EGR&#039;S 50 Power Affiliates</span>
+
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="site-footer__bottom">
+            <ul class="site-footer__nav--awareness">
+
+                <li class="site-footer__nav-item ">
+                    <img src="/uploads/18plus-1a94105197af83137f48896e928f957d-40-5df2277504c1e279fd2d3475.svg" alt="" />
+
+                    <span>
+
+                    </span>
+                </li>
+                <li class="site-footer__nav-item ">
+                    <a href=http://www.gamcare.org.uk/ rel="nofollow">
+                        <img src="/uploads/gamcare-c2f80da890015818a8667901468361b0-40-5df2277504c1e279fd2d3476.svg" alt="" />
+                    </a>
+
+                    <span>
+
+                        <a href="http://www.gamcare.org.uk/" rel="nofollow"></a>
+
+                    </span>
+                </li>
+                <li class="site-footer__nav-item ">
+                    <a href=https://www.begambleaware.org/ rel="nofollow">
+                        <img src="/uploads/gambleaware-46b350f14e4ca642ab84eef5bdd3a767-40-5df2277504c1e279fd2d3477.svg" alt="" />
+                    </a>
+
+                    <span>
+
+                        <a href="https://www.begambleaware.org/" rel="nofollow"></a>
+
+                    </span>
+                </li>
+            </ul>
+
+            <ul class="site-footer__nav--social">
+                <li class="site-footer__nav--social-links ">
+                    <a href=https://www.facebook.com/askgamblers/ rel="nofollow" target="_blank">
+
+                        <img class="icon" src="/uploads/icon-facebook-grey-f4dcf00a477b0741f52924bacdef27b6-40-5df2277604c1e279fd2d347a.svg" alt="" />
 
                     </a>
-                }
 
-                <button class="navbar-toggler hamburger-menu-btn" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span>toggle menu</span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ml-auto">
-                        @foreach (var item in menu)
-                        {
-                            string displayName = item.GetPropertyValue<string>("displayName");
-                            displayName = string.IsNullOrEmpty(displayName) ? item.Name : displayName;
-                            <li class="nav-item dropdown">
-                                <a href="@item.Url" class="dropdown-toggle nav-link">@displayName</a>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- End Header -->
-        <!-- main -->
-        <div class="page-container scene-main scene-main--fade_In">
+                    <span>
 
+                        <a href="https://www.facebook.com/askgamblers/" rel="nofollow"></a>
 
-            <!-- Slider -->
-            <div id="default-carousel" class="owl-carousel default-owl-carousel light-nav-dots">
-                @if (headerImagesList != null)
-                {
-                    foreach (var item in headerImagesList)
-                    {
-                        var url = item.GetPropertyValue<IPublishedContent>("slideImage").Url;
-                        var alt = item.GetPropertyValue<string>("slideImageAlt");
-                        var title = item.GetPropertyValue<string>("slideImageTitle");
-                        string link = item.HasValue("slideLink") ? item.GetPropertyValue<string>("slideLink") : "";
+                    </span>
+                </li>
+                <li class="site-footer__nav--social-links ">
+                    <a href=https://www.twitter.com/askgamblers rel="nofollow" target="_blank">
 
+                        <img class="icon" src="/uploads/icon-twitter-grey-2386f4b1f321a07b97f21443b3a4f050-40-5df2277604c1e279fd2d347b.svg" alt="" />
 
+                    </a>
 
+                    <span>
 
-                        <div class="owl-carousel-item">
-                            <a href="@link">
-                                <div class="bg-image">
+                        <a href="https://www.twitter.com/askgamblers" rel="nofollow"></a>
 
-                                    <img src="@url" alt="Picture">
+                    </span>
+                </li>
+                <li class="site-footer__nav--social-links ">
+                    <a href="https://www.instagram.com/askgamblers/?hl=en" rel="nofollow" target="_blank">
 
-                                </div>
-                            </a>
-                        </div>
+                        <img class="icon" src="/uploads/instagram-icon-grey-13-5df22a0a04c1e27d5c61b20f.svg" alt="" />
 
-                    }
-                }
-            </div>
+                    </a>
 
-            @RenderBody()
+                    <span>
 
-            <!-- Subscribe To The Newsletter  -->
-            <div class="bg-color-creamy pt-30px pb-5px">
-                <div class="container">
-                    <div class="row small-gutters align-items-center mb-20px">
-                        <div class="col-lg-5">
-                            <h4 class="mb-15px">@Umbraco.GetDictionaryValue("Subscribe To The Newsletter")</h4>
-                        </div>
-                        <div class="col-lg-6 offset-lg-1">
-                            <form id="newsletter-form">
-                                <div class="form-group form-row  mb-0">
-                                    <div class="col-sm-8 col-xs-12  mb-30px">
-                                        <input type="email" name="NewsletterEmail" id="NewsletterEmail" class="form-control form-solid-border validate-required validate-email" placeholder="@Umbraco.GetDictionaryValue("Enter Email")">
-                                    </div>
-                                    <div class="col-sm-4 col-xs-12  mb-30px">
-                                        <button type="button" id="saveToEmailBtn" class="btn btn-outline-dark rounded-0">@Umbraco.GetDictionaryValue("Subscribe")</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- footer  -->
-            <footer class="web-footer footer bg-color-blackflame all-text-content-white">
-                <div class="footer-widgets pt-85px pb-55px">
-                    <div class="container">
+                        <a href="https://www.instagram.com/askgamblers/?hl=en" rel="nofollow"></a>
 
+                    </span>
+                </li>
+                <li class="site-footer__nav--social-links ">
+                    <a href=https://www.youtube.com/channel/UCMLqUP5ImP1f4rS5KqcjyaQ rel="nofollow" target="_blank">
 
-                        <div class="col-lg-3 mb-30px">
-                            <div class="footer-widget">
-                                <ul class="list-unstyled tweets-simple-list">
-                                    @foreach (var item in menu)
-                                    {
-                                        string displayName = item.GetPropertyValue<string>("displayName");
-                                        displayName = string.IsNullOrEmpty(displayName) ? item.Name : displayName;
-                                        <li class="media">
-                                            <a href="@item.Url">
-                                                @displayName
-                                            </a>
-                                        </li>
+                        <img class="icon" src="/uploads/youtube-icon-grey-13-5df22a1604c1e27d61575419.svg" alt="" />
 
-                                    }
-                                </ul>
-                            </div>
-                        </div>
-                        @*
-                            <div class="row large-gutters">
+                    </a>
 
-                                <div class="col-lg-3 mb-30px">
-                                    <div class="footer-widget">
-                                        <h5 class="widget-title">Casinos</h5>
-                                        <ul class="list-unstyled tweets-simple-list">
-                                            @if(casinos!=null){
-                                                foreach (var item in casinos.Children.Where(m => m.IsVisible()))
-                                                {
-                                                    <li class="media">
-                                                        <a href="@item.Url">
-                                                            @item.Name
-                                                        </a>
-                                                    </li>
-                                                }
-                                            }
+                    <span>
 
-                                        </ul>
-                                    </div>
-                                </div>
+                        <a href="https://www.youtube.com/channel/UCMLqUP5ImP1f4rS5KqcjyaQ" rel="nofollow"></a>
 
-                                <div class="col-lg-3 mb-30px">
-                                    <div class="footer-widget">
-                                        <h5 class="widget-title">Bookmakers</h5>
-                                        <ul class="list-unstyled tweets-simple-list">
-                                            @if(bookmakers!=null){
-                                                foreach (var item in bookmakers.Children.Where(m => m.IsVisible()))
-                                                {
-                                                    <li class="media">
-                                                        <a href="@item.Url">
-                                                            @item.Name
-                                                        </a>
-                                                    </li>
-                                                }
-                                            }
-                                        </ul>
-                                    </div>
-                                </div>
+                    </span>
+                </li>
+                <li class="site-footer__nav--social-links ">
+                    <a href=https://t.me/askgamblerschat rel="nofollow" target="_blank">
 
-                                <div class="col-lg-3 mb-30px">
-                                    <div class="footer-widget">
-                                        <h5 class="widget-title">Slots</h5>
-                                        <ul class="list-unstyled tweets-simple-list">
-                                            @if(slots!=null){
-                                                foreach (var item in slots.Children.Where(m => m.IsVisible()))
-                                                {
-                                                    <li class="media">
-                                                        <a href="@item.Url">
-                                                            @item.Name
-                                                        </a>
-                                                    </li>
-                                                }
-                                            }
-                                        </ul>
-                                    </div>
-                                </div>
+                        <img class="icon" src="/uploads/telegram-icon-grey-5e20640b04c1e251e02b321b.svg" alt="" />
 
-                                <div class="col-lg-3 mb-30px">
-                                    <div class="footer-widget">
-                                        <h5 class="widget-title">History</h5>
-                                        <ul class="list-unstyled tweets-simple-list">
-                                            @if(history!=null){
-                                                foreach (var item in history.Children.Where(m => m.IsVisible()))
-                                                {
-                                                    <li class="media">
-                                                        <a href="@item.Url">
-                                                            @item.Name
-                                                        </a>
-                                                    </li>
-                                                }
-                                            }
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        *@
+                    </a>
 
+                    <span>
 
+                        <a href="https://t.me/askgamblerschat" rel="nofollow"></a>
 
-
-                        <div class="row large-gutters footer-container">
-                            @*
-                                <div class="footer-col">
-                                    <span id="siteseal">
-                                        <script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=CD9MoLPfmgWLxd15rSjxE6JrXb9sWbRb3eDxdEsKQaUF5eHpQ3TivpfwRyV2"></script>
-                                    </span>
-                                </div>
-                            *@
-                            @foreach (var logo in footerImagesList)
-                            {
-                                var url = logo.GetPropertyValue<IPublishedContent>("customMediaImage").Url;
-                                var footerLogoAlt = logo.GetPropertyValue<string>("customAlt");
-                                var footerLogoTitle = logo.GetPropertyValue<string>("customTitle");
-                                //var title = logo.GetPropertyValue<string>("customImageTitle");
-                                <div class="footer-col">
-
-                                    <img class="footer-image" alt="@footerLogoAlt" src="@url" title="@footerLogoTitle" />
-                                </div>
-                            }
-                            @*
-                                <div class="footer-col">
-                                    <a href="//www.dmca.com/Protection/Status.aspx?ID=a96d485a-17c4-4239-9eb0-aa15fd08ed86" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca-badge-w100-5x1-06.png?ID=a96d485a-17c4-4239-9eb0-aa15fd08ed86"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
-                                </div>
-                            *@
-                        </div>
-
-                        <div class="row large-gutters footer-container">
-                            <div class="footer-widget">
-                                <ul class="list-inline m-0">
-                                    <li class="list-inline-item">
-                                        <a href="skype:xion999x?call">
-                                            <i class="fab fa-skype" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a href="https://www.facebook.com/CasinoPsychocom-345561016311160/">
-                                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                    @*
-                                        <li class="list-inline-item">
-                                            <a href="https://instagram.com/energeticthemes">
-                                                <i class="fab fa-instagram" aria-hidden="true"></i>
-                                            </a>
-                                        </li>
-                                    *@
-                                    <li class="list-inline-item">
-                                        <a href="https://twitter.com/casino_nomads">
-                                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                </div>
-            </footer>
+                    </span>
+                </li>
+            </ul>
         </div>
-        <!-- End main -->
+
+        <div class="site-footer__copy">
+            <div class="site-footer__copyright">&copy; 2006-2020 AskGamblers.com</div>
+        </div>
+
     </div>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @Scripts.Render("~/bundles/MainScriptNotMinify")
     @Scripts.Render("~/bundles/MainScript")
     @Scripts.Render("~/bundles/jqueryval")
-
-    @*
-        <script>
-            $(document).ready(function () {
-                $('a').click(function (event) {
-                    isClicked = true;
-                });
-            });
-        </script>
-    *@
 </body>
+
+
 </html>

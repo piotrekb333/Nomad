@@ -64,10 +64,10 @@ namespace Nomad
                       //"~/css/fontawesome-all.min.css",
                       //"~/css/bootstrap.min.css",
                       //"~/css/plugins/owl.carousel.min.css",
-                      "~/css/plugins/magnific-popup.css",
-                      "~/css/plugins/aos.css",
+                      //"~/css/plugins/magnific-popup.css",
+                      //"~/css/plugins/aos.css",
                       //"~/css/plugins/spacing-and-height.css",
-                      "~/css/theme-modules.css",
+                      "~/css/site.css",
                       "~/css/jquery-eu-cookie-law-popup.css"
 
                       ));

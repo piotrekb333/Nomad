@@ -339,6 +339,7 @@
     <Content Include="css\plugins\magnific-popup.css" />
     <Content Include="css\plugins\owl.carousel.min.css" />
     <Content Include="css\plugins\spacing-and-height.css" />
+    <Content Include="css\site.css" />
     <Content Include="css\theme-modules.css" />
     <Content Include="css\uxcore.css" />
     <Content Include="default.aspx" />
